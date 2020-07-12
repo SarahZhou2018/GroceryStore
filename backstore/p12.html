@@ -1,0 +1,135 @@
+<!--
+    P12 - Edit order profile
+    Shi Qi Zhou - 40163947
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Order</title>
+    <link rel="stylesheet" href="../css/p7-p12.css">
+</head>
+
+<body>
+
+    <header id="main-header">
+        Back Store - Add/Edit Order
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="p7.html">Product list</a></li>
+            <li><a href="p9.html">User list</a></li>
+            <li><a href="p11.html">Order list</a></li>
+            <li><a href="index.html">Main site</a></li>
+        </ul>
+    </nav>
+
+    <div id="main-block">
+        Enter order information below:<br>
+        <form action="" class="form-large">
+
+            <div class="form-container">
+                <label for="ordernum">Order number</label><br>
+                <input type="" name="ordernum" id="ordernum" value="3" readonly><br>
+                <!-- <input type="text" name="ordernum" id="ordernum" class="inputbox" required><br> -->
+            </div>
+
+            <!-- <div class="form-container">
+                <label for="ordernum">*Order number</label><br>
+                <input type="text" name="ordernum" id="ordernum" class="inputbox" required><br>
+            </div> -->
+            <div class="clr"></div>
+            <div class="form-container">
+                <label for="date">Date created</label><br>
+                <input type="text" name="date" id="date" placeholder="" value="2020-07-01 00:00:00" class="inputbox" readonly><br>
+            </div>
+            <div class="form-container">
+                <label for="date">Date last modified</label><br>
+                <input type="text" name="date" id="date" placeholder="" value="2020-07-07 14:00:00" class="inputbox" readonly><br>
+            </div>
+            <div class="clr"></div>
+            <div class="form-container">
+                <label for="orderdesc">Order description</label><br>
+                <input type="text" name="orderdesc" id="orderdesc" class="inputbox"><br>
+            </div>
+            <div class="clr"></div>
+
+            <!-- Responsive Table -->
+            <table>
+                <caption> Order </caption>
+
+                <!-- Button Add Row  -->
+                <button type="button" data-toggle="tooltip" data-placement="top" title="Add" style="float: right"><i
+                        class=""> ADD</i></button>
+
+                <tr>
+                    <th scope="col"> Products </th>
+                    <th scope="col"> Quantity </th>
+                    <th scope="col"> Action </th>
+                </tr>
+                <tr>
+                    <div contenteditable>
+                        <td>
+                            <div contenteditable>Paramount Citrus Navel Oranges</div>
+                        </td>
+                        <td>
+                            <div contenteditable>100 kg</div>
+                        </td>
+                        <td>
+                            <!-- Call to action button -->
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
+                                    DELETE</i></button>
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <td>
+                        <div contenteditable>Ristorante Frozen Pepperoni Pizza</div>
+                    </td>
+                    <td>
+                        <div contenteditable>500 boxes</div>
+                    </td>
+                    <td>
+                        <!-- Call to action button -->
+                        <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
+                                DELETE</i></button>
+                    </td>
+                </tr>
+            </table>
+            <br /> <br />
+
+            <!-- <div class="form-container">
+                <label for="products[]">*Products</label><br>
+                <input type="email" name="products[]" id="products[]" placeholder="" class="inputbox" required><br>
+            </div>
+            <div class="form-container">
+                <label for="quantity"></label>*Quantity</label><br>
+                <input type="tel" name="quantity" id="quantity" class="inputbox" maxlength=12 placeholder=""><br>
+            </div> -->
+            <div class="clr"></div>
+            <div class="form-container">
+                <label for="phonenum">*Contact phone number</label><br>
+                <input type="text" name="phonenum" id="phonenum" class="inputbox" maxlength=7 placeholder="999-999-9999"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+            </div>
+
+            <div class="clr"></div>
+
+            <br />
+            <input type="submit" value="Save" class="button">
+
+
+        </form>
+        <div class="clr"></div>
+        <a href="p11.html">Return to order list without saving</a>
+    </div>
+    <footer>
+        <a href="p12.html#main-header">Back to top</a>
+    </footer>
+</body>
+
+</html>
