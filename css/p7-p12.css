@@ -14,12 +14,14 @@ a:hover {
     color: #01A2A6;
 }
 
-body {
+html, body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fff;
 	color: #000;
     margin: 0px;
+    padding: 0px;
     font-size: 1em;
+    height: 100%;
 
 }
 
@@ -97,10 +99,10 @@ footer{
     padding: 1em 0;
     position: absolute;
     bottom: 0px;
-    width: 100%;
+    width: 95%;
     margin: auto;
-
     padding-left: 5%;
+
 }
 
 footer a{
@@ -118,6 +120,12 @@ footer a:hover {
     margin: auto;
     margin-top: 1em;
     width: 90%;
+    padding-bottom: 4em;
+}
+
+#main-container {
+    min-height: 100%;
+    position: relative;
 }
 
 
