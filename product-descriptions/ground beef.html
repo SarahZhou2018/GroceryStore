@@ -1,0 +1,68 @@
+<!--
+    P3 - Product page description
+    Georges Grondin - 40034160
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground Beef</title>
+    <link rel="stylesheet" href="../css/p3.css">
+</head>
+
+<nav>
+    <ul>
+        <li><a href="../index.html">Home Page</a></li>
+        <li><a href="../aisles/meat-poultry.html">Return to Aisle</a></li>
+    </ul>
+</nav>
+
+<body>
+    <header>
+        <div class="product-name-header">
+            Product Description - Ground beef, 1lb
+        </div>
+
+        <div class="register-log-in">
+            <a href="register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
+            <a href="login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
+        </div>
+    </header>
+
+    <div class="image">
+        <img src="../images/beef.jpg" alt="IMAGE" width="200px" height="200px" />
+    </div>
+
+    <div class="description">
+        <h2>Ground beef, 1lb</h2>
+        <p>8.99$</p>
+        <p>Weight: 1 lb</p>
+
+
+        <button class="addtocart" type="button" name="addtocart-button">More description</button><br><br>
+
+        <form action="../shopping-cart/index.html">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value=1 size="2"><br><br>
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+                <option value="80-20">80% Lean / 20% fat</option>
+                <option value="93-7">93% Lean / 7% fat</option>
+            </select><br><br>
+
+        
+
+            <div class="addtocartposition">
+                <button class="addtocart" type="submit" name="addtocart-button">Add to cart</button>
+            </div>
+        </form>
+    </div>
+
+    <footer></footer>
+
+</body>
+
+</html>
