@@ -28,11 +28,16 @@
                 <li><a href="p11.html">Order list</a></li>
                 <li><a href="index.html">Main site</a></li>
             </ul>
+            <a href="../index.html"><button class="logout-button" type="button" title="logout">Log out</button></a>
         </nav>
 
         <div id="main-block">
+            <h2>Add/Edit Order</h2>
             Enter order information below:<br>
             <form action="" class="form-large">
+                <div class="required-fields">
+                    <i>* required fields</i>
+                </div>
 
                 <div class="form-container">
                     <label for="ordernum">Order number</label><br>
@@ -59,49 +64,54 @@
                     <input type="text" name="orderdesc" id="orderdesc" class="inputbox"><br>
                 </div>
                 <div class="clr"></div>
-
+                <div class="form-container">
+                    
+                </div>
+                <div class="clr"></div>
                 <!-- Responsive Table -->
-                <table>
-                    <caption> Order </caption>
+                <div class="table-overflow">
+                    <table>
+                        <caption> Order </caption>
 
-                    <!-- Button Add Row  -->
-                    <button type="button" data-toggle="tooltip" data-placement="top" title="Add" style="float: right"><i
-                            class=""> ADD</i></button>
+                        <!-- Button Add Row  -->
+                        <button type="button" data-toggle="tooltip" data-placement="top" title="Add" style="float: right"><i
+                                class=""> ADD</i></button>
 
-                    <tr>
-                        <th scope="col"> Products </th>
-                        <th scope="col"> Quantity </th>
-                        <th scope="col"> Action </th>
-                    </tr>
-                    <tr>
-                        <div contenteditable>
+                        <tr>
+                            <th scope="col"> Products </th>
+                            <th scope="col"> Quantity </th>
+                            <th scope="col"> Action </th>
+                        </tr>
+                        <tr>
+                            <div contenteditable>
+                                <td>
+                                    <div contenteditable>Paramount Citrus Navel Oranges</div>
+                                </td>
+                                <td>
+                                    <div contenteditable>100 kg</div>
+                                </td>
+                                <td>
+                                    <!-- Call to action button -->
+                                    <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
+                                            DELETE</i></button>
+                                </td>
+                            </div>
+                        </tr>
+                        <tr>
                             <td>
-                                <div contenteditable>Paramount Citrus Navel Oranges</div>
+                                <div contenteditable>Ristorante Frozen Pepperoni Pizza</div>
                             </td>
                             <td>
-                                <div contenteditable>100 kg</div>
+                                <div contenteditable>500 boxes</div>
                             </td>
                             <td>
                                 <!-- Call to action button -->
                                 <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
                                         DELETE</i></button>
                             </td>
-                        </div>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div contenteditable>Ristorante Frozen Pepperoni Pizza</div>
-                        </td>
-                        <td>
-                            <div contenteditable>500 boxes</div>
-                        </td>
-                        <td>
-                            <!-- Call to action button -->
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
-                                    DELETE</i></button>
-                        </td>
-                    </tr>
-                </table>
+                        </tr>
+                    </table>
+                </div>
                 <br /> <br />
 
                 <!-- <div class="form-container">
