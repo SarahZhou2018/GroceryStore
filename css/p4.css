@@ -7,6 +7,7 @@ body {
     color: #000;
     margin: 0px;
     font-size: 1em;
+    overflow-x: hidden;
 }
 
 span {
@@ -80,6 +81,19 @@ footer a:hover {
     color: #FFFFA6;
 }
 
+.banner {
+    height: fit-content;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.banner h4 {
+    padding: 0px;
+    margin: 5px;
+}
+
 
 /* **********  Buttons *************** */
 
@@ -91,6 +105,7 @@ footer a:hover {
     padding: 0.7em 1em;
     border: solid 1px #29D9C2;
     border-radius: 0.5em;
+    margin: 1em;
 }
 
 .button:hover {
@@ -115,10 +130,12 @@ footer a:hover {
     float: right;
     padding: 0em 0em;
     border-color: transparent;
+    background-color: #fff;
 }
 
 .item-block button:hover,
-:active {
+.item-block button:focus {
+    outline: none;
     border-color: black;
     border-radius: 2em;
 }
@@ -131,22 +148,47 @@ footer a:hover {
 
 /* ********* Content ************* */
 
+.column {
+    float: left;
+    width: 50%;
+}
+
+
+/* Clear floats after the columns */
+
+.content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .content header {
-    background-color: #eee;
+    background-color: white;
     color: #2F2933;
-    margin: auto;
+    margin: 1%;
     overflow: hidden;
     padding: 0.5em 5%;
     font-size: 1.5em;
 }
 
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
 .item-block {
-    width: 50%;
-    max-height: 36rem;
+    width: 100%;
+    max-height: 28em;
     overflow: scroll;
-    margin: 1em;
-    padding: 1em;
-    background-color: #eee;
+    margin: 2%;
+    padding: 2%;
+    background-color: white;
     float: left;
     position: relative;
 }
@@ -163,19 +205,37 @@ footer a:hover {
     text-align: center;
 }
 
+.item-block table {
+    text-align: center;
+    position: relative;
+}
+
+.item-block th {
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
 .summary-block {
     margin: 1em;
     padding: 1em;
+    max-height: 100%;
+    overflow: scroll;
     background-color: #eee;
     float: right;
     position: relative;
 }
 
+.summary-block header {
+    background-color: #eee;
+    margin: 1%;
+}
+
 .summary-block table,
 th,
 td {
-    padding-bottom: 0.2em;
-    width: 35em;
+    padding-bottom: 0.2%;
+    width: 36em;
     border: none;
 }
 
@@ -185,21 +245,12 @@ td {
 
 #total {
     font-weight: bold;
-    border-spacing: 0 0.8em;
+    border-spacing: 0 2%;
 }
 
-
-/* #shop {
-    float: left;
-    transform: translatex(100%);
-} */
-
-
-/* 
 #pay {
     float: right;
-    transform: translate X(-100%);
-} */
+}
 
 
 /* .summary-block h2 {

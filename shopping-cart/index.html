@@ -26,131 +26,171 @@
         <li><a href="p1.html">Home Page</a></li>
     </ul>
 </nav>
+<div class="banner">
+    <marquee behavior="scroll" direction="left">
+        <h4>FREE DELIVERY FOR ORDERS ABOVE 30 $</h4>
+    </marquee>
+</div>
 
 <body>
     <div class="content">
         <!-- Left side -->
-        <div class="item-block" id="item-block">
-            <header>
-                Your Items
-            </header>
-            <span></span><span></span><br />
-            <!-- Detailed Illustrataded Table -->
-            <table>
-                <tr>
-                    <th>Item</th>
-                    <th>Price Per Unit</th>
-                    <th>Quantity</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td>
-                        Romaine Lettuce
-                        <img src="../images/lettuce.jpeg" alt="Romaine Lettuce" />
+        <div class="column">
+            <div class="item-block" id="item-block">
+                <header>
+                    Your Items
+                </header>
 
-                    </td>
-                    <td id="right">5 $</td>
-                    <td id="right">2</td>
-                    <td>
-                        <!-- Quantity +/- buttons -->
+                <span></span><span></span><br />
+                <!-- Detailed Illustrataded Table -->
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price Per Unit</th>
+                        <th>Quantity</th>
+                        <th></th>
+                    </tr>
 
-                        <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
-                            <img id ="icon" src="../images/minus.png"></button>
-                        <button type="button" data-toggle="tooltip" data-placement="top" title="add">
-                            <img id ="icon" src="../images/plus.png"></button>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Romaine Lettuce</p>
+                            <img src="../images/lettuce.jpeg" alt="Romaine Lettuce" />
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Bananas
-                        <img src="../images/banana.jpg" alt="Bananas" />
-                    </td>
-                    <td id="right">1.99 $</td>
-                    <td id="right">1</td>
-                    <td>
-                        <!-- Quantity +/- buttons -->
+                        </td>
+                        <td id="right">5 $</td>
+                        <td id="right">2</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
 
-                        <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
-                            <img id ="icon" src="../images/minus.png"></button>
-                        <button type="button" data-toggle="tooltip" data-placement="top" title="add">
-                            <img id ="icon" src="../images/plus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                            <img id="icon" src="../images/minus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
+                            <img id="icon" src="../images/plus.png"></button>
 
-                    </td>
-                </tr>
-            </table>
+                        </td>
+                    </tr>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Bananas</p>
+                            <img src="../images/banana.jpg" alt="Bananas" />
+                        </td>
+                        <td id="right">1.99 $</td>
+                        <td id="right">1</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                            <img id="icon" src="../images/minus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
+                            <img id="icon" src="../images/plus.png"></button>
+
+                        </td>
+                    </tr>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Ground Beef</p>
+                            <img src="../images/beef.jpg" alt="Gorund Beef" />
+
+                        </td>
+                        <td id="right">8.99 $</td>
+                        <td id="right">3</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                            <img id="icon" src="../images/minus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
+                            <img id="icon" src="../images/plus.png"></button>
+
+                        </td>
+                    </tr>
+                </table>
 
 
-            <span></span>
+                <span></span>
+
+            </div>
+            <!-- Bottom Buttons -->
+
+            <input class="button" id="shop" type="submit" value="Continue Shopping">
         </div>
 
         <!-- Right side -->
-        <div class="summary-block" id="summary-block">
-            <header>
-                Order Summary
-            </header>
-            <span></span><span></span><br />
-            <!-- Order Summary Table -->
-            <table>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </tr>
-                <tr>
-                    <td>Romaine Lettuce</td>
-                    <td id="right">x 2</td>
-                    <td id="right"> 10 $</td>
-                </tr>
-                <tr>
-                    <td>Bananas</td>
-                    <td id="right"></td>
-                    <td id="right">1.99 $</td>
-                </tr>
-            </table>
-            <span></span>
-            <!-- Total Table -->
-            <table id="total">
+        <div class="column">
+            <div class="summary-block" id="summary-block">
+                <header>
+                    Order Summary
+                </header>
+                <span></span><span></span><br />
+                <!-- Order Summary Table -->
+                <table>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    <tr>
+                        <td>Romaine Lettuce</td>
+                        <td id="right">x 2</td>
+                        <td id="right"> 10 $</td>
+                    </tr>
+                    <tr>
+                        <td>Bananas</td>
+                        <td id="right"></td>
+                        <td id="right">1.99 $</td>
+                    </tr>
+                    <tr>
+                        <td>Ground Beef</td>
+                        <td id="right">x 3</td>
+                        <td id="right">26.97 $</td>
+                    </tr>
+                </table>
+                <span></span>
+                <!-- Total Table -->
+                <table id="total">
 
-                <tr>
-                    <td>Sub Total</td>
-                    <td id="right"></td>
-                    <td id="right">11.99 $</td>
-                </tr>
-                <tr>
-                    <td>Shipping</td>
-                    <td id="right"></td>
-                    <td id="right">0.00 $</td>
-                </tr>
-                <tr>
-                    <td>GST Tax</td>
-                    <td id="right"></td>
-                    <td id="right">0.60 $</td>
-                </tr>
-                <tr>
-                    <td>PST</td>
-                    <td id="right"></td>
-                    <td id="right">1.20 $</td>
-                </tr>
-            </table>
-            <span></span>
-            <!-- Grand Total Table -->
-            <table id="total">
-                <tr>
-                    <td>Grand Total</td>
-                    <td id="right"></td>
-                    <td id="right">13.79 $</td>
-                </tr>
-            </table>
-            <span></span>
+                    <tr>
+                        <td>Sub Total</td>
+                        <td id="right"></td>
+                        <td id="right">38.96 $</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery Fee</td>
+                        <td id="right"></td>
+                        <td id="right">0.00 $</td>
+                    </tr>
+                    <tr>
+                        <td>GST Tax</td>
+                        <td id="right"></td>
+                        <td id="right">0.00 $</td>
+                    </tr>
+                    <tr>
+                        <td>PST</td>
+                        <td id="right"></td>
+                        <td id="right">0.00 $</td>
+                    </tr>
+                </table>
+                <span></span>
+                <!-- Grand Total Table -->
+                <table id="total">
+                    <tr>
+                        <td>Grand Total</td>
+                        <td id="right"></td>
+                        <td id="right">38.96 $</td>
+                    </tr>
+                </table>
+                <span></span>
 
+            </div>
+
+            <!-- Bottom Buttons -->
+            <input class="button" id="pay" type="submit" value="Checkout">
         </div>
 
-        <!-- Bottom Buttons -->
-        <input class="button" id="shop" type="submit" value="Continue Shopping">
-        <input class="button" id="pay" type="submit" value="Checkout">
     </div>
-
 </body>
 <footer>
     <a href="/SOEN287GroceryStore/shopping-cart/index.html#main-header">Back to top</a>
