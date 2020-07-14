@@ -1,0 +1,42 @@
+.Title{
+
+    color: royalblue;
+    text-align: center;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #085472;
+    color: white;
+    text-align: center;
+ }
+ .frozenfruits {
+    width: 40%;
+    float: left;
+    padding: 15px;
+
+  }
+  .juice{
+    width: 40%;
+    float: right;
+    padding: 15px;
+    
+  
+  }
+  .popsicles {
+    width: 40%;
+    float: left;
+    padding: 15px;
+    
+  }
+  .icecream {
+    width: 40%;
+    float: right;
+    padding: 15px;
+  
+  }
+
+
+ 
