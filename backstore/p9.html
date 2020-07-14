@@ -23,60 +23,65 @@
                 <li><a href="p7.html">Product list</a></li>
                 <li><a href="p9.html">User list</a></li>
                 <li><a href="p11.html">Order list</a></li>
-                <li><a href="p1.html">Main site</a></li>
+                <li><a href="../index.html">Main site</a></li>
             </ul>
+            <a href="../index.html"><button class="logout-button" type="button" title="logout">Log out</button></a>
         </nav>
         
         
 
         <div id="main-block">
-            <br>
+            <h2>User List</h2>
+            Select a user:
+            <br><br>
             <form action="p10.html">
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Phone #</th>
-                        <th>Email</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="row1"><input type="radio" name="selectedUser" id="row1" /> 0001</label>
-                        </td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>123-456-1234</td>
-                        <td>jsmith@test.com</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="row2"><input type="radio" name="selectedUser" id="row2" /> 0002</label>
-                        </td>
-                        <td>Jane</td>
-                        <td>Doe</td>
-                        <td>789-987-4321</td>
-                        <td>jdoe@test.com</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="row3"><input type="radio" name="selectedUser" id="row3" /> 0003</label>
-                        </td>
-                        <td>Bob</td>
-                        <td>Loblaw</td>
-                        <td>456-654-3212</td>
-                        <td>blob@test.com</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="row3"><input type="radio" name="selectedUser" id="row4" /> 0004</label>
-                        </td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>123-987-6543</td>
-                        <td>johnd@test.com</td>
-                    </tr>
-                </table>
+                <div class="table-overflow">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone #</th>
+                            <th>Email</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="row1"><input type="radio" name="selectedUser" id="row1" /> 0001</label>
+                            </td>
+                            <td>John</td>
+                            <td>Smith</td>
+                            <td>123-456-1234</td>
+                            <td>jsmith@test.com</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="row2"><input type="radio" name="selectedUser" id="row2" /> 0002</label>
+                            </td>
+                            <td>Jane</td>
+                            <td>Doe</td>
+                            <td>789-987-4321</td>
+                            <td>jdoe@test.com</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="row3"><input type="radio" name="selectedUser" id="row3" /> 0003</label>
+                            </td>
+                            <td>Bob</td>
+                            <td>Loblaw</td>
+                            <td>456-654-3212</td>
+                            <td>blob@test.com</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="row4"><input type="radio" name="selectedUser" id="row4" /> 0004</label>
+                            </td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>123-987-6543</td>
+                            <td>johnd@test.com</td>
+                        </tr>
+                    </table>
+                </div>
                 <br>
                 <input type="submit" value="Add" class="button">
                 <input type="button" value="Delete" class="button">
