@@ -20,7 +20,6 @@
         <header id="main-header">
             Back Store - Add/Edit Order
         </header>
-
         <nav>
             <ul>
                 <li><a href="p7.html">Product list</a></li>
@@ -40,15 +39,13 @@
                 </div>
 
                 <div class="form-container">
-                    <label for="ordernum">Order number</label><br>
+                    <label for="ordernum">Order Number</label><br>
                     <input type="" name="ordernum" id="ordernum" value="2116" readonly><br>
-                    <!-- <input type="text" name="ordernum" id="ordernum" class="inputbox" required><br> -->
                 </div>
-
-                <!-- <div class="form-container">
-                    <label for="ordernum">*Order number</label><br>
-                    <input type="text" name="ordernum" id="ordernum" class="inputbox" required><br>
-                </div> -->
+                <div class="form-container">
+                    <label for="userid">Customer ID</label><br>
+                    <input type="" name="userid" id="userid" value="219002" readonly><br>
+                </div>
                 <div class="clr"></div>
                 <div class="form-container">
                     <label for="date">Date created</label><br>
@@ -60,18 +57,31 @@
                 </div>
                 <div class="clr"></div>
                 <div class="form-container">
-                    <label for="orderdesc">Order description</label><br>
+                    <label for="fname">First name</label><br>
+                    <input type="text" name="fname" id="fname" value="Joe" class="inputbox" size="30" readonly><br>
+                </div>
+                <div class="form-container">
+                    <label for="lname">Last name</label><br>
+                    <input type="text" name="lname" id="lname" value="Smith" class="inputbox" size="30" readonly><br>
+                </div>
+                <div class="form-container">
+                    <label for="phonenum">Contact phone number</label><br>
+                    <input type="text" name="phonenum" id="phonenum" value="514-569-9089" class="inputbox" maxlength=7 placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" readonly<br>
+                </div>
+                <div class="clr"></div>
+                <div class="form-container">
+                    <label for="orderdesc">Order Note</label><br>
                     <input type="text" name="orderdesc" id="orderdesc" class="inputbox"><br>
                 </div>
                 <div class="clr"></div>
                 <div class="form-container">
-                    
+
                 </div>
                 <div class="clr"></div>
                 <!-- Responsive Table -->
                 <div class="table-overflow">
                     <table>
-                        <caption> Order </caption>
+                        <!-- <caption> Order </caption> -->
 
                         <!-- Button Add Row  -->
                         <button type="button" data-toggle="tooltip" data-placement="top" title="Add" style="float: right"><i
@@ -88,7 +98,7 @@
                                     <div contenteditable>Paramount Citrus Navel Oranges</div>
                                 </td>
                                 <td>
-                                    <div contenteditable>100 kg</div>
+                                    <div contenteditable>8 boxes</div>
                                 </td>
                                 <td>
                                     <!-- Call to action button -->
@@ -102,7 +112,7 @@
                                 <div contenteditable>Ristorante Frozen Pepperoni Pizza</div>
                             </td>
                             <td>
-                                <div contenteditable>500 boxes</div>
+                                <div contenteditable>2 boxes</div>
                             </td>
                             <td>
                                 <!-- Call to action button -->
@@ -122,13 +132,6 @@
                     <label for="quantity"></label>*Quantity</label><br>
                     <input type="tel" name="quantity" id="quantity" class="inputbox" maxlength=12 placeholder=""><br>
                 </div> -->
-                <div class="clr"></div>
-                <div class="form-container">
-                    <label for="phonenum">*Contact phone number</label><br>
-                    <input type="text" name="phonenum" id="phonenum" class="inputbox" maxlength=7 placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
-                </div>
-
-                <div class="clr"></div>
 
                 <br />
                 <input type="submit" value="Save" class="button">
