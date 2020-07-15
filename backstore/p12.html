@@ -37,14 +37,13 @@
                 <div class="required-fields">
                     <i>* required fields</i>
                 </div>
-
                 <div class="form-container">
                     <label for="ordernum">Order Number</label><br>
                     <input type="" name="ordernum" id="ordernum" value="2116" readonly><br>
                 </div>
                 <div class="form-container">
                     <label for="userid">Customer ID</label><br>
-                    <input type="" name="userid" id="userid" value="219002" readonly><br>
+                    <input type="" name="userid" id="userid" required><br>
                 </div>
                 <div class="clr"></div>
                 <div class="form-container">
@@ -58,20 +57,24 @@
                 <div class="clr"></div>
                 <div class="form-container">
                     <label for="fname">First name</label><br>
-                    <input type="text" name="fname" id="fname" value="Joe" class="inputbox" size="30" readonly><br>
+                    <input type="text" name="fname" id="fname" value="Joe" class="inputbox" size="30"><br>
                 </div>
                 <div class="form-container">
                     <label for="lname">Last name</label><br>
-                    <input type="text" name="lname" id="lname" value="Smith" class="inputbox" size="30" readonly><br>
+                    <input type="text" name="lname" id="lname" value="Smith" class="inputbox" size="30"><br>
+                </div>
+                <div class="form-container">
+                    <label for="email">E-mail</label><br>
+                    <input type="email" name="email" id="email" value="joesmith@test.com" placeholder="abc@abc.com" size="30" class="inputbox"><br>
                 </div>
                 <div class="form-container">
                     <label for="phonenum">Contact phone number</label><br>
-                    <input type="text" name="phonenum" id="phonenum" value="514-569-9089" class="inputbox" maxlength=7 placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" readonly<br>
+                    <input type="text" name="phonenum" id="phonenum" value="514-569-9089" class="inputbox" maxlength=7 placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
                 </div>
                 <div class="clr"></div>
                 <div class="form-container">
                     <label for="orderdesc">Order Note</label><br>
-                    <input type="text" name="orderdesc" id="orderdesc" class="inputbox"><br>
+                    <input style="height: 4em" size="130" type="text" name="orderdesc" id="orderdesc" class="inputbox"><br>
                 </div>
                 <div class="clr"></div>
                 <div class="form-container">
