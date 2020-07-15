@@ -55,9 +55,8 @@ nav li{
 }
 
 img {
-    width: 310px;
-    height: 310px;
     float: left;
+    padding-right: 1em;
 }
 
 footer {
@@ -79,7 +78,7 @@ footer a:hover {
     color: #FFFFA6;
 }
 
-.description, img {
+.description{
     padding: 10px;
     background: #EAECEE;
     margin-top: 100px;
