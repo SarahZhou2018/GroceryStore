@@ -4,12 +4,29 @@ html,body {
   background-color: #29D9C2;;
 }
 
-h2 {
+.images {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  background: #bdf271;
+}
+
+h3 {
   margin: 10px;
   padding: 10px;
   background: #2F2933;
   color: white;
   border-radius: 5px;
+}
+
+.navbar {
+  background: #2F2933;
+  width: 100%;
+  position: absolute;
+  top: 80px;
 }
 
 .user-button {
@@ -18,10 +35,10 @@ h2 {
 }
 
 .container-fluid {
-  top: 50%;
+  top: 60%;
   left: 10%;
   position: absolute;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   width: 80%;
   background: #EAECEE;
 }
@@ -34,7 +51,7 @@ h2 {
 #headRowRight {
   top: 2%;
   right: 2%;
-  position: absolute;
+  position: relative;
 }
 
 
