@@ -34,16 +34,6 @@ body {
     clear: both;
 }
 
-header {
-    background-color: #2F2933;
-    color: #fff;
-    margin: auto;
-    overflow: hidden;
-    padding-left: 5%;
-    padding-top: 0.55%;
-    padding-bottom: 0.55%;
-    font-size: 1.5em;
-}
 
 footer {
     position: absolute;
