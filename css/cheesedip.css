@@ -31,3 +31,13 @@ h2 {
   width: 80%;
   background: #EAECEE;
 }
+
+img {
+  margin: 15px;
+}
+
+a {
+  color: white;
+  font-size: 16px;
+  text-decoration: underline;
+}
