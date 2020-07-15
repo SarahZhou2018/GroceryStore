@@ -1,11 +1,15 @@
 /* Shopping Cart CSS stylesheet (p4)
 Shi Qi Zhou - 40034160 */
 
+html,
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fff;
     color: #000;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    ;
     font-size: 1em;
     overflow-x: hidden;
 }
@@ -22,7 +26,9 @@ header {
     color: #fff;
     margin: auto;
     overflow: hidden;
-    padding: 0.5em 5%;
+    padding-left: 5%;
+    padding-top: 0.55%;
+    padding-bottom: 0.55%;
     font-size: 1.5em;
 }
 
@@ -30,26 +36,37 @@ header img {
     height: 28px;
     width: auto;
     display: inline-block;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 
-nav {
+
+/* nav {
     background-color: #01A2A6;
     color: #fff;
-    margin: auto;
     overflow: hidden;
     padding-left: 5%;
+    padding-top: 0.9%;
+} */
+
+.navbar {
+    background-color: #01A2A6;
+    color: #fff;
+    padding-left: 5%;
+    padding-top: 0.9%;
+    height: 3em;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-size: 1em;
+    vertical-align: bottom;
     padding-right: 1em;
 }
 
 nav a:hover {
     color: #FFFFA6;
+    text-decoration: none;
 }
 
 nav ul {
@@ -67,7 +84,9 @@ footer {
     color: #fff;
     padding: 1em 0;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     margin: auto;
     padding-left: 5%;
@@ -87,11 +106,8 @@ footer a:hover {
     background-color: black;
     color: white;
     text-align: center;
-}
-
-.banner h4 {
-    padding: 0px;
-    margin: 5px;
+    padding-top: 0.6%;
+    margin: 0em;
 }
 
 
@@ -101,14 +117,17 @@ footer a:hover {
     float: left;
     background-color: #01A2A6;
     color: #fff;
+    text-align: center;
     font-size: 1.3em;
     padding: 0.7em 1em;
     border: solid 1px #29D9C2;
     border-radius: 0.5em;
     margin: 1em;
+    cursor: pointer;
 }
 
-.button:hover {
+.button:hover,
+.user-button:hover {
     color: #FFFFA6;
 }
 
@@ -120,9 +139,12 @@ footer a:hover {
 }
 
 .register-log-in {
-    top: 8.25%;
+    /* top: 8.25%;
     right: 5%;
     position: absolute;
+    display: inline-block; */
+    padding-right: 1.5em;
+    padding-bottom: 0.5em;
     border: none;
 }
 
@@ -156,13 +178,13 @@ footer a:hover {
 
 /* Clear floats after the columns */
 
-.content:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.content header {
+.row header {
     background-color: white;
     color: #2F2933;
     margin: 1%;
@@ -212,7 +234,7 @@ footer a:hover {
 
 .item-block th {
     background: white;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
 }
 
@@ -228,11 +250,11 @@ footer a:hover {
 
 .summary-block header {
     background-color: #eee;
+    color: #2F2933;
     margin: 1%;
 }
 
-.summary-block table,
-th,
+.summary-block th,
 td {
     padding-bottom: 0.2%;
     width: 36em;
@@ -250,6 +272,11 @@ td {
 
 #pay {
     float: right;
+    /* width: max-content;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%; */
 }
 
 
