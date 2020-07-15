@@ -6,10 +6,19 @@ Shi Qi Zhou - 40034160
     box-sizing: border-box;
 }
 
-.row::after {
+.row:after {
     content: "";
-    clear: both;
     display: table;
+    clear: both;
+}
+
+.row header {
+    background-color: white;
+    color: #2F2933;
+    margin: 1%;
+    overflow: hidden;
+    padding: 0.5em 5%;
+    font-size: 1.5em;
 }
 
 html,
@@ -129,15 +138,6 @@ a {
     height: 3em;
 } */
 
-
-/* nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    vertical-align: bottom;
-    padding-right: 1em;
-} */
-
 .banner {
     height: fit-content;
     overflow: hidden;
@@ -167,6 +167,14 @@ a {
 .aisle-menu li:hover {
     background-color: #bdf271;
     color: #fff;
+}
+
+.aisle-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    vertical-align: bottom;
+    padding-right: 1em;
 }
 
 .aside {
