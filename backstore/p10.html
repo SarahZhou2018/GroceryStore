@@ -12,60 +12,75 @@
     <link rel="stylesheet" href="../css/p7-p12.css">
 </head>
 <body>
+    <div id="main-container">
 
-    <header id="main-header">
-        Back Store - Add/Edit User
-    </header>
+        <header id="main-header">
+            Back Store - Add/Edit User
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="p7.html">Product list</a></li>
-            <li><a href="p9.html">User list</a></li>
-            <li><a href="p11.html">Order list</a></li>
-            <li><a href="p1.html">Main site</a></li>
-        </ul>
-    </nav>
-    
-    <div id="main-block">
-        Enter user information below:<br>
-        <form action="" class="form-large">
-            
-            <div class="form-container">
-                <label for="fname">*First name</label><br>
-                <input type="text" name="fname" id="fname" class="inputbox" required><br>
-            </div>
-            <div class="form-container">
-                <label for="lname">*Last name</label><br>
-                <input type="text" name="lname" id="lname" class="inputbox"  required><br>
-            </div>
+        <nav>
+            <ul>
+                <li><a href="p7.html">Product list</a></li>
+                <li><a href="p9.html">User list</a></li>
+                <li><a href="p11.html">Order list</a></li>
+                <li><a href="p1.html">Main site</a></li>
+            </ul>
+            <a href="../index.html"><button class="logout-button" type="button" title="logout">Log out</button></a>
+        </nav>
+        
+        <div id="main-block">
+            <h2>Add/Edit User</h2>
+            Enter user information below:<br>
+            <form action="" class="form-large">
+                <div class="required-fields">
+                    <i>* required fields</i>
+                </div>
+                <div class="form-container">
+                    <label for="fname">*First name</label><br>
+                    <input type="text" name="fname" id="fname" class="inputbox" size="30" required><br>
+                </div>
+                <div class="form-container">
+                    <label for="lname">*Last name</label><br>
+                    <input type="text" name="lname" id="lname" class="inputbox" size="30"  required><br>
+                </div>
+                <div class="clr"></div>
+                <div class="form-container">
+                    <label for="email">*E-mail</label><br>
+                    <input type="email" name="email" id="email" placeholder="abc@abc.com" size="30"  class="inputbox"  required><br>
+                </div>
+                <div class="form-container">
+                    <label for="phone"></label>Phone number</label><br>
+                    <input type="tel" name="phone" id="phone" class="inputbox" maxlength=12 size="12" placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+                </div>
+                <div class="form-container">
+                    <label for="postal-code">*Postal code</label><br>
+                    <input type="text" name="postal-code" id="postal-code" class="inputbox" maxlength=7 size="7"  placeholder="A9A 9A9" pattern="[a-zA-Z][0-9][a-zA-Z] *[0-9][a-zA-Z][0-9]" required><br>
+                </div>
+
+                <div class="clr"></div>
+                <div class="form-container">
+                    <input type="checkbox" name="marketing-list" id="marketing-list">
+                    <label for="marketing-list">Subscribed to special offers</label>
+                </div>
+                <div class="clr"></div>
+                
+                
+                <input type="submit" value="Save" class="button"> 
+            </form>
+
             <div class="clr"></div>
-            <div class="form-container">
-                <label for="email">*E-mail</label><br>
-                <input type="email" name="email" id="email" placeholder="abc@abc.com" class="inputbox"  required><br>
-            </div>
-            <div class="form-container">
-                <label for="phone"></label>Phone number</label><br>
-                <input type="tel" name="phone" id="phone" class="inputbox" maxlength=12 placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
-            </div>
-            <div class="clr"></div>
-            <div class="form-container">
-                <label for="postal-code">*Postal code</label><br>
-                <input type="text" name="postal-code" id="postal-code" class="inputbox" maxlength=7 placeholder="A9A 9A9" pattern="[a-zA-Z][0-9][a-zA-Z] *[0-9][a-zA-Z][0-9]" required><br>
-            </div>
 
-            <div class="clr"></div>
-            
-            
-            <input type="submit" value="Save" class="button"> 
+            <a href="p9.html">Return to user list without saving</a>
+
+        </div>
 
 
-        </form>
-        <div class="clr"></div>
-        <a href="p9.html">Return to user list without saving</a>
+        <footer>
+            <a href="p10.html#main-header">Back to top</a>
+        </footer>
+
     </div>
-    <footer>
-        <a href="p10.html#main-header">Back to top</a>
-    </footer>
+    
 </body>
 </html>
 
