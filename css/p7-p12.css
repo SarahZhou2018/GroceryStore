@@ -62,7 +62,7 @@ nav ul{
 
 nav li{
     display:inline;
-    padding-right: 1em;
+    padding-right: 0.7em;
 }
 
 table{
@@ -100,8 +100,8 @@ footer{
     background-color: #2F2933;
     color: #fff;
     padding: 1em 0;
-    position: absolute;
-    bottom: 0px;
+    position: fixed;
+    bottom: 0;
     width: 90%;
     margin: auto;
     padding-left: 10%;
@@ -114,6 +114,10 @@ footer a{
 
 footer a:hover {
     color: #FFFFA6;
+}
+
+textarea{
+    width: 100%;
 }
 
 
@@ -165,6 +169,7 @@ footer a:hover {
     overflow: hidden;
 }
 
+
 .inputbox {
     border-style: solid 1px #2F2933;
     padding: 0.5em;
@@ -209,6 +214,11 @@ footer a:hover {
 
 .table-overflow{
     overflow-x: auto;
+}
+
+.textarea-container{
+    float: left;
+    width: 75%;
 }
 
 .clr{

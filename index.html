@@ -1,28 +1,35 @@
+
+<!--
+    P1 - HOME PAGE
+    Noor Hammodi - 40061760
+-->
 <!DOCTYPE html>
 <html lang="en">
     
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Our Grocery Store</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="p1.css">
     </head>
-    <body style = "background-color: rgb(161, 231, 231);">
+    <body style = "background-color:#29D9C2;">
+     
         <div id="logo">
-            <img src="images/logo.png" width="300" height="215" style="float:left;">
+            <img src="images/logo.png" width="300" height="180" style="float:left;">
         </div>
        
         <div class="header">
             
               <div class="header-right">
-                <a class="active" href="#home">Home</a>  
+                
                 <div class="dropdown">
                     <button class="dropbtn">Aisles</button>
                     <div class="dropdown-content">
-                      <a href="#">Aisle 1-Meat</a>
-                      <a href="#">Aisle 2-Snack</a>
-                      <a href="#">Aisle 3-Bread</a>
-                      <a href="#">Aisle 4-Fruits & Vegetables</a>
-                      <a href="#">Aisle 5-Frozen</a>
+                      <a href="meat-poultry.html">Aisle 1-Meat</a>
+                      <a href="snacks.html">Aisle 2-Snack</a>
+                      <a href="bread.html">Aisle 3-Bread</a>
+                      <a href="fruits-vegetables">Aisle 4-Fruits & Vegetables</a>
+                      <a href="frozen.html">Aisle 5-Frozen</a>
                     </div>
                   </div> 
               </div>
@@ -30,9 +37,19 @@
             <div class="welcome">
                <h1><b><u> WELCOME TO OUR STORE!</u></b></h1>
             </div>
+      
+            <nav>
+              <ul>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../shopping-cart/index.html">Shopping cart</a></li>
+                  <li><a href="../user/login.html">Log in</a></li>
+                  <li><a href="../user/register.html">Sign up</a></li>
+              </ul>
+          </nav>
           
           <div class="alert">
-              
+              <img src="images/alert.png" alt="alert" width="200 "height="115" style="text-align: center;">
+
           <h1>Alert! </h1>
           <p>COVID-19</p>
           <p> Thank you for choosing us. Rest assured that we continue to take every precaution necessary to maintain a high-quality, safe service.</p>
@@ -41,35 +58,67 @@
 
        </div>
        <div class="title">
-         <h2>Check out our deals this week!</h2>
+         <h2><u>Check out our deals this week!</h2></u>
        </div>
        <div class= "row">
         <div class="column">
-         <p>Whole Chicken</p>
+         <p>Grounded Beef</p>
          
-         <img src= "images/Whole_Chicken.jpg" alt="Whole Chicken" style="width:60%">
-         <p><h2> Price: <del>15$</del> 10$</h2></p>
-         <a href="#addlink">
+         <img src= "images/beef.jpg" alt="beef" style="width:60%">
+         <p><h2> Price: <del>15.99$</del> 10.99$</h2></p>
+         <a href="groundbeef.html">
          <img src="images/add.png" alt="add to cart" style="width:50%">
             </a>
        </div>
        <div class="column">
          <p>Fresh Lettuce</p>
          <img src= "images/lettuce.jpg" alt="green lettuce" style="width:80%">
-         <p><h2> Price: <del>7$</del> 5$</h2></p></article>
+         <p><h2> Price: <del>7.99$</del> 5.99$</h2></p></article>
+         <a href="lettuce.html">
+          <img src="images/add.png" alt="add to cart" style="width:50%">
+             </a>
        </div>
          <div class="column">
          <p>Bananas</p>
          <img src= "images/banana.jpg" alt="Real bananas" style="width:80%">
-         <p><h2> Price: <del>3$</del> 1.99$</h2></p></article>
+         <p><h2> Price: <del>3.99$</del> 1.99$</h2></p></article>
+         <a href="banana.html">
+          <img src="images/add.png" alt="add to cart" style="width:50%">
+             </a>
         </div>
          </div>
-       
+         <h2><u>Special Summer Treats!</h2></u>
+       <div class="rows">
+         <div class="columns">
+           <a href="frozen.html" >
+         <img src="images/ice.jpg" alt="icecream" width="500"height="500" >
+           </a>
+           </div>
+       <div class="columns">
+        <a href="frozen.html" >
+         <img src="images/frozen.jpg" alt="frozenfruits" width="500"height="500">
+        </a>
+       </div>
+       <div class="columns">
+        <a href="frozen.html" >
+         <img src="images/popsicles.jpg" alt="popsicles" width="500"height="500">
+        </a>
+       </div>
+       <div class="columns">
+        <a href="frozen.html" >
+         <img src="images/juice.jpg" alt="juice" width="500"height="500">
+        </a>
+       </div>
+
+       </div>
+        </div>
 
 
 
-
-
+        <div class="footer">
+          <p>Author: The Store</p>
+          <p>thestore@store.com</p>
+        </div>
        
 
 
