@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Log In to Online Grocery Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/register.css">
+  </head>
+  <body>
+    <header>
+      <h2>
+        Register
+        <a href="../index.html">Home Page</a>
+      </h2>
+    </header>
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-xl-6 col-sm-12">
+          <label for="firstName">First Name</label>
+          <input required class="form-control" type="text" name="firstName" placeholder="First Name">
+
+          <label for="number">Phone Number</label>
+          <input required class="form-control" type="text" name="number" placeholder="(XXX)-XXX-XXXX">
+
+          <label for="password">Password</label>
+          <input required class="form-control" type="password" name="password" placeholder="Password" password>
+
+          <label for="postal">Postal Code</label>
+          <input required class="form-control" type="text" name="postal" placeholder="XXX XXX">
+
+        </div>
+
+        <div class="col-xl-6 col-sm-12">
+          <label for="lastName">Last Name</label>
+          <input required class="form-control" type="text" name="lastName" placeholder="Last Name">
+
+          <label for="email">Email</label>
+          <input required class="form-control" type="text" name="email" placeholder="Ex: John.Michael@gmail.com" email>
+
+          <label for="password">Confirm Password</label>
+          <input required class="form-control" type="password" name="password" placeholder="Password" password>
+
+          <label for="subscribeToMailingList">Subscribe To Mailing List?</label>
+          <select class="form-control" name="">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+
+        </div>
+
+        <div class="col-xl-12 col-sm-12">
+          <a href="../index.html"><button class="btn btn-primary" type="button" name="button">Register</button></a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

@@ -1,5 +1,11 @@
-/* STYLE SHEET FOR P2
-Noor Hammodi - 40061760 */
+
+/* CSS stylesheet (p2)
+Shi Qi Zhou - 40034160 
+Noor -40061760 */
+
+
+/* Addition by SQZ */
+
 * {
     box-sizing: border-box;
 }
@@ -217,6 +223,7 @@ nav li {
         width: 100%;
     }
 }
+
 
 .card button {
     border: none;

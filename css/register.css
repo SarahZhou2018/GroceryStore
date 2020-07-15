@@ -1,0 +1,63 @@
+html,body {
+  width: 100%;
+  height: 100%;
+  background-color: #29D9C2;
+}
+
+div.container-fluid {
+  background-color: #EAECEE;
+  width: 600px;
+  height: auto;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  position: absolute;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+label, input, select {
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+button.btn.btn-primary {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: white;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.images {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  background: #bdf271;
+}
+
+h3 {
+  margin: 10px;
+  padding: 10px;
+  background: #2F2933;
+  color: white;
+  border-radius: 5px;
+}
+
+.navbar {
+  background: #2F2933;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+}
