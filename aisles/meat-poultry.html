@@ -8,40 +8,53 @@
 </head>
 
 <body>
-    <header>
-        Grocery Store
+    <header id="top">
+        Groceries
     </header>
 
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li>Aisles</li>
-            <ul>
-                <li><a href="meat-poultry.html">Meat & Poultry</a></li>
-                <li><a href="snack.html">Snacks</a></li>
-                <li><a href="bread.html">Bread</a></li>
-                <li><a href="fruits-vegetables.html">Fruits & Vegetables</a></li>
-                <li><a href="Snacks.html">Fruits</a></li>
-            </ul>
             <li><a href="../shopping-cart/index.html">Shopping cart</a></li>
-            <li><a href="p5.html">Log in</a></li>
-            <li><a href="p6.html">Sign up</a></li>
+            <li><a href="../user/login.html">Log in</a></li>
+            <li><a href="../user/register.html">Sign up</a></li>
         </ul>
     </nav>
-    <section>
-        Meat and Poultry
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+            <ul>
+                <li><a href="../aisles/fruits-vegetables.html">Fruits & Vegetables</a></li>
+                <li><a href="../aisles/meat-poultry.html">Meat & Poultry</a></li>
+                <li><a href="../aisles/bread.html">Bread</a></li>
+                <li><a href="../aisles/snacks.html">Snack</a></li>
+                <li><a href="../aisles/frozen.html">Frozen</a></li>
+            </ul>
+        </div>
 
-        <article>
-            <a href="../product-descriptions/ground beef.html">Ground beef, lean 1lb</a>
-        </article>
-        <article>
-            Chicken breast, 2lbs
-        </article>
-        <article>
-            Bacon, 500g
-        </article>
+        <div class="col-6 col-s-6">
+            <h1>Online Grocery</h1>
+            <table>
+                <tr>
+                    <td>
+                        <a href="../product-descriptions/ground beef.html"><img src="../images/beef.jpg" alt="Ground beef"></a>
+                    </td>
+                    <td><a href="../product-descriptions/banana.html">Ground beef, 1lb</a></td>
+                    <td><a href="../product-descriptions/banana.html">8.99$</a></td>
+                </tr>
+            </table>
+        </div>
 
-    </section>
+        <div class="col-3 col-s-12">
+            <div class="aside">
+                <h2>COVID-19</h2>
+                <p>Please consult our COVID-19 policies.</p>
+            </div>
+        </div>
+    </div>
+    <br/><br/><br/><br/>
+    
+
+
     <footer>
         <a href="../backstore/p7.html">Back Store</a>
     </footer>
