@@ -8,8 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Description</title>
     <link rel="stylesheet" href="../css/p3.css">
+    <title>Bananas</title>
 </head>
 
 
@@ -19,14 +19,16 @@
             Product Description - Bananas
         </div>
         <div class="register-log-in">
-            <a href="register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
-            <a href="login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
+            <a href="/SOEN287GroceryStore/user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
+            <a href="/SOEN287GroceryStore/user/login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
         </div>
     </header>
     <nav>
         <ul>
-            <li><a href="p1.html">Home Page</a></li>
-            <li><a href="p2.html">Aisle</a></li>
+            <li><a href="/SOEN287GroceryStore/">Home Page</a></li>
+            <li><a href="/SOEN287GroceryStore/aisles/fruits-vegetables.html">Return to Aisle</a></li>
+            <li><a href="/SOEN287GroceryStore/shopping-cart/">Shopping Cart</a></li>
+
         </ul>
     </nav>
 
@@ -39,9 +41,26 @@
         <p>Weight 190g avg.</p>
         <h3>Product Description</h3>
         <p>Product of Costa Rica, Ecuador or Guatemala<br/></p>
-        <div class="addtocartposition">
-            <a href="../shopping-cart/"><button class="addtocart" type="button" name="addtocart-button">Add to Cart</button></a>
-        </div>
+
+        <button class="addtocart" type="button" name="More description">More description</button><br><br>
+
+        <form action="../shopping-cart/index.html">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value=1 size="2">
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+                    <option value="80-20">organic</option>
+                    <option value="93-7">regular</option>
+                </select>
+
+            <div class="addtocartposition">
+                <button class="addtocart" type="submit" name="addtocart-button">Add to cart</button>
+            </div>
+            <div class="addtocartposition">
+                <a href="../shopping-cart/"><button class="addtocart" type="button" name="addtocart-button">Add to Cart</button></a>
+            </div>
+        </form>
+    </div>
     </div>
     <footer></footer>
 </body>
