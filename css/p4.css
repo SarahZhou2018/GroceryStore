@@ -140,6 +140,16 @@ span {
 }
 
 header {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #bdf271;
+    height: fit-content;
+    width: auto;
+    display: block;
+    text-align: center;
+}
+
+.row header {
     background-color: white;
     color: #2F2933;
     margin: 1%;
