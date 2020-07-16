@@ -1,14 +1,17 @@
+<!--
+    P2 - Fruit & Vegetables Aisle Page
+    Shi Qi Zhou - 40163947
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruits & Vegetables</title>
-    <link rel="stylesheet" href="../css/p2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/p4.css">
+    <title>Shopping Cart</title>
 </head>
-
-<!-- Addition SQZ -->
 
 <body>
     <header id="main-header">
@@ -16,29 +19,40 @@
         <img id="slogan" class="img-fluid" src="../images/slogan.png" alt="slogan" />
     </header>
     <div class="page-header">
-        Groceries
+        Online Groceries
     </div>
-    <nav>
+    <nav class="navbar">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../shopping-cart/index.html">Shopping cart</a></li>
-            <li><a href="/SOEN287GroceryStore/user/login.html">Log in</a></li>
-            <li><a href="/SOEN287GroceryStore/user/register.html">Sign up</a></li>
+            <li><a href="p1.html">Home Page</a></li>
+            <li><a href="/SOEN287GroceryStore/aisles/fruits-vegetables.html">Return to Aisle</a></li>
+            <li><a href="/SOEN287GroceryStore/shopping-cart/">Shopping Cart</a></li>
         </ul>
-    </nav>
-    <div class="row">
-        <div class="col-3 col-s-3 menu">
-            <ul>
-                <li><a href="/SOEN287GroceryStore/aisles/fruits-vegetables.html">Fruits & Vegetables</a></li>
-                <li><a href="/SOEN287GroceryStore/aisles/meat-poultry.html">Meat & Poultry</a></li>
-                <li><a href="/SOEN287GroceryStore/aisles/bread.html">Bread</a></li>
-                <li><a href="/SOEN287GroceryStore/aisles/snacks.html">Snack</a></li>
-                <li><a href="/SOEN287GroceryStore/aisles/frozen.html">Frozen</a></li>
-            </ul>
+        <div class="text-right">
+            <a href="../user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
+            <a href="../user/login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
         </div>
+    </nav>
 
-        <div class="col-6 col-s-6">
-            <h1>Online Grocery</h1>
+    <div class="banner">
+        <marquee behavior="scroll" direction="left">
+            <h6><b>FREE DELIVERY FOR ORDERS ABOVE 30 $</b></h6>
+        </marquee>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="aisle-menu">
+                <ul class="unstyled">
+                    <li><a href="fruits-vegetables.html">Fruits & Vegetables</a></li>
+                    <li><a href="meat-poultry.html">Meat & Poultry</a></li>
+                    <li><a href="bread.html">Bread</a></li>
+                    <li><a href="snacks.html">Snack</a></li>
+                    <li><a href="frozen.html">Frozen</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-6">
+            Fruits and Vegetables
             <table>
                 <!-- A Row -->
                 <tr>
@@ -59,7 +73,7 @@
             </table>
         </div>
 
-        <div class="col-3 col-s-12">
+        <div class="col">
             <div class="aside">
                 <h2>COVID-19</h2>
                 <p>Please consult our COVID-19 policies.</p>
@@ -68,7 +82,7 @@
     </div>
     <br/><br/><br/><br/>
     <footer>
-        <a href="../backstore/p7.html">Back to top</a>
+        <a href="fruits-vegetables.html#main-header">Back to top</a>
     </footer>
 
 </body>
