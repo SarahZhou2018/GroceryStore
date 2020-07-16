@@ -1,15 +1,16 @@
 <!--
-    P2 - Meat and poultry aisle
+    P2 - Meat and Poultry Aisle Page
     Georges Grondin - 40034160
 -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meat & Poultry</title>
-    <link rel="stylesheet" href="../css/p2.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/p2.css">
+    <title>Fruits & Vegetables</title>
 </head>
 
 <body>
@@ -18,57 +19,109 @@
         <img id="slogan" class="img-fluid" src="../images/slogan.png" alt="slogan" />
     </header>
     <div class="page-header">
-        Groceries
+        Online Groceries
     </div>
-
-    <nav>
+    <nav class="navbar">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../shopping-cart/index.html">Shopping cart</a></li>
-            <li><a href="../user/login.html">Log in</a></li>
-            <li><a href="../user/register.html">Sign up</a></li>
+            <li><a href="../index.html">Home Page</a></li>
+            <li><a href="fruits-vegetables.html">Return to Aisle</a></li>
+            <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="../user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a></li>
+            <li><a href="../user/login.html"><button class="user-button" type="button" name="login-button">Log In</button></a></li>
         </ul>
     </nav>
-    <div class="row">
-        <div class="col-3 col-s-3 menu">
-            <ul>
-                <li><a href="../aisles/fruits-vegetables.html">Fruits & Vegetables</a></li>
-                <li><a href="../aisles/meat-poultry.html">Meat & Poultry</a></li>
-                <li><a href="../aisles/bread.html">Bread</a></li>
-                <li><a href="../aisles/snacks.html">Snack</a></li>
-                <li><a href="../aisles/frozen.html">Frozen</a></li>
-            </ul>
-        </div>
 
-        <div class="col-6 col-s-6">
-            <h1>Online Grocery</h1>
-            <table>
-                <tr>
-                    <td>
-                        <a href="../product-descriptions/groundbeef.html"><img src="../images/beef.jpg" alt="Ground beef"></a>
-                    </td>
-                    <td><a href="../product-descriptions/groundbeef.html">Ground beef, 1lb</a></td>
-                    <td><a href="../product-descriptions/groundbeef.html">8.99$</a></td>
-                </tr>
-
-            </table>
-        </div>
-
-        <div class="col-3 col-s-12">
-            <div class="aside">
-                <h2>COVID-19</h2>
-                <p>Please consult our COVID-19 policies.</p>
+    <div class="banner">
+        <marquee behavior="scroll" direction="left">
+            <h6><b>FREE DELIVERY FOR ORDERS ABOVE 30 $</b></h6>
+        </marquee>
+    </div>
+    <div class="container-fluid">
+        <h1>Meat & Poultry</h1><br/>
+        <div class="row container">
+            <div class="col-md-3 col-sm-12">
+                <div class="menu ">
+                    <ul class="list-unstyled">
+                        <a href="fruits-vegetables.html">
+                            <li>Fruits & Vegetables</li>
+                        </a>
+                        <a href="meat-poultry.html">
+                            <li>Meat & Poultry</li>
+                        </a>
+                        <a href="bread.html">
+                            <li>Bread</li>
+                        </a>
+                        <a href="snacks.html">
+                            <li>Snack</li>
+                        </a>
+                        <a href="frozen.html">
+                            <li>Frozen</li>
+                        </a>
+                    </ul>
+                </div>
             </div>
+
+            <div class="col-md-9 col-sm-12">
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/beef.jpg" alt="Ground beef">
+                        <div class="card-body">
+                            <h5 class="card-title">Ground beef, 1lb</h5>
+                            <p class="card-text">
+                                Sold in lb
+                            </p>
+                            <h5 class="card-bold ">8.99 $</h5>
+                            <a href="../product-descriptions/groundbeef.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="../images/beef.jpg" alt="Ground beef">
+                        <div class="card-body">
+                            <h5 class="card-title">Ground beef, 1lb</h5>
+                            <p class="card-text">
+                                Sold in lb
+                            </p>
+                            <h5 class="card-bold ">8.99 $</h5>
+                            <a href="../product-descriptions/groundbeef.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="../images/beef.jpg" alt="Ground beef">
+                        <div class="card-body">
+                            <h5 class="card-title">Ground beef, 1lb</h5>
+                            <p class="card-text">
+                                Sold in lb
+                            </p>
+                            <h5 class="card-bold ">8.99 $</h5>
+                            <a href="../product-descriptions/groundbeef.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="../images/beef.jpg" alt="Ground beef">
+                        <div class="card-body">
+                            <h5 class="card-title">Ground beef, 1lb</h5>
+                            <p class="card-text">
+                                Sold in lb
+                            </p>
+                            <h5 class="card-bold ">8.99 $</h5>
+                            <a href="../product-descriptions/groundbeef.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
         </div>
     </div>
-    <br/><br/><br/><br/>
-    
 
 
     <footer>
-        <a href="meat-poultry.html#top">Back to top</a>
+        <a href="meat-poultry.html#main-header">Back to top</a>
     </footer>
 
-    
 </body>
+
 </html>
