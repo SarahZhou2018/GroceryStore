@@ -1,20 +1,22 @@
+<!--
+    P11 -  order list  profile
+    Noor Hammodi - 40061760
+-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Order list</title>
+    <title>Order List</title>
     <link rel="stylesheet" href="../css/p7-p12.css">
 </head>
-
 <body>
     <div id="main-container">
-
-
         <header id="main-header">
+            <!--<img src="pear.png"  style="float: left; padding-right: 1em;">-->
             Back Store - Order List
         </header>
+
         <nav>
             <ul>
                 <li><a href="p7.html">Product list</a></li>
@@ -24,118 +26,97 @@
             </ul>
             <a href="../index.html"><button class="logout-button" type="button" title="logout">Log out</button></a>
         </nav>
+        
+        
 
         <div id="main-block">
-            <h2>Order List:</h2>
-                Order information below:<br>
-            <form action="" class="form-large">
-                <div class="required-fields">
-                    <i>* required fields</i>
-                </div>
-
-                <div class="form-container">
-                    <label for="ordernum">Order Number</label><br>
-                    <input type="" name="ordernum" id="ordernum" value="2116" readonly><br>
-                </div>
-                <div class="form-container">
-                    <label for="userid">Customer ID</label><br>
-                    <input type="" name="userid" id="userid" value="219002" readonly><br>
-                </div>
-                <div class="clr"></div>
-                <div class="form-container">
-                    <label for="date">Date created</label><br>
-                    <input type="text" name="date" id="date" placeholder="" value="2020-07-01 00:00:00" class="inputbox" readonly><br>
-                </div>
-                <div class="form-container">
-                    <label for="date">Date last modified</label><br>
-                    <input type="text" name="date" id="date" placeholder="" value="2020-07-07 14:00:00" class="inputbox" readonly><br>
-                </div>
-                <div class="clr"></div>
-                <div class="form-container">
-                    <label for="fname">First name</label><br>
-                    <input type="text" name="fname" id="fname" value="Joe" class="inputbox" size="30" readonly><br>
-                </div>
-                <div class="form-container">
-                    <label for="lname">Last name</label><br>
-                    <input type="text" name="lname" id="lname" value="Smith" class="inputbox" size="30" readonly><br>
-                </div>
-                <div class="form-container">
-                    <label for="phonenum">Contact phone number</label><br>
-                    <input type="text" name="phonenum" id="phonenum" value="514-569-9089" class="inputbox" maxlength=7 placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" readonly<br>
-                </div>
-                <div class="clr"></div>
-                <div class="form-container">
-                    <label for="orderdesc">Order Note</label><br>
-                    <input type="text" name="orderdesc" id="orderdesc" class="inputbox"><br>
-                </div>
-                <div class="clr"></div>
-                <div class="form-container">
-
-                </div>
-                <div class="clr"></div>
-                <!-- Responsive Table -->
+            <h2>Order List</h2>
+            Select an order to Edit/Add/Delete:
+            <br><br>
+            <form action="p12.html">
                 <div class="table-overflow">
                     <table>
-                        <!-- <caption> Order </caption> -->
-
-                        <a href="p12.html">
-                        <button type="button" data-toggle="tooltip" data-placement="top" title="Add" style="float: right"><i
-                                class=""> ADD</i></button></a>
-                                
-
                         <tr>
-                            <th scope="col"> Products </th>
-                            <th scope="col"> Quantity </th>
-                            <th scope="col"> Action </th>
-                        </tr>
-                        <tr>
-                            <div contenteditable>
-                                <td>
-                                    <div contenteditable>Paramount Citrus Navel Oranges</div>
-                                </td>
-                                <td>
-                                    <div contenteditable>8 boxes</div>
-                                </td>
-                                <td>
-                                    <a href="p12.html">
-                                    <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
-                                            DELETE</i></button></a>
-                                            <a href="p12.html">
-                                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
-                                                        EDIT</i></button></a>
-                                </td>
-                            </div>
+                            <th>Order Number</th>
+                            <th>Customer's Full Name</th>
+                            <th>Product Ordered</th>
+                            <th>Delivery Method</th>
+                            <th>Special Notes</th>
                         </tr>
                         <tr>
                             <td>
-                                <div contenteditable>Ristorante Frozen Pepperoni Pizza</div>
+                                <label for="row1"><input type="radio" name="selectedUser" id="row1" /> 000123</label>
                             </td>
+                            <td>John Smith</td>
+                            <td><ul>
+                                <li>2 Lettuces</li>
+                                <li>1 FireCracker Popsicle</li>
+                            </ul></td>
+                            <td> deliver to shipping address </td>
+                            <td><em> **Please drop off at the door</em></td>
+                        </tr>
+                        <tr>
                             <td>
-                                <div contenteditable>2 boxes</div>
+                                <label for="row2"><input type="radio" name="selectedUser" id="row2" /> 000456</label>
                             </td>
+                            <td>Jane Doe</td>
+                            <td><ul>
+                                <li>4 Ground Beef</li>
+                                <li>2 Bananas</li>
+                                <li>8 Ben&Jerry's Ice Cream</li>
+                            </ul></td>
+                            <td>pickup at the store</td>
+                            <td><em>**Please put the ice cream in different bag</em></td>
+                        </tr>
+                        <tr>
                             <td>
-                                <a href="p12.html">
-                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
-                                        DELETE</i></button></a>
-                                        <a href="p12.html">
-                                            <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
-                                                    EDIT</i></button></a>
+                                <label for="row3"><input type="radio" name="selectedUser" id="row3" /> 000789</label>
                             </td>
+                            <td>Bob Loblaw</td>
+                            <td><ul>
+                                <li>2 Baguettes</li>
+                                <li>5 Chips</li>
+                                <li>1 Ben&Jerry's Ice Cream</li>
+                                <li>5 Cheesedips
+                                </li>
+                            </ul></td>
+                            <td>deliver to shipping address</td>
+                            <td><em>**Please ring dorbell</em></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="row4"><input type="radio" name="selectedUser" id="row4" /> 0000123</label>
+                            </td>
+                            <td>John Doe</td>
+                            <td><ul>
+                                <li>10 Tortillas</li>
+                                <li>10 Ground Beef</li>
+                                <li>15 Chips</li>
+                                <li>7 Cheesedips
+                                </li>
+                            <li>
+                                3 Lettuces
+                            </li>
+                        <li>1 FireCracker Popsicle</li></td>
+                            <td>deliver to shipping address</td>
+                            <td><em>**Please drop off at door</em></td>
                         </tr>
                     </table>
                 </div>
+                <br>
+                <a href="p12.html">
+                <input type="submit" value="Add" class="button">
+                <input type="button" value="Delete" class="button">
+                <input type="submit" value="Edit" class="button"> </a>
                 
-                
-
-
             </form>
-            <div class="clr"></div>
-            
+            <br>
+
         </div>
         <footer>
             <a href="p11.html#main-header">Back to top</a>
         </footer>
     </div>
-</body>
 
+</body>
 </html>
