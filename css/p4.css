@@ -194,11 +194,6 @@ footer a:hover {
 
 /* ********* Content ************* */
 
-.column {
-    float: left;
-    width: 50%;
-}
-
 
 /* Clear floats after the columns */
 
@@ -216,6 +211,9 @@ footer a:hover {
     padding: 0.5em 5%;
     font-size: 1.5em;
 }
+
+
+/* ***** Scroll Bars ********* */
 
 ::-webkit-scrollbar {
     -webkit-appearance: none;
