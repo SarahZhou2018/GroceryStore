@@ -62,7 +62,7 @@ nav ul{
 
 nav li{
     display:inline;
-    padding-right: 1em;
+    padding-right: 0.7em;
 }
 
 table{
@@ -114,6 +114,10 @@ footer a{
 
 footer a:hover {
     color: #FFFFA6;
+}
+
+textarea{
+    width: 100%;
 }
 
 
@@ -210,6 +214,11 @@ footer a:hover {
 
 .table-overflow{
     overflow-x: auto;
+}
+
+.textarea-container{
+    float: left;
+    width: 75%;
 }
 
 .clr{

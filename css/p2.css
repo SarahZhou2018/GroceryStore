@@ -1,24 +1,10 @@
 
 /* CSS stylesheet (p2)
 Shi Qi Zhou - 40034160 
-Noor -40061760 */
-
-
-/* Addition by SQZ */
+*/
 
 * {
     box-sizing: border-box;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-[class*="col-"] {
-    float: left;
-    padding: 15px;
 }
 
 html,
@@ -35,14 +21,13 @@ body {
 }
 
 header {
-    background-color: #2F2933;
-    color: #fff;
-    margin: auto;
-    overflow: hidden;
-    padding-left: 5%;
-    padding-top: 0.55%;
-    padding-bottom: 0.55%;
-    font-size: 1.5em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #bdf271;
+    height: fit-content;
+    width: auto;
+    display: block;
+    text-align: center;
 }
 
 footer {
@@ -65,10 +50,8 @@ footer a:hover {
     color: #FFFFA6;
 }
 
-img {
-    width: 80%;
-    height: 80%;
-    padding: 2em;
+p {
+    color: #2F2933;
 }
 
 a {
@@ -76,11 +59,15 @@ a {
     color: #2F2933;
 }
 
+h1 {
+    text-align: center;
+}
+
 nav {
     background-color: #01A2A6;
     color: #fff;
     padding-left: 5%;
-    padding-top: 0.9%;
+    padding-top: 1px;
     height: 3em;
 }
 
@@ -107,10 +94,81 @@ nav li {
     padding-right: 1em;
 }
 
+
+/* Class level Selector */
+
+
+/* Clear Table */
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.banner {
+    height: fit-content;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 0.6%;
+    margin: 0em;
+}
+
+.button:hover,
+.user-button:hover {
+    color: #FFFFA6;
+}
+
+.user-button {
+    background: #01A2A6;
+    color: white;
+    border: none;
+    font-size: 1em;
+    float: right;
+    vertical-align: middle;
+}
+
+.user-button:hover {
+    color: #FFFFA6;
+}
+
+.container-fluid {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+}
+
+.img-fluid {
+    margin: 0em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.page-header {
+    background-color: #2F2933;
+    color: #fff;
+    margin: auto;
+    overflow: hidden;
+    padding-left: 5%;
+    padding-top: 0.55%;
+    padding-bottom: 0.55%;
+    font-size: 1.5em;
+}
+
+.page-header img {
+    height: 28px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: auto;
 }
 
 .menu li {
@@ -123,120 +181,54 @@ nav li {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.menu li:hover {
+.menu li:hover,
+.menu a:hover {
     background-color: #bdf271;
-    color: #fff;
+    text-decoration: none;
 }
 
 .aside {
+    margin-top: 2%;
     background-color: #bdf271;
-    padding: 15px;
     color: #2F2933;
+    width: 100%;
     text-align: center;
-    font-size: 14px;
+    padding: 0.5%;
+    font-size: 70%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-
-/* For mobile phones: */
-
-[class*="col-"] {
-    width: 100%;
+.card-img-top {
+    padding: 2em;
+    height: 15rem;
+    width: auto;
 }
 
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
-    .col-s-1 {
-        width: 8.33%;
-    }
-    .col-s-2 {
-        width: 16.66%;
-    }
-    .col-s-3 {
-        width: 25%;
-    }
-    .col-s-4 {
-        width: 33.33%;
-    }
-    .col-s-5 {
-        width: 41.66%;
-    }
-    .col-s-6 {
-        width: 50%;
-    }
-    .col-s-7 {
-        width: 58.33%;
-    }
-    .col-s-8 {
-        width: 66.66%;
-    }
-    .col-s-9 {
-        width: 75%;
-    }
-    .col-s-10 {
-        width: 83.33%;
-    }
-    .col-s-11 {
-        width: 91.66%;
-    }
-    .col-s-12 {
-        width: 100%;
-    }
+.card-bold {
+    font-weight: bold;
 }
 
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
-    .col-1 {
-        width: 8.33%;
-    }
-    .col-2 {
-        width: 16.66%;
-    }
-    .col-3 {
-        width: 25%;
-    }
-    .col-4 {
-        width: 33.33%;
-    }
-    .col-5 {
-        width: 41.66%;
-    }
-    .col-6 {
-        width: 50%;
-    }
-    .col-7 {
-        width: 58.33%;
-    }
-    .col-8 {
-        width: 66.66%;
-    }
-    .col-9 {
-        width: 75%;
-    }
-    .col-10 {
-        width: 83.33%;
-    }
-    .col-11 {
-        width: 91.66%;
-    }
-    .col-12 {
-        width: 100%;
-    }
+.card-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: .5rem;
+}
+
+.navbar {
+    background-color: #01A2A6;
+    color: #fff;
+    padding-left: 5%;
+    padding-top: 0.9%;
+    height: fit-content;
 }
 
 
-.card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-  .card button:hover {
-    opacity: 0.7;
-  }
+/* ID Selector */
+
+#logo {
+    height: 6em;
+}
+
+#slogan {
+    height: 3em;
+}
