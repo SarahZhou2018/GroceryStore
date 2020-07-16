@@ -1,271 +1,225 @@
-/* CSS stylesheet (p2)
+    /* CSS stylesheet (p2)
 Shi Qi Zhou - 40034160 
 Noor -40061760 */
-
-
-/* Addition by SQZ */
-
-* {
-    box-sizing: border-box;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
-
-html,
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff;
-    color: #2F2933;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    font-size: 1em;
-    overflow-x: hidden;
-    clear: both;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: #2F2933;
-    color: #fff;
-    padding: 1em 0;
-    padding-left: 5%;
-}
-
-footer a {
-    color: white;
-}
-
-footer a:hover {
-    color: #FFFFA6;
-}
-
-.col-6.col-s-6 img {
-    width: 80%;
-    height: 80%;
-    padding: 2em;
-}
-
-a {
-    text-decoration: none;
-    color: #2F2933;
-}
-
-nav {
-    background-color: #01A2A6;
-    color: #fff;
-    padding-left: 5%;
-    padding-top: 1px;
-    height: 3em;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    vertical-align: bottom;
-    padding-right: 1em;
-}
-
-nav a:hover {
-    color: #FFFFA6;
-    text-decoration: none;
-}
-
-nav ul {
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    display: inline;
-    padding-right: 1em;
-}
-
-header {
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background-color: #bdf271;
-    height: fit-content;
-    width: auto;
-    display: block;
-    text-align: center;
-}
-
-.img-fluid {
-    margin: 0em;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#logo {
-    height: 6em;
-}
-
-#slogan {
-    height: 3em;
-}
-
-.page-header {
-    background-color: #2F2933;
-    color: #fff;
-    margin: auto;
-    overflow: hidden;
-    padding-left: 5%;
-    padding-top: 0.55%;
-    padding-bottom: 0.55%;
-    font-size: 1.5em;
-}
-
-.page-header img {
-    height: 28px;
-    width: auto;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu li {
-    padding: 8px;
-    margin-bottom: 7px;
-    background-color: #29d9c2;
-    color: #2F2933;
-    font-weight: bold;
-    border-radius: 0.5em;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.menu li:hover {
-    background-color: #bdf271;
-    color: #fff;
-}
-
-.aside {
-    background-color: #bdf271;
-    padding: 15px;
-    color: #2F2933;
-    text-align: center;
-    font-size: 14px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-
-/* For mobile phones: */
-
-[class*="col-"] {
-    width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
-    .col-s-1 {
-        width: 8.33%;
+    /* Addition by SQZ */
+    
+    * {
+        box-sizing: border-box;
     }
-    .col-s-2 {
-        width: 16.66%;
+    
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
     }
-    .col-s-3 {
-        width: 25%;
+    
+    html,
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #fff;
+        color: #2F2933;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        font-size: 1em;
+        overflow-x: hidden;
+        clear: both;
     }
-    .col-s-4 {
-        width: 33.33%;
-    }
-    .col-s-5 {
-        width: 41.66%;
-    }
-    .col-s-6 {
-        width: 50%;
-    }
-    .col-s-7 {
-        width: 58.33%;
-    }
-    .col-s-8 {
-        width: 66.66%;
-    }
-    .col-s-9 {
-        width: 75%;
-    }
-    .col-s-10 {
-        width: 83.33%;
-    }
-    .col-s-11 {
-        width: 91.66%;
-    }
-    .col-s-12 {
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         width: 100%;
+        background-color: #2F2933;
+        color: #fff;
+        padding: 1em 0;
+        padding-left: 5%;
     }
-}
-
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
-    .col-1 {
-        width: 8.33%;
+    
+    footer a {
+        color: white;
     }
-    .col-2 {
-        width: 16.66%;
+    
+    footer a:hover {
+        color: #FFFFA6;
     }
-    .col-3 {
-        width: 25%;
+    
+    p {
+        color: #2F2933;
     }
-    .col-4 {
-        width: 33.33%;
+    
+    a {
+        text-decoration: none;
+        color: #2F2933;
     }
-    .col-5 {
-        width: 41.66%;
+    
+    nav {
+        background-color: #01A2A6;
+        color: #fff;
+        padding-left: 5%;
+        padding-top: 1px;
+        height: 3em;
     }
-    .col-6 {
-        width: 50%;
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        vertical-align: bottom;
+        padding-right: 1em;
     }
-    .col-7 {
-        width: 58.33%;
+    
+    nav a:hover {
+        color: #FFFFA6;
+        text-decoration: none;
     }
-    .col-8 {
-        width: 66.66%;
+    
+    nav ul {
+        padding: 0;
+        list-style: none;
     }
-    .col-9 {
-        width: 75%;
+    
+    nav li {
+        display: inline;
+        padding-right: 1em;
     }
-    .col-10 {
-        width: 83.33%;
+    
+    header {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        background-color: #bdf271;
+        height: fit-content;
+        width: auto;
+        display: block;
+        text-align: center;
     }
-    .col-11 {
-        width: 91.66%;
+    
+    h1 {
+        text-align: center;
     }
-    .col-12 {
+    
+    .banner {
+        height: fit-content;
+        overflow: hidden;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding-top: 0.6%;
+        margin: 0em;
+    }
+    
+    .button:hover,
+    .user-button:hover {
+        color: #FFFFA6;
+    }
+    
+    .user-button {
+        background: #01A2A6;
+        color: white;
+        border: none;
+        font-size: 1em;
+        float: right;
+        vertical-align: middle;
+    }
+    
+    .user-button:hover {
+        color: #FFFFA6;
+    }
+    
+    .container-fluid {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        padding-bottom: 2%;
+    }
+    
+    .img-fluid {
+        margin: 0em;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .page-header {
+        background-color: #2F2933;
+        color: #fff;
+        margin: auto;
+        overflow: hidden;
+        padding-left: 5%;
+        padding-top: 0.55%;
+        padding-bottom: 0.55%;
+        font-size: 1.5em;
+    }
+    
+    .page-header img {
+        height: 28px;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+    }
+    
+    .menu li {
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color: #29d9c2;
+        color: #2F2933;
+        font-weight: bold;
+        border-radius: 0.5em;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+    
+    .menu li:hover,
+    .menu a:hover {
+        background-color: #bdf271;
+        text-decoration: none;
+    }
+    
+    .aside {
+        margin-top: 2%;
+        background-color: #bdf271;
+        color: #2F2933;
         width: 100%;
+        text-align: center;
+        padding: 0.5%;
+        font-size: 70%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
-}
-
-.card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-
-.card button:hover {
-    opacity: 0.7;
-}
+    
+    .card-img-top {
+        padding: 2em;
+        height: 15rem;
+        width: auto;
+    }
+    
+    .card-bold {
+        font-weight: bold;
+    }
+    
+    .card-deck {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: .5rem;
+    }
+    
+    .navbar {
+        background-color: #01A2A6;
+        color: #fff;
+        padding-left: 5%;
+        padding-top: 0.9%;
+        height: fit-content;
+    }
+    
+    #logo {
+        height: 6em;
+    }
+    
+    #slogan {
+        height: 3em;
+    }
