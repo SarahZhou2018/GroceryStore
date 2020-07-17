@@ -1,6 +1,5 @@
-
 /* CSS stylesheet (p2)
-Shi Qi Zhou - 40034160 
+Shi Qi Zhou - 40163947 
 */
 
 * {
@@ -63,7 +62,8 @@ h1 {
     text-align: center;
 }
 
-nav {
+nav,
+.navbar {
     background-color: #01A2A6;
     color: #fff;
     padding-left: 5%;
@@ -71,7 +71,7 @@ nav {
     height: 3em;
 }
 
-nav a {
+.nav-link {
     color: white;
     text-decoration: none;
     font-size: 1em;
@@ -79,7 +79,8 @@ nav a {
     padding-right: 1em;
 }
 
-nav a:hover {
+nav a:hover,
+.nav-link:hover {
     color: #FFFFA6;
     text-decoration: none;
 }
@@ -200,7 +201,7 @@ nav li {
 
 .card-img-top {
     padding: 2em;
-    height: 15rem;
+    height: 13rem;
     width: auto;
 }
 
