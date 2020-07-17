@@ -12,4 +12,4 @@ noor hammodi (40061760)
 Link to hosted frontend : 	http://35.223.54.77/
 Link to hosted backstore: 	http://35.223.54.77/backstore/p7.html
 
-See 
+See file "SOEN287 project task distribution and data structures" for task distrution and data structure breakdown
