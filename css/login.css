@@ -8,9 +8,9 @@ div.container-fluid {
   background-color: #EAECEE;
   width: 400px;
   height: 350px;
-  top: 60%;
+  top: 55%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -45%);
   position: absolute;
   padding: 20px;
 
