@@ -1,0 +1,88 @@
+<!--
+    P8 - Edit product
+    Ejazali Rezayi - 40101892
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Order</title>
+    <link rel="stylesheet" href="../css/p7-p12.css">
+</head>
+
+<body>
+    <div id="main-container">
+
+
+        <header id="main-header">
+            Back Store - Add/Edit Product
+        </header>
+        <nav>
+            <ul>
+                <li><a href="p7.html">Product list</a></li>
+                <li><a href="p9.html">User list</a></li>
+                <li><a href="p11.html">Order list</a></li>
+                <li><a href="../index.html">Main site</a></li>
+            </ul>
+            <a href="../index.html"><button class="logout-button" type="button" title="logout">Log out</button></a>
+        </nav>
+
+        <div id="main-block">
+            <h2>Add/Edit Product</h2>
+            Enter product information below:<br>
+            <form action="" class="form-large">
+                
+                <div class="form-container">
+                    <label for="productname">Product name</label><br>
+                    <input type="text" name="productname" id="productname" value="Enter product name" size="30"><br>
+                </div>
+                
+                <div class="clr"></div>
+                <div class="form-container">
+                    <label for="date">Date created</label><br>
+                    <input type="text" name="date" id="date" placeholder="" value="2020-07-01 00:00:00" class="inputbox" readonly><br>
+                </div>
+                <div class="form-container">
+                    <label for="date">Date last modified</label><br>
+                    <input type="text" name="date" id="date" placeholder="" value="2020-07-07 14:00:00" class="inputbox" readonly><br>
+                </div>
+                <div class="clr"></div>
+
+                <div class="form-container">
+                    <label for="price">Price ($)</label><br>
+                    <input type="text" name="price" id="price" value="3.99" class="inputbox" size="30"><br>
+                </div>
+                <div class="form-container">
+                    <label for="weight">Weight (enter lbs or g at the end)</label><br>
+                    <input type="text" name="weight" id="weight" value="5lbs or 500g" class="inputbox" size="30"><br>
+                </div>
+                <div class="clr"></div>
+                <div class="textarea-container">
+                    <label for="productdesc">Product description</label><br>
+                    <textarea style="height: 4em" type="text" name="productdesc" id="productdesc" class="inputbox"></textarea><br>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>To add a product, enter a new product name and fill all the inputs</p>
+                <p>To edit a product, enter the product name and change the desired inputs</p>
+                <p>To delete a product, enter the product name and leave blank all other inputs</p>
+               
+                <input type="submit" value="Save" class="button">
+
+            </form>
+            <div class="clr"></div>
+            <a href="p7.html">Return to product list without saving</a>
+        </div>
+        <footer>
+            <a href="p8.html#main-header">Back to top</a>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!--
+    P3 - Product page description
+    Shi Qi Zhou - 40163947
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/p3.css">
+    <title>Bananas</title>
+</head>
+
+
+<body>
+    <header>
+        <div class="product-name-header">
+            Product Description - Bananas
+        </div>
+
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home Page</a></li>
+
+            <li><a href="../aisles/fruits-vegetables.html">Return to Aisle</a></li>
+
+            <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
+        </ul>
+        <div class="register-log-in">
+            <a href="../user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
+            <a href="../user/login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
+        </div>
+    </nav>
+
+
+    <div class="description">
+        <div class="image">
+            <img src="../images/banana.jpg" alt="Bananas" width="200px" height="200px" />
+        </div>
+        <h2>Bananas</h2>
+        <p>Price 1.99$/lb</p>
+        <p>Weight 190g avg.</p>
+        <h3>Product Description</h3>
+        <p>Product of Costa Rica, Ecuador or Guatemala. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel co.<br/></p>
+
+        <button class="addtocart" type="button" name="More description">More description</button><br><br>
+
+        <form action="../shopping-cart/index.html">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value=1 size="2">
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+                    <option value="o">organic</option>
+                    <option value="r">regular</option>
+                </select>
+
+            <div class="addtocartposition">
+                <a href="../shopping-cart/index.html"><button class="addtocart" type="button" name="addtocart-button">Add to Cart</button></a>
+            </div>
+        </form>
+    </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
