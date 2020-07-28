@@ -13,6 +13,7 @@ function toggleDescription() {
 function updateSubtotal(price){
     var quantity = document.getElementById("quantity").value;
     var subtotal=quantity*price;
-    document.getElementById("subtotal").innerHTML=subtotal + "$";
+    subtotal=Math.round((subtotal+Number.EPSILON)*100)/100;
+    document.getElementById("subtotal").innerHTML=subtotal.toFixed(2) + "$";
 
 }
