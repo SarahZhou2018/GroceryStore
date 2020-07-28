@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
     <link rel="stylesheet" href="../css/p7-p12.css">
-    <script src="../scripts/backstore-user.js"></script>
 </head>
 <body>
     <div id="main-container">
@@ -35,7 +34,7 @@
             <h2>User List</h2>
             Select a user:
             <br><br>
-            <form id="userListForm" action="p10.html">
+            <form action="p10.html">
                 <div class="table-overflow">
                     <table>
                         <tr>
@@ -45,36 +44,36 @@
                             <th>Phone #</th>
                             <th>Email</th>
                         </tr>
-                        <tr id="row1">
+                        <tr>
                             <td>
-                                <label for="row1select"><input type="radio" name="selectedUser" id="row1select" /> 0001</label>
+                                <label for="row1"><input type="radio" name="selectedUser" id="row1" /> 0001</label>
                             </td>
                             <td>John</td>
                             <td>Smith</td>
                             <td>123-456-1234</td>
                             <td>jsmith@test.com</td>
                         </tr>
-                        <tr id="row2">
+                        <tr>
                             <td>
-                                <label for="row2select"><input type="radio" name="selectedUser" id="row2select" /> 0002</label>
+                                <label for="row2"><input type="radio" name="selectedUser" id="row2" /> 0002</label>
                             </td>
                             <td>Jane</td>
                             <td>Doe</td>
                             <td>789-987-4321</td>
                             <td>jdoe@test.com</td>
                         </tr>
-                        <tr id="row3">
+                        <tr>
                             <td>
-                                <label for="row3select"><input type="radio" name="selectedUser" id="row3select" /> 0003</label>
+                                <label for="row3"><input type="radio" name="selectedUser" id="row3" /> 0003</label>
                             </td>
                             <td>Bob</td>
                             <td>Loblaw</td>
                             <td>456-654-3212</td>
                             <td>blob@test.com</td>
                         </tr>
-                        <tr id="row4">
+                        <tr>
                             <td>
-                                <label for="row4select"><input type="radio" name="selectedUser" id="row4select" /> 0004</label>
+                                <label for="row4"><input type="radio" name="selectedUser" id="row4" /> 0004</label>
                             </td>
                             <td>John</td>
                             <td>Doe</td>
@@ -85,7 +84,7 @@
                 </div>
                 <br>
                 <input type="submit" value="Add" class="button">
-                <input type="button" value="Delete" class="button" onclick="deleteUser()">
+                <input type="button" value="Delete" class="button">
                 <input type="submit" value="Edit" class="button"> 
                 
             </form>
