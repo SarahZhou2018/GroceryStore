@@ -1,6 +1,6 @@
 <!--
-    P1 - HOME PAGE
-    Noor Hammodi - 40061760
+    P9 - Shopping Cart Page
+    Shi Qi Zhou - 40163947
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -8,124 +8,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Foodsy - Home</title>
-    <link rel="stylesheet" href="css/p1.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/p4.css">
+    <title>Shopping Cart</title>
 </head>
 
-<body style="background-color:#29D9C2;">
-
-    <div id="logo">
-        <img src="images/logo.png" width="180" height="180" style="float:left;">
+<body>
+    <header id="main-header">
+        <img id="logo" class="img-fluid" src="../images/logo.png" alt="logo" />
+        <img id="slogan" class="img-fluid" src="../images/slogan.png" alt="slogan" />
+    </header>
+    <div class="page-header">
+        Your Shopping Cart
+        <img src="../images/shopping_cart.png" alt="shopping cart icon" />
     </div>
-
-    <div class="header">
-
-        <div class="header-right">
-
-            <div class="dropdown">
-                <button class="dropbtn">Aisles</button>
-                <div class="dropdown-content">
-                    <a href="aisles/meat-poultry.html">Aisle 1-Meat</a>
-                    <a href="aisles/snacks.html">Aisle 2-Snack</a>
-                    <a href="aisles/bread.html">Aisle 3-Bread</a>
-                    <a href="aisles/fruits-vegetables.html">Aisle 4-Fruits & Vegetables</a>
-                    <a href="aisles/frozen.html">Aisle 5-Frozen</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="welcome">
-        <h1><b><u> WELCOME TO OUR STORE!</u></b></h1>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shopping-cart/index.html">Shopping cart</a></li>
-            <li><a href="user/login.html">Log in</a></li>
-            <li><a href="user/register.html">Sign up</a></li>
+    <nav class="navbar navbar-expand-sm">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../index.html">Home Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../user/register.html">
+                    <button class="user-button" type="button" name="user-button">
+                    Register
+                    </button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../user/login.html">
+                    <button class="user-button" type="button" name="login-button">
+                    Log In
+                    </button>
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <div class="alert">
-        <img src="images/alert.png" alt="alert" width="200 " height="115" style="text-align: center;">
-
-        <h1>Alert! </h1>
-        <p>COVID-19</p>
-        <p> Thank you for choosing us. Rest assured that we continue to take every precaution necessary to maintain a
-            high-quality, safe service.</p>
-
-    </div>
-
-
-
-    <div class="title">
-        <h2><u>Check out our deals this week!</h2></u>
+    <div class="banner">
+        <marquee behavior="scroll" direction="left">
+            <h6><b>FREE DELIVERY FOR ORDERS ABOVE 30 $</b></h6>
+        </marquee>
     </div>
     <div class="row">
-        <div class="column">
-            <p>
-            <h3>Grounded Beef</p>
-            </h3>
+        <!-- Left side -->
+        <div class="col-md-6 col-sm-12">
+            <div class="item-block" id="item-block">
+                <header>
+                    Your Items (6)
+                </header>
+                <span></span><span></span><br />
+                <!-- Detailed Illustrataded Table -->
+                <table id="table-responsive">
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th></th>
+                    </tr>
 
-            <img src="images/beef.jpg" alt="beef" style="width:60%">
-            <p>
-            <h2> Price: <del>15.99$</del> 8.99$</h2>
-            </p>
-            <a href="product-descriptions/groundbeef.html">
-                <img src="images/add.png" alt="add to cart" style="width:50%">
-            </a>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Romaine Lettuce</p>
+                            <img src=" ../images/lettuce.jpeg" alt="Romaine Lettuce" />
+
+                        </td>
+                        <td>5.00 $/each</td>
+                        <td>2</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                                <img id="icon" src="../images/buttons/minus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
+                                <img id="icon" src="../images/buttons/plus.png"></button>
+
+                        </td>
+                        <td>
+                            <button type="button" onclick="myFunction1()" class="deletebtn">DELETE</button>
+
+                    </td>
+                    </tr>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Bananas</p>
+                            <img src="../images/banana.jpg " alt="Bananas" />
+                        </td>
+                        <td>1.99 $/lb</td>
+                        <td>1</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip " data-placement="top " title="remove">
+                                <img id="icon" src="../images/buttons/minus.png "></button>
+                            <button type="button" data-toggle="tooltip " data-placement="top " title="add">
+                                <img id="icon" src="../images/buttons/plus.png "></button>
+                                
+
+                        </td>
+                        <td>
+                            <button type="button" onclick="myFunction2()" class="deletebtn">DELETE</button>
+
+                    </td>
+                    </tr>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Ground Beef</p>
+                            <img src="../images/beef.jpg" alt="Gorund Beef" />
+
+                        </td>
+                        <td>8.99 $/lb</td>
+                        <td>3</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                                <img id="icon" src="../images/buttons/minus.png"></button>
+                            <button type="button" data-toggle="tooltip " data-placement="top" title="add">
+                                <img id="icon" src="../images/buttons/plus.png"></button>
+                        </td>
+                        <td>
+                                <button type="button" onclick="myFunction3()" class="deletebtn">DELETE</button>
+
+                        </td>
+                    </tr>
+                </table>
+
+                    
+                <span></span>
+
+            </div>
+            <!-- Bottom Buttons -->
+
+            <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
         </div>
-        <div class="column">
-            <p>
-            <h3>Fresh Lettuce</p>
-            </h3>
-            <img src="images/lettuce.jpeg" alt="green lettuce" style="width:80%">
-            <p>
-            <h2> Price: <del>7.99$</del> 5.00$</h2>
-            </p>
-            </article>
-            <a href="product-descriptions/lettuce.html">
-                <img src="../images/add.png" alt="add to cart" style="width:50%">
-            </a>
+
+        <!-- Right side -->
+        <div class="col-md-6 col-sm-12">
+            <div class="summary-block" id="summary-block">
+                <header>
+                    Order Summary
+                </header>
+                <span></span><span></span><br />
+                <!-- Order Summary Table -->
+                
+                   
+                    <table id="first">
+                    <tr>
+                        <td>Romaine Lettuce</td>
+                        <td id="right">x 2</td>
+                        <td id="right"> 10.00 $</td>
+                    </tr></table>
+                    <table id="second">
+                    <tr>
+                        <td>Bananas</td>
+                        <td id="right"></td>
+                        <td id="right">1.99 $</td>
+                    </tr> </table>
+                    <table id="third">
+                    <tr>
+                        <td>Ground Beef</td>
+                        <td id="right">x 3</td>
+                        <td id="right">26.97 $</td>
+                    </tr> </table>
+                
+                <span></span>
+                <!-- Total Table -->
+                <table id="total">
+                    <tr>
+                        <td>Sub Total</td>
+                        <td id="right"></td>
+                        <td id="right">38.96 $</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery Fee</td>
+                        <td id="right"></td>
+                        <td id="right">0.00 $</td>
+                    </tr>
+                    <tr>
+                        <td>GST Tax</td>
+                        <td id="right"></td>
+                        <td id="right">0.00 $</td>
+                    </tr>
+                    <tr>
+                        <td>QST</td>
+                        <td id="right"></td>
+                        <td id="right">0.00 $</td>
+                    </tr>
+                </table>
+                <span></span>
+                <!-- Grand Total Table -->
+                <table id="total">
+                    <tr>
+                        <td>Grand Total</td>
+                        <td id="right"></td>
+                        <td id="right">38.96 $</td>
+                    </tr>
+                </table>
+                <span></span>
+            </div>
+            
+            <script> 
+           
+            
+                    function myFunction1(){
+                        document.getElementById("table-responsive").deleteRow(1)
+                        document.getElementById("first").deleteRow(0);
+                       }
+                    
+                      function myFunction2(){
+                          document.getElementById("table-responsive").deleteRow(2)
+                               document.getElementById("second").deleteRow(0);
+                          }
+                      
+                   function myFunction3(){
+                       document.getElementById("table-responsive").deleteRow(3)
+                         document.getElementById("third").deleteRow(0);
+                    }
+                    
+                     
+                    
+
+
+
+
+                    </script>
+            <!-- Bottom Buttons -->
+            <input class="button" id="pay" type="submit" value="Checkout" readonly>
         </div>
-        <div class="column">
-            <p>
-            <h3>Bananas</p>
-            </h3>
-            <img src="images/banana.jpg" alt="Real bananas" style="width:80%">
-            <p>
-            <h2> Price: <del>3.99$</del> 1.99$</h2>
-            </p>
-            </article>
-            <a href="product-descriptions/banana.html">
-                <img src="images/add.png" alt="add to cart" style="width:50%">
-            </a>
-        </div>
     </div>
-    <div class="subtitle">
-        <h2><u>Special Summer Treats!</h2></u>
-    </div>
-
-
-    <div class="rows">
-
-
-        <a href="aisles/frozen.html">
-            <img src="images/summertreats.jpg" alt="icecream" style="width: 100%;">
-        </a>
-    </div>
-
-
-    <div class="footer">
-        <p>Author: The Store</p>
-        <p>thestore@store.com</p>
-    </div>
-
-
-
-
+    <br/><br/><br/>
+    <footer>
+        <a href="./index.html#main-header">Back to top</a>
+    </footer>
 </body>
 
 </html>
