@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/p4.css">
     <title>Shopping Cart</title>
+    <script src="../scripts/adjust-item-quantity.js"></script>
 </head>
 
 <body>
@@ -149,26 +150,61 @@
                 </header>
                 <span></span><span></span><br />
                 <!-- Order Summary Table -->
-                <table class="table-responsive">
+                <table class="table-responsive" id="mytable">
                     <tr>
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
-                    <tr>
-                        <td>Romaine Lettuce</td>
-                        <td id="right">x 2</td>
-                        <td id="right"> 10.00 $</td>
+                    <tr id="romaineLettuce" style="display:none">
+                        <td id="name">Romaine Lettuce</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
                     </tr>
-                    <tr>
-                        <td>Bananas</td>
-                        <td id="right"></td>
-                        <td id="right">1.99 $</td>
+                    <tr id="bananas" style="display:none">
+                        <td id="name">Bananas</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
                     </tr>
-                    <tr>
-                        <td>Ground Beef</td>
-                        <td id="right">x 3</td>
-                        <td id="right">26.97 $</td>
+                    <tr id="groundBeef" style="display:none">
+                        <td id="name">Ground Beef</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="chickenBreast" style="display:none">
+                        <td  id="name">Chicken Breast</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="baguette" style="display:none">
+                        <td id="name">Baguette</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="tortilla" style="display:none">
+                        <td id="name">Tortilla</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="laysChips" style="display:none">
+                        <td id="name">Lay's Chips</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="cheeseDip" style="display:none">
+                        <td id="name">Cheese Dip</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="iceCream" style="display:none">
+                        <td id="name">Ben&Jerry's Ice Cream</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="popsicle" style="display:none">
+                        <td id="name">FireCracker Popsicle</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
                     </tr>
                 </table>
                 <span></span>
@@ -177,22 +213,22 @@
                     <tr>
                         <td>Sub Total</td>
                         <td id="right"></td>
-                        <td id="right">38.96 $</td>
+                        <td id="right" class="subtotal">38.96 $</td>
                     </tr>
                     <tr>
                         <td>Delivery Fee</td>
                         <td id="right"></td>
-                        <td id="right">0.00 $</td>
+                        <td id="right" class="deliveryFee">0.00 $</td>
                     </tr>
                     <tr>
                         <td>GST Tax</td>
                         <td id="right"></td>
-                        <td id="right">0.00 $</td>
+                        <td id="right" class="GST">0.00 $</td>
                     </tr>
                     <tr>
                         <td>QST</td>
                         <td id="right"></td>
-                        <td id="right">0.00 $</td>
+                        <td id="right" class="QST">0.00 $</td>
                     </tr>
                 </table>
                 <span></span>
@@ -201,7 +237,7 @@
                     <tr>
                         <td>Grand Total</td>
                         <td id="right"></td>
-                        <td id="right">38.96 $</td>
+                        <td id="right" class="grandTotal">38.96 $</td>
                     </tr>
                 </table>
                 <span></span>
