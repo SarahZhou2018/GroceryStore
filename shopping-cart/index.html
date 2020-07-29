@@ -66,7 +66,7 @@
                 </header>
                 <span></span><span></span><br />
                 <!-- Detailed Illustrataded Table -->
-                <table class="table-responsive">
+                <table id="table-responsive">
                     <tr>
                         <th>Item</th>
                         <th>Price</th>
@@ -90,6 +90,7 @@
                                 <img id="icon" src="../images/buttons/minus.png"></button>
                             <button type="button" data-toggle="tooltip" data-placement="top" title="add">
                                 <img id="icon" src="../images/buttons/plus.png"></button>
+                                <button onclick="myFunction()">DELETE</button>
 
                         </td>
                     </tr>
@@ -108,6 +109,7 @@
                                 <img id="icon" src="../images/buttons/minus.png "></button>
                             <button type="button" data-toggle="tooltip " data-placement="top " title="add">
                                 <img id="icon" src="../images/buttons/plus.png "></button>
+                                <button onclick="myFunction()">DELETE</button>
 
                         </td>
                     </tr>
@@ -127,12 +129,18 @@
                                 <img id="icon" src="../images/buttons/minus.png"></button>
                             <button type="button" data-toggle="tooltip " data-placement="top" title="add">
                                 <img id="icon" src="../images/buttons/plus.png"></button>
+                                <button type="button" onclick="myFunction()" class="deletebtn">DELETE</button>
 
                         </td>
                     </tr>
                 </table>
 
+                    <script> 
+                    function myFunction(){
+                        document.getElementById("table-responsive").deleteRow(1);
 
+                    }
+                    </script>
                 <span></span>
 
             </div>
