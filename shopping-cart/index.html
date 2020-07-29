@@ -1,0 +1,285 @@
+<!--
+    P9 - Shopping Cart Page
+    Shi Qi Zhou - 40163947
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/p4.css">
+    <title>Shopping Cart</title>
+    <script src="../scripts/adjust-item-quantity.js"></script>
+</head>
+
+<body>
+    <header id="main-header">
+        <img id="logo" class="img-fluid" src="../images/logo.png" alt="logo" />
+        <img id="slogan" class="img-fluid" src="../images/slogan.png" alt="slogan" />
+    </header>
+    <div class="page-header">
+        Your Shopping Cart
+        <img src="../images/shopping_cart.png" alt="shopping cart icon" />
+    </div>
+    <nav class="navbar navbar-expand-sm">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../index.html">Home Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../user/register.html">
+                    <button class="user-button" type="button" name="user-button">
+                    Register
+                    </button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../user/login.html">
+                    <button class="user-button" type="button" name="login-button">
+                    Log In
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="banner">
+        <marquee behavior="scroll" direction="left">
+            <h6><b>FREE DELIVERY FOR ORDERS ABOVE 30 $</b></h6>
+        </marquee>
+    </div>
+    <div class="row">
+        <!-- Left side -->
+        <div class="col-md-6 col-sm-12">
+            <div class="item-block" id="item-block">
+                <header>
+                    Your Items (6)
+                </header>
+                <span></span><span></span><br />
+                <!-- Detailed Illustrataded Table -->
+                <table id="table-responsive">
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th></th>
+                    </tr>
+
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Romaine Lettuce</p>
+                            <img src=" ../images/lettuce.jpeg" alt="Romaine Lettuce" />
+
+                        </td>
+                        <td>5.00 $/each</td>
+                        <td>2</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                                <img id="icon" src="../images/buttons/minus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
+                                <img id="icon" src="../images/buttons/plus.png"></button>
+
+                        </td>
+                        <td>
+                            <button type="button" onclick="myFunction1()" class="deletebtn">DELETE</button>
+                        </td>
+                    </tr>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Bananas</p>
+                            <img src="../images/banana.jpg " alt="Bananas" />
+                        </td>
+                        <td>1.99 $/lb</td>
+                        <td>1</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip " data-placement="top " title="remove">
+                                <img id="icon" src="../images/buttons/minus.png "></button>
+                            <button type="button" data-toggle="tooltip " data-placement="top " title="add">
+                                <img id="icon" src="../images/buttons/plus.png "></button>
+
+                        </td>
+                        <td>
+                            <button type="button" onclick="myFunction2()" class="deletebtn">DELETE</button>
+
+                    </td>
+                    </tr>
+                    <!-- A Row -->
+                    <tr>
+                        <td>
+                            <p>Ground Beef</p>
+                            <img src="../images/beef.jpg" alt="Gorund Beef" />
+
+                        </td>
+                        <td>8.99 $/lb</td>
+                        <td>3</td>
+                        <td>
+                            <!-- Quantity +/- buttons -->
+
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                                <img id="icon" src="../images/buttons/minus.png"></button>
+                            <button type="button" data-toggle="tooltip " data-placement="top" title="add">
+                                <img id="icon" src="../images/buttons/plus.png"></button>
+
+                        </td>
+                        <td>
+                            <button type="button" onclick="myFunction3()" class="deletebtn">DELETE</button>
+
+                    </td>
+                    </tr>
+                </table>
+
+
+                <span></span>
+
+            </div>
+            <!-- Bottom Buttons -->
+
+            <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
+        </div>
+
+        <!-- Right side -->
+        <div class="col-md-6 col-sm-12">
+            <div class="summary-block" id="summary-block">
+                <header>
+                    Order Summary
+                </header>
+                <span></span><span></span><br />
+                <!-- Order Summary Table -->
+                <table class="table-responsive" id="mytable">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    <tr id="romaineLettuce" style="display:none">
+                        <td id="name">Romaine Lettuce</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="bananas" style="display:none">
+                        <td id="name">Bananas</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="groundBeef" style="display:none">
+                        <td id="name">Ground Beef</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="chickenBreast" style="display:none">
+                        <td  id="name">Chicken Breast</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="baguette" style="display:none">
+                        <td id="name">Baguette</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="tortilla" style="display:none">
+                        <td id="name">Tortilla</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="laysChips" style="display:none">
+                        <td id="name">Lay's Chips</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="cheeseDip" style="display:none">
+                        <td id="name">Cheese Dip</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="iceCream" style="display:none">
+                        <td id="name">Ben&Jerry's Ice Cream</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                    <tr id="popsicle" style="display:none">
+                        <td id="name">FireCracker Popsicle</td>
+                        <td style="text-align:right" id="number"></td>
+                        <td style="text-align:right" id="price"></td>
+                    </tr>
+                </table>
+                <span></span>
+                <!-- Total Table -->
+                <table id="total">
+                    <tr>
+                        <td>Sub Total</td>
+                        <td id="right"></td>
+                        <td id="right" class="subtotal">38.96 $</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery Fee</td>
+                        <td id="right"></td>
+                        <td id="right" class="deliveryFee">0.00 $</td>
+                    </tr>
+                    <tr>
+                        <td>GST Tax</td>
+                        <td id="right"></td>
+                        <td id="right" class="GST">0.00 $</td>
+                    </tr>
+                    <tr>
+                        <td>QST</td>
+                        <td id="right"></td>
+                        <td id="right" class="QST">0.00 $</td>
+                    </tr>
+                </table>
+                <span></span>
+                <!-- Grand Total Table -->
+                <table id="total">
+                    <tr>
+                        <td>Grand Total</td>
+                        <td id="right"></td>
+                        <td id="right" class="grandTotal">38.96 $</td>
+                    </tr>
+                </table>
+                <span></span>
+            </div>
+            <script> 
+           
+            
+                function myFunction1(){
+                    document.getElementById("table-responsive").deleteRow(1)
+                    
+                   }
+                
+                  function myFunction2(){
+                      document.getElementById("table-responsive").deleteRow(1)
+                           
+                      }
+                  
+               function myFunction3(){
+                   document.getElementById("table-responsive").deleteRow(1)
+                     
+                }
+                
+                </script>
+            <!-- Bottom Buttons -->
+            <input class="button" id="pay" type="submit" value="Checkout" readonly>
+        </div>
+    </div>
+    <br/><br/><br/>
+    <footer>
+        <a href="./index.html#main-header">Back to top</a>
+    </footer>
+</body>
+
+</html>
