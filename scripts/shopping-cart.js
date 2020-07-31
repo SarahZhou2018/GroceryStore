@@ -1,23 +1,25 @@
 // Shi Qi Zhou - 40163947
 // Quantity buttons that preserve quantity through refresh
 
-window.onbeforeunload = function() {
-    var table = document.getElementById('itemtable');
-    var persistingVars = []
-    for (var r = 0; r < table.rows.length; r++) {
-        localStorage.setItem(persistingVars.push(i), parseInt(table.rows[i].cells[2]).innerHTML);
-    }
+// window.onbeforeunload = function() {
+//     var table = document.getElementById('itemtable');
+//     var persistingVars = []
+//     for (var r = 0; r < table.rows.length; r++) {
+//         localStorage.setItem(persistingVars.push(i), parseInt(table.rows[i].cells[2]).innerHTML);
+//     }
 
-}
+// }
 window.onload = function() {
-    var table = document.getElementById('itemtable');
-    var persistingVars = []
-    for (var r = 0; r < table.rows.length; r++) {
-        if (localStorage.getItem(persistingVars[r]) !== null) {
-            table.rows[i].cells[2].innerHTML = localStorage.getItem(persistingVars[r]);
-        }
+    //     var table = document.getElementById('itemtable');
+    //     var persistingVars = []
+    //     for (var r = 0; r < table.rows.length; r++) {
+    //         if (localStorage.getItem(persistingVars[r]) !== null) {
+    //             table.rows[i].cells[2].innerHTML = localStorage.getItem(persistingVars[r]);
+    //         }
 
-    }
+    //     }
+    alert("window.onload, there");
+    // cartQty();
 }
 
 function qtyminus(elm) {
@@ -46,7 +48,7 @@ function qtyminus(elm) {
     y.innerHTML = afterqty;
     // alert(afterqty);
 
-    cartTotalQty();
+    cartQty();
 }
 
 function qtyplus(elm) {
@@ -70,31 +72,35 @@ function qtyplus(elm) {
     y.innerHTML = afterqty;
     // alert(afterqty);
 
-    cartTotalQty();
+    cartQty();
 
 }
 
-function cartTotalQty() {
+function cartQty() {
     var table = document.getElementsByClassName('itemtable');
     var num = 0;
-    var qtyPerProduct = []
+    var qtyPerProduct = [];
+
+    var qty = table.innerHTML;
+    alert(qty);
 
     //Get values of the qty input field
-    for (var i = 0; i < table.rows.length; i++) {
-        //Ignores the row where there are no items
-        if (table.rows[i].cells[2].innerHTML) {
-            var qty = parseInt(table.rows[i].cells[2].innerHTML);
-
-            if (qty) {
-                qtyPerProduct.push(qty)
-            }
-        }
-    }
+    // for (var i = 0; i < table.rows.length; i++) {
+    //     //Ignores the row where there are no items
+    //     // if (table.rows[i].cells[2].innerHTML) {
+    //     var qty = parseInt(table.rows[i + 1].cells[2].innerHTML);
+    //     alert(qty);
+    //     // if (qty) {
+    //     //     qtyPerProduct.push(qty)
+    //     // }
+    //     // }
+    // }
     // Sum total Qty
-    for (var r = 0; r < qtyPerProduct.length; r++) {
-        num += qtyPerProduct[r]
-    }
-
-    document.getElementById("cart-totalcount").innerHTML = num;
+    // for (var r = 0; r < qtyPerProduct.length; r++) {
+    //     num += qtyPerProduct[r]
+    // }
+    var t = document.getElementById("cart-totalcount").innerHTML;
+    alert(t);
+    document.getElementById("cart-totalcount").innerHTML = "Your Items " + num;
 
 }
