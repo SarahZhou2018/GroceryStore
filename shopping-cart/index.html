@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../css/p4.css">
     <title>Shopping Cart</title>
     <script src="../scripts/adjust-item-quantity.js"></script>
+    <script src="../scripts/shopping-cart.js"></script>
+    <script src="../scripts/total.js"></script>
 </head>
 
 <body>
@@ -63,11 +65,14 @@
         <div class="col-md-6 col-sm-12">
             <div class="item-block" id="item-block">
                 <header>
-                    Your Items (6)
+                    Your Items
+                    <span style="border: 0;" id="cart-totalcount"></span>
+                    <!-- <input style="border: 0;outline:0;text-align: center;padding: 0em;" type="text" id="qty" value="4000" readonly> -->
                 </header>
                 <span></span><span></span><br />
                 <!-- Detailed Illustrataded Table -->
-                <table class="table-responsive">
+                <table class="table-responsive" id="itemtable">
+                    <!-- Row 0 -->
                     <tr>
                         <th>Item</th>
                         <th>Price</th>
@@ -75,7 +80,7 @@
                         <th></th>
                     </tr>
 
-                    <!-- A Row -->
+                    <!-- Row 1-->
                     <tr>
                         <td>
                             <p>Romaine Lettuce</p>
@@ -83,18 +88,19 @@
 
                         </td>
                         <td>5.00 $/each</td>
-                        <td>2</td>
+                        <td>1</td>
+                        <!-- <td><input style="border: 0;outline:0;text-align: center;" type="text" id="cart-qty" value="1" readonly></td> -->
                         <td>
                             <!-- Quantity +/- buttons -->
 
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove" onclick="qtyminus(this)">
                                 <img id="icon" src="../images/buttons/minus.png"></button>
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add" onclick="qtyplus(this)">
                                 <img id="icon" src="../images/buttons/plus.png"></button>
 
                         </td>
                     </tr>
-                    <!-- A Row -->
+                    <!-- Row 2 -->
                     <tr>
                         <td>
                             <p>Bananas</p>
@@ -102,17 +108,18 @@
                         </td>
                         <td>1.99 $/lb</td>
                         <td>1</td>
+                        <!-- <td><input style="border: 0;outline:0;text-align: center;" type="text" id="cart-qty" value="1" readonly></td> -->
                         <td>
                             <!-- Quantity +/- buttons -->
 
-                            <button type="button" data-toggle="tooltip " data-placement="top " title="remove">
-                                <img id="icon" src="../images/buttons/minus.png "></button>
-                            <button type="button" data-toggle="tooltip " data-placement="top " title="add">
-                                <img id="icon" src="../images/buttons/plus.png "></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove" onclick="qtyminus(this)">
+                                <img id="icon" src="../images/buttons/minus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add" onclick="qtyplus(this)">
+                                <img id="icon" src="../images/buttons/plus.png"></button>
 
                         </td>
                     </tr>
-                    <!-- A Row -->
+                    <!-- Row 3-->
                     <tr>
                         <td>
                             <p>Ground Beef</p>
@@ -120,13 +127,14 @@
 
                         </td>
                         <td>8.99 $/lb</td>
-                        <td>3</td>
+                        <td>1</td>
+                        <!-- <td><input style="border: 0;outline:0;text-align: center;" type="text" id="cart-qty" value="1" readonly></td> -->
                         <td>
                             <!-- Quantity +/- buttons -->
 
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove" onclick="qtyminus(this)">
                                 <img id="icon" src="../images/buttons/minus.png"></button>
-                            <button type="button" data-toggle="tooltip " data-placement="top" title="add">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add" onclick="qtyplus(this)">
                                 <img id="icon" src="../images/buttons/plus.png"></button>
 
                         </td>
@@ -172,7 +180,7 @@
                         <td style="text-align:right" id="price"></td>
                     </tr>
                     <tr id="chickenBreast" style="display:none">
-                        <td  id="name">Chicken Breast</td>
+                        <td id="name">Chicken Breast</td>
                         <td style="text-align:right" id="number"></td>
                         <td style="text-align:right" id="price"></td>
                     </tr>
