@@ -16,7 +16,8 @@
     <script src="../scripts/total.js"></script>
 </head>
 
-<body onload="cartQty()">
+<body>
+    <!-- <body onload="cartQty()"> -->
     <header id="main-header">
         <img id="logo" class="img-fluid" src="../images/logo.png" alt="logo" />
         <img id="slogan" class="img-fluid" src="../images/slogan.png" alt="slogan" />
@@ -65,7 +66,7 @@
         <div class="col-md-6 col-sm-12">
             <div class="item-block" id="item-block">
                 <header id="cart-totalcount">
-                    Your Items 10
+                    Your Items
                     <!-- <span style="border: 0;" id="cart-totalcount"></span> -->
                     <!-- <input style="border: 0;outline:0;text-align: center;padding: 0em;" type="text" id="qty" value="4000" readonly> -->
                 </header>
@@ -87,7 +88,7 @@
                             <img src=" ../images/lettuce.jpeg" alt="Romaine Lettuce" />
 
                         </td>
-                        <td>5.00 $/each</td>
+                        <td>5.00 $/ea.</td>
                         <td>1</td>
                         <!-- <td><input style="border: 0;outline:0;text-align: center;" type="text" id="cart-qty" value="1" readonly></td> -->
                         <td>
@@ -146,7 +147,7 @@
 
             </div>
             <!-- Bottom Buttons -->
-
+            <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" value="Reset Cart" readonly>
             <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
         </div>
 
