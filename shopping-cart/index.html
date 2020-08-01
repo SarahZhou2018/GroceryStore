@@ -100,7 +100,7 @@
                         <!-- Noor Hammodi - 40061760
                         Workpackage 2 Start-->
                         <td>
-                            <button type="button" onclick="myFunction1()" class="deletebtn">DELETE</button>
+                            <button type="button" onclick="myFunction1();adjustOrderSummary()" class="deletebtn">DELETE</button>
                         </td>
                         <!-- Noor Hammodi - 40061760
                         Workpackage 2 Done-->
@@ -127,7 +127,7 @@
                         <!-- Noor Hammodi - 40061760
                         Workpackage 2 Start-->
                         <td>
-                            <button type="button" onclick="myFunction2()" class="deletebtn">DELETE</button>
+                            <button type="button" onclick="myFunction2();adjustOrderSummary()" class="deletebtn">DELETE</button>
                         </td>
                         <!-- Noor Hammodi - 40061760
                         Workpackage 2 Done-->
@@ -155,7 +155,7 @@
                         <!-- Noor Hammodi - 40061760
                         Workpackage 2 Start-->
                         <td>
-                            <button type="button" onclick="myFunction3()" class="deletebtn">DELETE</button>
+                            <button type="button" onclick="myFunction3();adjustOrderSummary()" class="deletebtn">DELETE</button>
                         </td>
                         <!-- Noor Hammodi - 40061760
                         Workpackage 2 Done-->
@@ -182,26 +182,27 @@
                 </header>
                 <span></span><span></span><br />
                 <!-- Order Summary Table -->
-                <table class="table-responsive" id="mytable">
+                <table class="table-responsive" id="mytable" onload="adjustOrderSummary()">
                     <tr>
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
-                    <tr id="romaineLettuce" style="display:none">
+                    <!--
+                    <tr id="romaineLettuce">
                         <td id="name">Romaine Lettuce</td>
-                        <td style="text-align:right" id="number"></td>
-                        <td style="text-align:right" id="price"></td>
+                        <td style="text-align:right" id="number">x 1</td>
+                        <td style="text-align:right" id="price">5.00 $</td>
                     </tr>
-                    <tr id="bananas" style="display:none">
+                    <tr id="bananas">
                         <td id="name">Bananas</td>
-                        <td style="text-align:right" id="number"></td>
-                        <td style="text-align:right" id="price"></td>
+                        <td style="text-align:right" id="number">x 1</td>
+                        <td style="text-align:right" id="price">1.99 $</td>
                     </tr>
-                    <tr id="groundBeef" style="display:none">
+                    <tr id="groundBeef">
                         <td id="name">Ground Beef</td>
-                        <td style="text-align:right" id="number"></td>
-                        <td style="text-align:right" id="price"></td>
+                        <td style="text-align:right" id="number">x 1</td>
+                        <td style="text-align:right" id="price">8.99 $</td>
                     </tr>
                     <tr id="chickenBreast" style="display:none">
                         <td id="name">Chicken Breast</td>
@@ -238,6 +239,7 @@
                         <td style="text-align:right" id="number"></td>
                         <td style="text-align:right" id="price"></td>
                     </tr>
+                -->
                 </table>
                 <span></span>
                 <!-- Total Table -->
