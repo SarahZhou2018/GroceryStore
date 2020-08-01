@@ -29,8 +29,6 @@ function storeLocalStorage() {
     localStorage.setItem("persistingVars", JSON.stringify(newArr))
     console.log(htmlcollection);
     console.log(newArr);
-
-    // alert("window.onbeforeunload, there");
 }
 
 function getLocalStorage() {
@@ -49,7 +47,6 @@ function getLocalStorage() {
         })
 
         if (searchItemResult == undefined) {
-            // table.rows[i].remove();
             productToRemove.push(table.rows[i])
         } else {
             table.rows[i].cells[2].innerText = searchItemResult.quantity
@@ -63,9 +60,7 @@ function getLocalStorage() {
         table.rows[0].remove();
         table.insertRow().insertCell()
         table.rows[0].cells[0].innerText = "Your cart is empty"
-
     }
-    // alert("window.onload, here :)");
 }
 
 function extractProductFromHtml(tr, index) {
@@ -100,7 +95,6 @@ function qtyminus(elm) {
         table.rows[0].cells[0].innerText = "Your cart is empty"
     }
     y.innerHTML = afterqty;
-    // alert(afterqty);
 
     storeLocalStorage();
     cartTotalQty();
@@ -131,29 +125,13 @@ function cartTotalQty() {
     var table = document.getElementById('itemtable');
     var totalqty = 0;
 
-    // Get values of the qty input field
     for (var i = 1; i < table.rows.length; i++) {
-        //Ignores the row where there are no items
-        // if (table.rows[i].cells[2].innerHTML) {
         var qty = parseInt(table.rows[i].cells[2].innerText);
         if (!isNaN(qty)) {
             totalqty += qty
         }
     }
-    //var t = document.getElementById("cart-totalcount").innerHTML;
     document.getElementById("cart-totalcount").innerText = "Your Items (" + totalqty + ")";
-
-    // Using Local Storage
-    // var dataSaved = localStorage.getItem("persistingVars");
-    // if (dataSaved == null) {
-    //     return;
-    // }
-    // var table = document.getElementsByClassName('itemtable');
-    // var totalqty = 0;
-    // dataSaved = JSON.parse(dataSaved)
-    // for (var i = 0; i < dataSaved.length; i++) {
-    //     totalqty += parseInt(dataSaved.quantity)
-    // }
 }
 
 // if (window.addEventListener) {
