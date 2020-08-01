@@ -32,7 +32,7 @@
                 <a class="nav-link" href="../index.html">Home Page</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisles</a>
+                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisle</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
@@ -67,8 +67,6 @@
             <div class="item-block" id="item-block">
                 <header id="cart-totalcount">
                     Your Items
-                    <!-- <span style="border: 0;" id="cart-totalcount"></span> -->
-                    <!-- <input style="border: 0;outline:0;text-align: center;padding: 0em;" type="text" id="qty" value="4000" readonly> -->
                 </header>
                 <span></span><span></span><br />
                 <!-- Detailed Illustrataded Table -->
@@ -90,7 +88,6 @@
                         </td>
                         <td>5.00 $/ea.</td>
                         <td>1</td>
-                        <!-- <td><input style="border: 0;outline:0;text-align: center;" type="text" id="cart-qty" value="1" readonly></td> -->
                         <td>
                             <!-- Quantity +/- buttons -->
 
@@ -109,7 +106,6 @@
                         </td>
                         <td>1.99 $/lb</td>
                         <td>1</td>
-                        <!-- <td><input style="border: 0;outline:0;text-align: center;" type="text" id="cart-qty" value="1" readonly></td> -->
                         <td>
                             <!-- Quantity +/- buttons -->
 
@@ -129,7 +125,6 @@
                         </td>
                         <td>8.99 $/lb</td>
                         <td>1</td>
-                        <!-- <td><input style="border: 0;outline:0;text-align: center;" type="text" id="cart-qty" value="1" readonly></td> -->
                         <td>
                             <!-- Quantity +/- buttons -->
 
@@ -142,13 +137,15 @@
                     </tr>
                 </table>
 
-
                 <span></span>
 
             </div>
             <!-- Bottom Buttons -->
             <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" value="Reset Cart" readonly>
-            <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
+            <form action="../aisles/fruits-vegetables.html">
+                <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
+            </form>
+
         </div>
 
         <!-- Right side -->

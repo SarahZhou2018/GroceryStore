@@ -1,12 +1,22 @@
 // Shi Qi Zhou - 40163947
 // Quantity buttons that preserve quantity through refresh
 
-window.onbeforeunload = storeLocalStorage;
-window.onload = getLocalStorage;
+var isResetCart = false;
+
+window.onbeforeunload = function() {
+    if (!isResetCart) {
+        storeLocalStorage;
+    }
+}
+window.onload = function() {
+    getLocalStorage();
+    cartTotalQty();
+};
 
 function clearLocalStorage() {
     localStorage.clear();
     location.reload();
+    isResetCart = true;
 }
 
 function storeLocalStorage() {
@@ -55,8 +65,6 @@ function getLocalStorage() {
         table.rows[0].cells[0].innerText = "Your cart is empty"
 
     }
-
-    cartTotalQty();
     // alert("window.onload, here :)");
 }
 
@@ -67,9 +75,9 @@ function extractProductFromHtml(tr, index) {
 }
 
 function qtyminus(elm) {
-    //We are interested in:
-    //Quantity column index  = currentCell index -1 
-    //Row index = currentRow index
+    // We are interested in:
+    // Quantity column index  = currentCell index -1 
+    // Row index = currentRow index
     let currentCell = elm.offsetParent;
     var currentRow = currentCell.parentNode;
     let targetCellIndex = currentCell.cellIndex - 1;
@@ -99,9 +107,9 @@ function qtyminus(elm) {
 }
 
 function qtyplus(elm) {
-    //We are interested in:
-    //Quantity column index  = currentCell index -1 
-    //Row index = currentRow index
+    // We are interested in:
+    // Quantity column index  = currentCell index -1 
+    // Row index = currentRow index
     let currentCell = elm.offsetParent;
     var currentRow = currentCell.parentNode;
     let targetCellIndex = currentCell.cellIndex - 1;
@@ -128,10 +136,12 @@ function cartTotalQty() {
         //Ignores the row where there are no items
         // if (table.rows[i].cells[2].innerHTML) {
         var qty = parseInt(table.rows[i].cells[2].innerText);
-        if (isNaN(qty)) {
+        if (!isNaN(qty)) {
             totalqty += qty
         }
     }
+    //var t = document.getElementById("cart-totalcount").innerHTML;
+    document.getElementById("cart-totalcount").innerText = "Your Items (" + totalqty + ")";
 
     // Using Local Storage
     // var dataSaved = localStorage.getItem("persistingVars");
@@ -144,9 +154,6 @@ function cartTotalQty() {
     // for (var i = 0; i < dataSaved.length; i++) {
     //     totalqty += parseInt(dataSaved.quantity)
     // }
-
-    //var t = document.getElementById("cart-totalcount").innerHTML;
-    document.getElementById("cart-totalcount").innerText = "Your Items (" + totalqty + ")";
 }
 
 // if (window.addEventListener) {
