@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../css/p4.css">
     <title>Shopping Cart</title>
     <script src="../scripts/adjust-item-quantity.js"></script>
+    <script src="../scripts/shopping-cart.js"></script>
+    <script src="../scripts/total.js"></script>
 </head>
 
 <body>
@@ -29,7 +31,7 @@
                 <a class="nav-link" href="../index.html">Home Page</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisles</a>
+                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisle</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
@@ -62,12 +64,13 @@
         <!-- Left side -->
         <div class="col-md-6 col-sm-12">
             <div class="item-block" id="item-block">
-                <header>
-                    Your Items (6)
+                <header id="cart-totalcount">
+                    Your Items
                 </header>
                 <span></span><span></span><br />
                 <!-- Detailed Illustrataded Table -->
-                <table class="table-responsive">
+                <table class="table-responsive" id="itemtable">
+                    <!-- Row 0 -->
                     <tr>
                         <th>Item</th>
                         <th>Price</th>
@@ -75,26 +78,35 @@
                         <th></th>
                     </tr>
 
-                    <!-- A Row -->
+                    <!-- Row 1-->
                     <tr>
                         <td>
                             <p>Romaine Lettuce</p>
                             <img src=" ../images/lettuce.jpeg" alt="Romaine Lettuce" />
 
                         </td>
-                        <td>5.00 $/each</td>
-                        <td>2</td>
+                        <td>5.00 $/ea.</td>
+                        <td>1</td>
                         <td>
                             <!-- Quantity +/- buttons -->
 
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove" onclick="qtyminus(this)">
                                 <img id="icon" src="../images/buttons/minus.png"></button>
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add" onclick="qtyplus(this)">
                                 <img id="icon" src="../images/buttons/plus.png"></button>
 
                         </td>
+
+                        <!-- Noor Hammodi - 40061760
+                        Workpackage 2 Start-->
+                        <td>
+                            <button type="button" onclick="myFunction1()" class="deletebtn">DELETE</button>
+                        </td>
+                        <!-- Noor Hammodi - 40061760
+                        Workpackage 2 Done-->
+
                     </tr>
-                    <!-- A Row -->
+                    <!-- Row 2 -->
                     <tr>
                         <td>
                             <p>Bananas</p>
@@ -105,14 +117,23 @@
                         <td>
                             <!-- Quantity +/- buttons -->
 
-                            <button type="button" data-toggle="tooltip " data-placement="top " title="remove">
-                                <img id="icon" src="../images/buttons/minus.png "></button>
-                            <button type="button" data-toggle="tooltip " data-placement="top " title="add">
-                                <img id="icon" src="../images/buttons/plus.png "></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove" onclick="qtyminus(this)">
+                                <img id="icon" src="../images/buttons/minus.png"></button>
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add" onclick="qtyplus(this)">
+                                <img id="icon" src="../images/buttons/plus.png"></button>
 
                         </td>
+
+                        <!-- Noor Hammodi - 40061760
+                        Workpackage 2 Start-->
+                        <td>
+                            <button type="button" onclick="myFunction2()" class="deletebtn">DELETE</button>
+                        </td>
+                        <!-- Noor Hammodi - 40061760
+                        Workpackage 2 Done-->
+
                     </tr>
-                    <!-- A Row -->
+                    <!-- Row 3-->
                     <tr>
                         <td>
                             <p>Ground Beef</p>
@@ -120,26 +141,37 @@
 
                         </td>
                         <td>8.99 $/lb</td>
-                        <td>3</td>
+                        <td>1</td>
                         <td>
                             <!-- Quantity +/- buttons -->
 
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove" onclick="qtyminus(this)">
                                 <img id="icon" src="../images/buttons/minus.png"></button>
-                            <button type="button" data-toggle="tooltip " data-placement="top" title="add">
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="add" onclick="qtyplus(this)">
                                 <img id="icon" src="../images/buttons/plus.png"></button>
 
                         </td>
+
+                        <!-- Noor Hammodi - 40061760
+                        Workpackage 2 Start-->
+                        <td>
+                            <button type="button" onclick="myFunction3()" class="deletebtn">DELETE</button>
+                        </td>
+                        <!-- Noor Hammodi - 40061760
+                        Workpackage 2 Done-->
+
                     </tr>
                 </table>
-
 
                 <span></span>
 
             </div>
             <!-- Bottom Buttons -->
+            <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" value="Reset Cart" readonly>
+            <form action="../aisles/fruits-vegetables.html">
+                <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
+            </form>
 
-            <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
         </div>
 
         <!-- Right side -->
@@ -172,7 +204,7 @@
                         <td style="text-align:right" id="price"></td>
                     </tr>
                     <tr id="chickenBreast" style="display:none">
-                        <td  id="name">Chicken Breast</td>
+                        <td id="name">Chicken Breast</td>
                         <td style="text-align:right" id="number"></td>
                         <td style="text-align:right" id="price"></td>
                     </tr>
@@ -242,6 +274,33 @@
                 </table>
                 <span></span>
             </div>
+
+            <!-- Noor Hammodi - 40061760
+            Workpackage 2 Start-->
+            <script>
+                function myFunction1() {
+                    document.getElementById("itemtable").deleteRow(1)
+                        // 2 functions calls by Shi Qi Zhou
+                    storeLocalStorage();
+                    cartTotalQty();
+                }
+
+                function myFunction2() {
+                    document.getElementById("itemtable").deleteRow(1)
+                    storeLocalStorage();
+                    cartTotalQty();
+                }
+
+                function myFunction3() {
+                    document.getElementById("itemtable").deleteRow(1)
+                    storeLocalStorage();
+                    cartTotalQty();
+                }
+            </script>
+            <!-- Noor Hammodi - 40061760
+            Workpackage 2 Done-->
+
+
             <!-- Bottom Buttons -->
             <input class="button" id="pay" type="submit" value="Checkout" readonly>
         </div>
