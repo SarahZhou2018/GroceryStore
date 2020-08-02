@@ -132,6 +132,7 @@ function cartTotalQty() {
         }
     }
     document.getElementById("cart-totalcount").innerText = "Your Items (" + totalqty + ")";
+    adjustOrderSummary();
 }
 
 // if (window.addEventListener) {
