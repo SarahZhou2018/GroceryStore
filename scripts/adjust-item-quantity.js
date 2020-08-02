@@ -21,6 +21,3 @@ function adjustOrderSummary() {
         order.rows[j].cells[2].style.textAlign='right';
     }
 }
-
-
-
