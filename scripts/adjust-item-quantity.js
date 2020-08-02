@@ -12,7 +12,7 @@ function adjustOrderSummary() {
     }
     for(var j=1;j<items.rows.length;j++){
         var row = order.insertRow(j);
-        row.insertCell(0).innerHTML = items.getElementsByTagName("p").innerHTML; // insert the name ex: Baguette
+        row.insertCell(0).innerHTML = items.rows[j].getElementsByTagName("p").innerHTML; // insert the name ex: Baguette
         row.insertCell(1).innerHTML = ("x "+items.rows[j].cells[2].innerHTML); // insert units ex: x 3
         var price = items.rows[j].cells[1].innerHTML.substring(0,4);
         var units = items.rows[j].cells[2].innerHTML;
