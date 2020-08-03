@@ -10,9 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/p3.css">
     <title>Romaine Lettuce</title>
+    <script src="../scripts/product-descriptions.js"></script>
 </head>
 
-<body>
+<body onload="updateSubtotal(5)">
     <header>
         <div class="product-name-header">
             Product Description - Romaine Lettuce
@@ -42,16 +43,26 @@
         <p>Weight: 50g avg.</p>
         <h3>Product Description</h3>
         <p>Product of U.S.A. or Mexico. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur su.<br/></p>
-        <button class="addtocart" type="button" name="more-description">More description</button><br><br>
+        <button class="addtocart" type="button" name="moredesc-button" onClick="toggleDescription()">More
+            description</button><br><br>
+        <div id="long-desc" style="display:none">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe
+            quaerat. Quod modi nesciunt earum hic, eligendi esse vitae quis velit quisquam autem mollitia ea? Lorem
+            ipsum, dolor sit amet consectetur adipisicing elit. Beatae vero earum ut perspiciatis dolores sapiente
+            inventore pariatur facilis! Unde deleniti hic autem error molestias vel illum nostrum reprehenderit
+            atque debitis.
+        </div>
+        <br />
 
         <form action="../shopping-cart/index.html">
             <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" value=1 size="2">
+            <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(5)">
             <label for="type">Type:</label>
             <select id="type" name="type">
                     <option value="o">organic</option>
                     <option value="r">regular</option>
-                </select>
+            </select>
+            Subtotal: <span id="subtotal"></span>
             <div class="addtocartposition">
                 <a href="../shopping-cart/index.html"><button class="addtocart" type="button" name="addtocart-button">Add to Cart</button></a>
             </div>
