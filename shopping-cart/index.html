@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/p4.css">
     <title>Shopping Cart</title>
+    <script src="../scripts/adjust-item-quantity.js"></script>
+    <script src="../scripts/shopping-cart.js"></script>
+    <script src="../scripts/total.js"></script>
 </head>
 
 <body>
@@ -28,7 +31,7 @@
                 <a class="nav-link" href="../index.html">Home Page</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisles</a>
+                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisle</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
@@ -61,84 +64,109 @@
         <!-- Left side -->
         <div class="col-md-6 col-sm-12">
             <div class="item-block" id="item-block">
-                <header>
-                    Your Items (6)
+                <header id="cart-totalcount">
+                    Your Items
                 </header>
                 <span></span><span></span><br />
                 <!-- Detailed Illustrataded Table -->
-                <table class="table-responsive">
-                    <tr>
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th></th>
-                    </tr>
+                <div id="table1">
+                    <table class="table-responsive" id="itemtable">
+                        <!-- Row 0 -->
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th></th>
+                        </tr>
 
-                    <!-- A Row -->
-                    <tr>
-                        <td>
-                            <p>Romaine Lettuce</p>
-                            <img src=" ../images/lettuce.jpeg" alt="Romaine Lettuce" />
+                        <!-- Row 1-->
+                        <tr>
+                            <td>
+                                <p>Romaine Lettuce</p>
+                                <img src=" ../images/lettuce.jpeg" alt="Romaine Lettuce" />
 
-                        </td>
-                        <td>5.00 $/each</td>
-                        <td>2</td>
-                        <td>
-                            <!-- Quantity +/- buttons -->
+                            </td>
+                            <td>5.00 $/ea.</td>
+                            <td>1</td>
+                            <td>
+                                <!-- Quantity +/- buttons -->
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
+                                    <img id="icon" src="../images/buttons/minus.png"></button>
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
+                                    <img id="icon" src="../images/buttons/plus.png"></button>
+                            </td>
 
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
-                                <img id="icon" src="../images/buttons/minus.png"></button>
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="add">
-                                <img id="icon" src="../images/buttons/plus.png"></button>
+                            <!-- Noor Hammodi - 40061760
+                            Workpackage 2 Start-->
+                            <td>
+                                <button type="button" onclick="myFunction1()" class="deletebtn">DELETE</button>
+                            </td>
+                            <!-- Noor Hammodi - 40061760
+                            Workpackage 2 Done-->
 
-                        </td>
-                    </tr>
-                    <!-- A Row -->
-                    <tr>
-                        <td>
-                            <p>Bananas</p>
-                            <img src="../images/banana.jpg " alt="Bananas" />
-                        </td>
-                        <td>1.99 $/lb</td>
-                        <td>1</td>
-                        <td>
-                            <!-- Quantity +/- buttons -->
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td>
+                                <p>Bananas</p>
+                                <img src="../images/banana.jpg " alt="Bananas" />
+                            </td>
+                            <td>1.99 $/lb</td>
+                            <td>1</td>
+                            <td>
+                                <!-- Quantity +/- buttons -->
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
+                                    <img id="icon" src="../images/buttons/minus.png"></button>
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
+                                    <img id="icon" src="../images/buttons/plus.png"></button>
+                            </td>
 
-                            <button type="button" data-toggle="tooltip " data-placement="top " title="remove">
-                                <img id="icon" src="../images/buttons/minus.png "></button>
-                            <button type="button" data-toggle="tooltip " data-placement="top " title="add">
-                                <img id="icon" src="../images/buttons/plus.png "></button>
+                            <!-- Noor Hammodi - 40061760
+                            Workpackage 2 Start-->
+                            <td>
+                                <button type="button" onclick="myFunction2()" class="deletebtn">DELETE</button>
+                            </td>
+                            <!-- Noor Hammodi - 40061760
+                            Workpackage 2 Done-->
 
-                        </td>
-                    </tr>
-                    <!-- A Row -->
-                    <tr>
-                        <td>
-                            <p>Ground Beef</p>
-                            <img src="../images/beef.jpg" alt="Gorund Beef" />
+                        </tr>
+                        <!-- Row 3-->
+                        <tr>
+                            <td>
+                                <p>Ground Beef</p>
+                                <img src="../images/beef.jpg" alt="Gorund Beef" />
 
-                        </td>
-                        <td>8.99 $/lb</td>
-                        <td>3</td>
-                        <td>
-                            <!-- Quantity +/- buttons -->
+                            </td>
+                            <td>8.99 $/lb</td>
+                            <td>1</td>
+                            <td>
+                                <!-- Quantity +/- buttons -->
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
+                                    <img id="icon" src="../images/buttons/minus.png"></button>
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
+                                    <img id="icon" src="../images/buttons/plus.png"></button>
+                            </td>
 
-                            <button type="button" data-toggle="tooltip" data-placement="top" title="remove">
-                                <img id="icon" src="../images/buttons/minus.png"></button>
-                            <button type="button" data-toggle="tooltip " data-placement="top" title="add">
-                                <img id="icon" src="../images/buttons/plus.png"></button>
+                            <!-- Noor Hammodi - 40061760
+                            Workpackage 2 Start-->
+                            <td>
+                                <button type="button" onclick="myFunction3()" class="deletebtn">DELETE</button>
+                            </td>
+                            <!-- Noor Hammodi - 40061760
+                            Workpackage 2 Done-->
 
-                        </td>
-                    </tr>
-                </table>
-
-
+                        </tr>
+                    </table>
+                </div>
                 <span></span>
 
             </div>
             <!-- Bottom Buttons -->
+            <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" value="Reset Cart" readonly>
+            <form action="../aisles/fruits-vegetables.html">
+                <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
+            </form>
 
-            <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
         </div>
 
         <!-- Right side -->
@@ -149,63 +177,133 @@
                 </header>
                 <span></span><span></span><br />
                 <!-- Order Summary Table -->
-                <table class="table-responsive" id="mytable">
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                    <tr>
-                        <td>Romaine Lettuce</td>
-                        <td id="right">x 2</td>
-                        <td id="right"> 10.00 $</td>
-                    </tr>
-                    <tr>
-                        <td>Bananas</td>
-                        <td id="right"></td>
-                        <td id="right">1.99 $</td>
-                    </tr>
-                    <tr>
-                        <td>Ground Beef</td>
-                        <td id="right">x 3</td>
-                        <td id="right">26.97 $</td>
-                    </tr>
-                </table>
-                <span></span>
-                <!-- Total Table -->
-                <table id="total">
-                    <tr>
-                        <td>Sub Total</td>
-                        <td id="right"></td>
-                        <td id="right" class="subtotal">38.96 $</td>
-                    </tr>
-                    <tr>
-                        <td>Delivery Fee</td>
-                        <td id="right"></td>
-                        <td id="right" class="deliveryFee">0.00 $</td>
-                    </tr>
-                    <tr>
-                        <td>GST Tax</td>
-                        <td id="right"></td>
-                        <td id="right" class="GST">0.00 $</td>
-                    </tr>
-                    <tr>
-                        <td>QST</td>
-                        <td id="right"></td>
-                        <td id="right" class="QST">0.00 $</td>
-                    </tr>
-                </table>
-                <span></span>
-                <!-- Grand Total Table -->
-                <table id="total">
-                    <tr>
-                        <td>Grand Total</td>
-                        <td id="right"></td>
-                        <td id="right" class="grandTotal">38.96 $</td>
-                    </tr>
-                </table>
+                <div id="table2">
+                    <table class="table-responsive" id="mytable">
+                        <!--
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+
+                        <tr id="romaineLettuce">
+                            <td id="name">Romaine Lettuce</td>
+                            <td style="text-align:right" id="number">x 1</td>
+                            <td style="text-align:right" id="price">5.00 $</td>
+                        </tr>
+                        <tr id="bananas">
+                            <td id="name">Bananas</td>
+                            <td style="text-align:right" id="number">x 1</td>
+                            <td style="text-align:right" id="price">1.99 $</td>
+                        </tr>
+                        <tr id="groundBeef">
+                            <td id="name">Ground Beef</td>
+                            <td style="text-align:right" id="number">x 1</td>
+                            <td style="text-align:right" id="price">8.99 $</td>
+                        </tr>
+                        <tr id="chickenBreast" style="display:none">
+                            <td id="name">Chicken Breast</td>
+                            <td style="text-align:right" id="number"></td>
+                            <td style="text-align:right" id="price"></td>
+                        </tr>
+                        <tr id="baguette" style="display:none">
+                            <td id="name">Baguette</td>
+                            <td style="text-align:right" id="number"></td>
+                            <td style="text-align:right" id="price"></td>
+                        </tr>
+                        <tr id="tortilla" style="display:none">
+                            <td id="name">Tortilla</td>
+                            <td style="text-align:right" id="number"></td>
+                            <td style="text-align:right" id="price"></td>
+                        </tr>
+                        <tr id="laysChips" style="display:none">
+                            <td id="name">Lay's Chips</td>
+                            <td style="text-align:right" id="number"></td>
+                            <td style="text-align:right" id="price"></td>
+                        </tr>
+                        <tr id="cheeseDip" style="display:none">
+                            <td id="name">Cheese Dip</td>
+                            <td style="text-align:right" id="number"></td>
+                            <td style="text-align:right" id="price"></td>
+                        </tr>
+                        <tr id="iceCream" style="display:none">
+                            <td id="name">Ben&Jerry's Ice Cream</td>
+                            <td style="text-align:right" id="number"></td>
+                            <td style="text-align:right" id="price"></td>
+                        </tr>
+                        <tr id="popsicle" style="display:none">
+                            <td id="name">FireCracker Popsicle</td>
+                            <td style="text-align:right" id="number"></td>
+                            <td style="text-align:right" id="price"></td>
+                        </tr>
+                    -->
+                    </table>
+                    <span></span>
+                    <!-- Total Table -->
+                    <table id="total">
+                        <tr>
+                            <td>Sub Total</td>
+                            <td id="right"></td>
+                            <td id="right" class="subtotal">38.96 $</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Fee</td>
+                            <td id="right"></td>
+                            <td id="right" class="deliveryFee">0.00 $</td>
+                        </tr>
+                        <tr>
+                            <td>GST Tax</td>
+                            <td id="right"></td>
+                            <td id="right" class="GST">0.00 $</td>
+                        </tr>
+                        <tr>
+                            <td>QST</td>
+                            <td id="right"></td>
+                            <td id="right" class="QST">0.00 $</td>
+                        </tr>
+                    </table>
+                    <span></span>
+                    <!-- Grand Total Table -->
+                    <table id="total">
+                        <tr>
+                            <td>Grand Total</td>
+                            <td id="right"></td>
+                            <td id="right" class="grandTotal">38.96 $</td>
+                        </tr>
+                    </table>
+                </div>
                 <span></span>
             </div>
+
+            <!-- Noor Hammodi - 40061760
+            Workpackage 2 Start-->
+            <script>
+                function myFunction1() {
+                    document.getElementById("itemtable").deleteRow(1)
+                        // 2 functions calls by Shi Qi Zhou
+                    storeLocalStorage();
+                    cartTotalQty();
+                    adjustOrderSummary();
+                }
+
+                function myFunction2() {
+                    document.getElementById("itemtable").deleteRow(1)
+                    storeLocalStorage();
+                    cartTotalQty();
+                    adjustOrderSummary();
+                }
+
+                function myFunction3() {
+                    document.getElementById("itemtable").deleteRow(1)
+                    storeLocalStorage();
+                    cartTotalQty();
+                    adjustOrderSummary();
+                }
+            </script>
+            <!-- Noor Hammodi - 40061760
+            Workpackage 2 Done-->
+
+
             <!-- Bottom Buttons -->
             <input class="button" id="pay" type="submit" value="Checkout" readonly>
         </div>
