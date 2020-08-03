@@ -90,9 +90,9 @@
                             <td>1</td>
                             <td>
                                 <!-- Quantity +/- buttons -->
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary()">
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
                                     <img id="icon" src="../images/buttons/minus.png"></button>
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary()">
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
                                     <img id="icon" src="../images/buttons/plus.png"></button>
                             </td>
 
@@ -115,9 +115,9 @@
                             <td>1</td>
                             <td>
                                 <!-- Quantity +/- buttons -->
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary()">
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
                                     <img id="icon" src="../images/buttons/minus.png"></button>
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary()">
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
                                     <img id="icon" src="../images/buttons/plus.png"></button>
                             </td>
 
@@ -141,9 +141,9 @@
                             <td>1</td>
                             <td>
                                 <!-- Quantity +/- buttons -->
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary()">
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
                                     <img id="icon" src="../images/buttons/minus.png"></button>
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary()">
+                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
                                     <img id="icon" src="../images/buttons/plus.png"></button>
                             </td>
 
@@ -185,7 +185,7 @@
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
-                        
+
                         <tr id="romaineLettuce">
                             <td id="name">Romaine Lettuce</td>
                             <td style="text-align:right" id="number">x 1</td>
@@ -271,7 +271,7 @@
                             <td id="right" class="grandTotal">38.96 $</td>
                         </tr>
                     </table>
-                </div>    
+                </div>
                 <span></span>
             </div>
 
