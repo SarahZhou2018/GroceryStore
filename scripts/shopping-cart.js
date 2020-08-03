@@ -11,6 +11,7 @@ window.onbeforeunload = function() {
 window.onload = function() {
     getLocalStorage();
     cartTotalQty();
+    updateTotalPrice();
 };
 
 function clearLocalStorage() {
