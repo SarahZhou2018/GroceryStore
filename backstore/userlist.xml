@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<userlist idcount="2">
+    <user>
+        <id>0001</id>
+        <fname>John</fname>
+        <lname>Smith</lname>
+        <email>jsmith@test.com</email>
+        <phone>123-456-1234</phone>
+        <postalcode>A9A9A9</postalcode>
+        <marketinglist>1</marketinglist>
+        <password/>
+    </user>
+    <user>
+        <id>0002</id>
+        <fname>Jane</fname>
+        <lname>Doe</lname>
+        <email>jdoe@test.com</email>
+        <phone>789-987-4321</phone>
+        <postalcode>A9A9A9</postalcode>
+        <marketinglist>0</marketinglist>
+        <password/>
+    </user>
+
+</userlist>
