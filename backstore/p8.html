@@ -33,13 +33,16 @@
         <div id="main-block">
             <h2>Add/Edit Product</h2>
             Enter product information below:<br>
-            <form action="" class="form-large">
+            <form action="addeditdeleteproduct.php" class="form-large" method="POST" enctype="multipart/form-data">
                 
                 <div class="form-container">
                     <label for="productname">Product name</label><br>
-                    <input type="text" name="productname" id="productname" value="Enter product name" size="30"><br>
+                    <input type="text" name="productname" id="productname" value="" size="30"><br>
                 </div>
-                
+                <div class="form-container">
+                    <label for="image">Image</label><br>
+                    <input type="file" name="image" id="image"><br>
+                </div>
                 <div class="clr"></div>
                 <div class="form-container">
                     <label for="date">Date created</label><br>
@@ -50,14 +53,18 @@
                     <input type="text" name="date" id="date" placeholder="" value="2020-07-07 14:00:00" class="inputbox" readonly><br>
                 </div>
                 <div class="clr"></div>
-
                 <div class="form-container">
-                    <label for="price">Price ($)</label><br>
-                    <input type="text" name="price" id="price" value="3.99" class="inputbox" size="30"><br>
+                    <label for="price">Price (in $, enter number only)</label><br>
+                    <input type="text" name="price" id="price" value="" class="inputbox" size="30"><br>
                 </div>
                 <div class="form-container">
-                    <label for="weight">Weight (enter lbs or g at the end)</label><br>
-                    <input type="text" name="weight" id="weight" value="5lbs or 500g" class="inputbox" size="30"><br>
+                    <label for="weight">Weight (enter ml, lbs or g at the end)</label><br>
+                    <input type="text" name="weight" id="weight" value="" class="inputbox" size="30"><br>
+                </div>
+                <div class="clr"></div>
+                <div class="form-container">
+                    <label for="Types">Types (Separate types with a dash (-), Leave blank if no types)</label><br>
+                    <input type="text" name="types" id="types" value="" class="inputbox" size="100"><br>
                 </div>
                 <div class="clr"></div>
                 <div class="textarea-container">
@@ -73,7 +80,7 @@
                 <p>To edit a product, enter the product name and change the desired inputs</p>
                 <p>To delete a product, enter the product name and leave blank all other inputs</p>
                
-                <input type="submit" value="Save" class="button">
+                <input type="submit" name="save" value="save" class="button">
 
             </form>
             <div class="clr"></div>
