@@ -4,11 +4,12 @@
         <id>0001</id>
         <fname>John</fname>
         <lname>Smith</lname>
-        <email>jsmith@test.com</email>
+        <email>admin@xyz.com</email>
         <phone>123-456-1234</phone>
         <postalcode>A9A9A9</postalcode>
         <marketinglist>1</marketinglist>
-        <password/>
+        <password>admin</password>
+        <admin>1</admin>
     </user>
     <user>
         <id>0002</id>
@@ -18,7 +19,8 @@
         <phone>789-987-4321</phone>
         <postalcode>A9A9A9</postalcode>
         <marketinglist>0</marketinglist>
-        <password/>
+        <password>12345</password>
+        <admin>0</admin>
     </user>
 
 </userlist>
