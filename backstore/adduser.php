@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = validate_input($_POST["phone"]);
     $postalcode = validate_input($_POST["postalcode"]);
 
-    if($_POST["marketinglist"]==true) $marketinglist = 1;
-    elseif (isset($_POST["marketinglist"]) && $_POST["marketinglist"]!=false) $marketinglist = 1;
+    if($_POST["marketinglist"]=="true") $marketinglist = 1;
+    elseif (isset($_POST["marketinglist"]) && $_POST["marketinglist"]!="false") $marketinglist = 1;
     else $marketinglist=0;
 
     if (isset($_POST["admin"]))$admin = 1;
