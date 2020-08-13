@@ -4,9 +4,11 @@ if(isset($_POST['save'])) {
     $price=$_POST['price'];
     $weight=$_POST['weight'];
     $productdesc=$_POST['productdesc'];
+    $aisles=$_POST['aisles'];
     if($productname!=null&&$productname!="") {
         if($price!=null&&$price!=""&&$weight!=null&&$weight!=""&&$productdesc!=null&&$productdesc!="") {
             add();
+            phpAlert("Product has been successfully added!");
         } elseif (($price==null||$price=="")&&($weight==null||$weight=="")||($productdesc==null||$productdesc=="")) {
             delete();
         } else {
@@ -21,10 +23,8 @@ if(isset($_POST['save'])) {
                 editProductDesc();
             }
         }
-    } else {
-        
     }
-    // return TO BE COMPLETED
+    header("Location:../backstore/p8.html");
 }
 
 function uploadImage($productname) {
@@ -42,8 +42,9 @@ function uploadImage($productname) {
     if(in_array($fileActualExt, $allowed)) {
         if($fileError==0) {
             $fileNameNew= changestring($productname).".".$fileActualExt;
-            $fileDestination= "images//".$fileNameNew;
+            $fileDestination= "../images/".$fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
+            return $fileDestination;
         }
     }
 }
@@ -57,7 +58,7 @@ function changestring($s) {
 }
 
 function phpAlert($msg) {
-    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+    echo '<script type="text/javascript">alert("'.$msg.'")</script>';
 }
 
 function add() {
@@ -65,6 +66,7 @@ function add() {
     $price=$_POST['price'];
     $weight=$_POST['weight'];
     $productdesc=$_POST['productdesc'];
+    $aisles=$_POST['aisles'];
     $a=$_POST['types'];
     $types=explode("-",$a);
     $options="";    
@@ -73,8 +75,8 @@ function add() {
         $options.=$types[$i];
         $options.="</option>";
     }
-    uploadImage($productname);
-    $fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/product-descriptions//".changestring($_POST['productname']).".html","w");
+    $fileDestination=uploadImage($productname);
+    $fp = fopen($_SERVER['DOCUMENT_ROOT']."/product-descriptions/".changestring($_POST['productname']).".html","w");
     fwrite($fp,'<!DOCTYPE html>
     <html lang="en">
     
@@ -98,7 +100,7 @@ function add() {
             <ul>
                 <li><a href="../index.html">Home Page</a></li>
     
-                <li><a href="../aisles/fruits-vegetables.html">Return to Aisle</a></li>
+                <li><a href="../aisles/'.$aisles.'.html">Return to Aisle</a></li>
     
                 <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
             </ul>
@@ -113,7 +115,7 @@ function add() {
     
         <div class="description">
             <div class="image">
-                <img src="../images/'.changestring($productname).'.jpg" alt="'.$productname.'" width="200px" height="200px" />
+                <img src="'.$fileDestination.'" alt="'.$productname.'" width="200px" height="200px" />
             </div>
             <h2>'.$productname.'</h2>
             <p>'.$price.'$/lb</p>
