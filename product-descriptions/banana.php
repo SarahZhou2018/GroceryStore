@@ -2,6 +2,7 @@
     P3 - Product page description
     Shi Qi Zhou - 40163947
 -->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 

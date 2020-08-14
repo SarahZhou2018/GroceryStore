@@ -1,7 +1,9 @@
 <!--
-    P9 - Shopping Cart Page
+    P4 - Shopping Cart Page
     Shi Qi Zhou - 40163947
 -->
+
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +101,7 @@
                             <!-- Noor Hammodi - 40061760
                             Workpackage 2 Start-->
                             <td>
-                                <button type="button" onclick="myFunction1()" class="deletebtn">DELETE</button>
+                                <button type="button" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
                             </td>
                             <!-- Noor Hammodi - 40061760
                             Workpackage 2 Done-->
@@ -124,7 +126,7 @@
                             <!-- Noor Hammodi - 40061760
                             Workpackage 2 Start-->
                             <td>
-                                <button type="button" onclick="myFunction2()" class="deletebtn">DELETE</button>
+                                <button type="button" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
                             </td>
                             <!-- Noor Hammodi - 40061760
                             Workpackage 2 Done-->
@@ -150,7 +152,7 @@
                             <!-- Noor Hammodi - 40061760
                             Workpackage 2 Start-->
                             <td>
-                                <button type="button" onclick="myFunction3()" class="deletebtn">DELETE</button>
+                                <button type="button" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
                             </td>
                             <!-- Noor Hammodi - 40061760
                             Workpackage 2 Done-->
@@ -277,7 +279,7 @@
 
             <!-- Noor Hammodi - 40061760
             Workpackage 2 Start-->
-            <script>
+            <!-- <script>
                 function myFunction1() {
                     document.getElementById("itemtable").deleteRow(1)
                         // 2 functions calls by Shi Qi Zhou
@@ -299,7 +301,7 @@
                     cartTotalQty();
                     adjustOrderSummary();
                 }
-            </script>
+            </script> -->
             <!-- Noor Hammodi - 40061760
             Workpackage 2 Done-->
 

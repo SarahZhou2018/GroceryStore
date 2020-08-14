@@ -136,6 +136,15 @@ function cartTotalQty() {
     adjustOrderSummary();
 }
 
+function deleteProductFromCart() {
+    var table = document.getElementById('itemtable');
+    var td = event.target.parentNode; 
+    var tr = td.parentNode; // the row to be removed
+    tr.parentNode.removeChild(tr);
+    storeLocalStorage();
+    cartTotalQty();
+    adjustOrderSummary();
+}
 // if (window.addEventListener) {
 //     window.addEventListener('load', function() {
 //         alert('addEventListener')
