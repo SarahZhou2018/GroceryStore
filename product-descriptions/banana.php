@@ -25,7 +25,7 @@
         <ul>
             <li><a href="../index.html">Home Page</a></li>
 
-            <li><a href="../aisles/fruits-vegetables.html">Return to Aisle</a></li>
+            <li><a href="../aisles/fruits-vegetables.php">Return to Aisle</a></li>
 
             <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
         </ul>

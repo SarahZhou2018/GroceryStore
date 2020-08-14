@@ -1,31 +1,62 @@
 <?php
 
-// When Saved, checks if add, edit or delete is called
-if(isset($_POST['save'])) {
-    $productname=$_POST['productname'];
-    $price=$_POST['price'];
-    $weight=$_POST['weight'];
-    $productdesc=$_POST['productdesc'];
-    $aisles=$_POST['aisles'];
-    if($productname!=null&&$productname!="") {
-        if($price!=null&&$price!=""&&$weight!=null&&$weight!=""&&$productdesc!=null&&$productdesc!="") {
-            add();
-        } elseif (($price==null||$price=="")&&($weight==null||$weight=="")||($productdesc==null||$productdesc=="")) {
-            delete();
-        } else {
-            //CHECK FOR IMAGE
-            if($price!=null&&$price!="") {
-                editPrice();
-            }
-            if($weight!=null&&$weight!="") {
-                editWeight();
-            }
-            if($productdesc!=null&&$productdesc!="") {
-                editProductDesc();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //Validate inputs
+    $id=0;
+    if(isset($_POST["id"])) $id = $_POST["id"];
+    $name = $_POST["name"];
+    $aisle = $_POST["name"];
+    $price = $_POST["name"];
+    $weight = $_POST["name"];
+    $productdesc = $_POST["name"];
+
+    //load XML file
+    $productlist=simplexml_load_file("productlist.xml") or die("Error: cannot load productlist.xml");
+
+    if($id){
+        foreach($productlist->children() as $product){
+            if($product->id == $id){
+                $product->name=$name;
+                $product->aisle=$aisle;
+                $product->price=$price;
+                $product->weight=$weight;
+                $product->productdesc=$productdesc;
+                $product->imagepath=uploadImage($name);
+                break;
             }
         }
     }
-    header("Location:../backstore/p8.html");
+    else {
+        //Fetch user ID count, store, increment and update count
+        $att="idcount";
+        $idcount = $productlist->attributes()->$att;
+        $idcount = $idcount+1;
+        $productlist->attributes()->$att=$idcount;
+        //$productlist->addAttribute("idcount",$idcount);
+
+        //create new user entry
+        $new_product = $productlist->addChild("product");
+        $new_product->addChild("id",str_pad($idcount,4,"0",STR_PAD_LEFT));
+        $new_product->addChild("name",$name);
+        $new_product->addChild("aisle",$aisle);
+        $new_product->addChild("price",$price);
+        $new_product->addChild("weight",$weight);
+        $new_product->addChild("productdesc",$productdesc);
+        $new_product->addChild("imagepath",uploadImage($name));
+        $new_product->addChild("productpage",'../product-descriptions/'.changestring($_FILESname).'.php');
+        $a=$_POST['types'];
+        $types=explode("-",$a);
+        $new_product->addChild("types",$types);
+        for($i=0;$i<count($types);$i++) {
+            $new_product->addChild("type",$types[$i]);
+        }
+        addpage();
+    }
+    
+    //save user list to file
+    $productlist_file=fopen("productlist.xml","w") or die ("Error: cannot load productlist.xml");
+    fwrite($productlist_file,$productlist->asXML());
+    fclose($productlist_file);
 }
 
 // Upload image
@@ -60,6 +91,7 @@ function changestring($s) {
     return $s;
 }
 
+/*
 // Add product page description
 function add() {
     $productname=$_POST['productname'];
@@ -155,6 +187,38 @@ function add() {
     </html>');
     fclose($fp);
 }
+*/
 
+/*
+// When Saved, checks if add, edit or delete is called
+if(isset($_POST['save'])) {
+    $productname=$_POST['productname'];
+    $price=$_POST['price'];
+    $weight=$_POST['weight'];
+    $productdesc=$_POST['productdesc'];
+    $aisles=$_POST['aisles'];
+    if($productname!=null&&$productname!="") {
+        if($price!=null&&$price!=""&&$weight!=null&&$weight!=""&&$productdesc!=null&&$productdesc!="") {
+            add();
+        } elseif (($price==null||$price=="")&&($weight==null||$weight=="")||($productdesc==null||$productdesc=="")) {
+            delete();
+        } else {
+            //CHECK FOR IMAGE
+            if($price!=null&&$price!="") {
+                editPrice();
+            }
+            if($weight!=null&&$weight!="") {
+                editWeight();
+            }
+            if($productdesc!=null&&$productdesc!="") {
+                editProductDesc();
+            }
+        }
+    }
+    header("Location:../backstore/p8.html");
+}
+*/
+
+//FIX TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES
 
 ?>

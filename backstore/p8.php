@@ -22,7 +22,7 @@
         </header>
         <nav>
             <ul>
-                <li><a href="p7.html">Product list</a></li>
+                <li><a href="p7.php">Product list</a></li>
                 <li><a href="p9.php">User list</a></li>
                 <li><a href="p11.html">Order list</a></li>
                 <li><a href="../index.html">Main site</a></li>
@@ -78,8 +78,7 @@
                 <br>
                 <br>
                 <p>To add a product, enter a new product name and fill all the inputs</p>
-                <p>To edit a product, enter the product name and change the desired inputs</p>
-                <p>To delete a product, enter the product name and leave blank all other inputs</p>
+                <p>To edit a product, change the desired inputs</p>
                
                 <input type="submit" name="save" value="save" class="button">
 

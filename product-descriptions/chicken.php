@@ -29,7 +29,7 @@
     <nav>
         <ul>
             <li><a href="../index.html">Home Page</a></li>
-            <li><a href="../aisles/meat-poultry.html">Return to Aisle</a></li>
+            <li><a href="../aisles/meat-poultry.php">Return to Aisle</a></li>
             <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
         </ul>
         <div class="register-log-in">
@@ -46,9 +46,9 @@
 
         <div class="description">
             <div class="image">
-                <img src="../images/beef.jpg" alt="IMAGE" width="200px" height="200px" />
+                <img src="../images/chicken.jpg" alt="IMAGE" width="200px" height="200px" />
             </div>
-            <h2>Ground beef, 1lb</h2>
+            <h2>Chicken breast, 1lb</h2>
             <p>8.99$/lb</p>
             <p>Weight: 1 lb</p>
             <h3>Product Description</h3>
@@ -69,11 +69,12 @@
 
             <form action="../shopping-cart/index.html">
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(8.99)">
+                <input type="number" id="quantity" name="quantity" min="1" value=1 size="2"
+                    onchange="updateSubtotal(8.99)">
                 <label for="type">Type:</label>
                 <select id="type" name="type">
-                    <option value="80-20">80% Lean / 20% fat</option>
-                    <option value="93-7">93% Lean / 7% fat</option>
+                    <option value="regular">Regular</option>
+                    <option value="organic">Certified Organic Free Range</option>
                 </select>
                 Subtotal: <span id="subtotal"></span>
                 <div class="addtocartposition">
