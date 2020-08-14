@@ -23,7 +23,7 @@
                 <a class="nav-link" href="../index.html">Home Page</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../aisles/snacks.html">Return to Aisle</a>
+                <a class="nav-link" href="../aisles/snacks.php">Return to Aisle</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
@@ -58,19 +58,19 @@
             <div class="col-md-3 col-sm-12">
                 <div class="menu ">
                     <ul class="list-unstyled">
-                        <a href="fruits-vegetables.html">
+                        <a href="fruits-vegetables.php">
                             <li>Fruits & Vegetables</li>
                         </a>
-                        <a href="meat-poultry.html">
+                        <a href="meat-poultry.php">
                             <li>Meat & Poultry</li>
                         </a>
-                        <a href="bread.html">
+                        <a href="bread.php">
                             <li>Bread</li>
                         </a>
-                        <a href="snacks.html">
+                        <a href="snacks.php">
                             <li>Snack</li>
                         </a>
-                        <a href="frozen.html">
+                        <a href="frozen.php">
                             <li>Frozen</li>
                         </a>
                     </ul>
@@ -79,32 +79,24 @@
 
             <div class="col-md-9 col-sm-12">
                 <div class="card-deck">
-                    <div class="card">
-                        <img class="card-img-top" src="../images/lays.jpg" style="height: 13rem; width: 60%">
-                        <div class="card-body">
-                            <h5 class="card-title">Lay's Chips</h5>
-                            <p class="card-text">
-                                Sold in bags
-                            </p>
-
-                            <h5 class="card-bold ">1.69 $</h5>
-                            <a href="../product-descriptions/chips.html " class="stretched-link"></a>
-                        </div>
-                    </div>
-
-
-
-                    <div class="card">
-                        <img class="card-img-top" src="../images/cheesedip.jpg" style="height: 13rem; width: 60%">
-                        <div class="card-body">
-                            <h5 class="card-title">Cheese Dip</h5>
-                            <p class="card-text">
-                                Sold in containers
-                            </p>
-                            <h5 class="card-bold">3.99 $</h5>
-                            <a href="../product-descriptions/cheesedip.html" class="stretched-link"></a>
-                        </div>
-                    </div>
+                <?php
+                    $productlist=simplexml_load_file("../backstore/productlist.xml") or die("Error: cannot load userlist.xml");
+                    foreach($productlist->children() as $product){
+                        if($product->aisle=="snacks"){
+                            echo '<div class="card">';
+                            echo '<img class="card-img-top" src="'.$product->imagepath.'" alt="'.$product->name.'">';
+                            echo '<div class="card-body">';
+                            echo '<h5 class="card-title">'.$product->name.'</h5>';
+                            echo '<p class="card-text">';
+                            echo 'Sold in unit';
+                            echo '</p>';
+                            echo '<h5 class="card-bold ">'.$product->price.' $</h5>';
+                            echo '<a href="'.$product->productpage.'" class="stretched-link"></a>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                ?>
                 </div>
             </div>
         </div>

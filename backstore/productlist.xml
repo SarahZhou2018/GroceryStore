@@ -81,7 +81,7 @@
         <name>Ground beef, 1lb</name>
         <imagepath>../images/beef.jpg</imagepath>
         <productpage>../product-descriptions/groundbeef.html</productpage>
-        <aisle>fruits-vegetables</aisle>
+        <aisle>meat-poultry</aisle>
         <price>8.99</price>
         <weight>1 lb</weight>
         <types>

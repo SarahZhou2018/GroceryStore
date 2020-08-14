@@ -27,7 +27,7 @@
                 <a class="nav-link" href="../index.html">Home Page</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisle</a>
+                <a class="nav-link" href="../aisles/bread.php">Return to Aisle</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
@@ -62,19 +62,19 @@
             <div class="col-md-3 col-sm-12">
                 <div class="menu ">
                     <ul class="list-unstyled">
-                        <a href="fruits-vegetables.html">
+                        <a href="fruits-vegetables.php">
                             <li>Fruits & Vegetables</li>
                         </a>
-                        <a href="meat-poultry.html">
+                        <a href="meat-poultry.php">
                             <li>Meat & Poultry</li>
                         </a>
-                        <a href="bread.html">
+                        <a href="bread.php">
                             <li>Bread</li>
                         </a>
-                        <a href="snacks.html">
+                        <a href="snacks.php">
                             <li>Snack</li>
                         </a>
-                        <a href="frozen.html">
+                        <a href="frozen.php">
                             <li>Frozen</li>
                         </a>
                     </ul>
@@ -84,7 +84,7 @@
             <div class="col-md-9 col-sm-12">
                 <div class="card-deck">
                 <?php
-                    $productlist=simplexml_load_file("productlist.xml") or die("Error: cannot load userlist.xml");
+                    $productlist=simplexml_load_file("../backstore/productlist.xml") or die("Error: cannot load userlist.xml");
                     foreach($productlist->children() as $product){
                         if($product->aisle=="bread"){
                             echo '<div class="card">';
@@ -95,58 +95,12 @@
                             echo 'Sold in unit';
                             echo '</p>';
                             echo '<h5 class="card-bold ">'.$product->price.' $</h5>';
-                            echo '<a href="../product-descriptions/'.$product->name.'.html " class="stretched-link"></a>';
-                            echo '';
-                            echo '';
+                            echo '<a href="'.$product->productpage.'" class="stretched-link"></a>';
+                            echo '</div>';
+                            echo '</div>';
                         }
                     }
                 ?>
-                    <div class="card">
-                        <img class="card-img-top" src="../images/baguette.jpg" alt="Bananas">
-                        <div class="card-body">
-                            <h5 class="card-title">Baguette</h5>
-                            <p class="card-text">
-                                Sold in unit
-                            </p>
-                            <h5 class="card-bold ">3.99 $</h5>
-                            <a href="../product-descriptions/baguette.html " class="stretched-link"></a>
-                        </div>
-                    </div>
-
-
-                    <div class="card">
-                        <img class="card-img-top" src="../images/tortilla.jpg" alt="Bananas">
-                        <div class="card-body">
-                            <h5 class="card-title">Tortilla</h5>
-                            <p class="card-text">
-                                Sold in unit
-                            </p>
-                            <h5 class="card-bold">1.99 $</h5>
-                            <a href="../product-descriptions/tortilla.html" class="stretched-link"></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="../images/baguette.jpg" alt="Bananas">
-                        <div class="card-body">
-                            <h5 class="card-title">Baguette</h5>
-                            <p class="card-text">
-                                Sold in unit
-                            </p>
-                            <h5 class="card-bold ">3.99 $</h5>
-                            <a href="../product-descriptions/baguette.html " class="stretched-link"></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="../images/tortilla.jpg" alt="Bananas">
-                        <div class="card-body">
-                            <h5 class="card-title">Tortilla</h5>
-                            <p class="card-text">
-                                Sold in unit
-                            </p>
-                            <h5 class="card-bold">1.99 $</h5>
-                            <a href="../product-descriptions/tortilla.html" class="stretched-link"></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
