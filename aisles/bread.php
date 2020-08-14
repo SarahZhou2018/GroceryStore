@@ -83,6 +83,24 @@
 
             <div class="col-md-9 col-sm-12">
                 <div class="card-deck">
+                <?php
+                    $productlist=simplexml_load_file("productlist.xml") or die("Error: cannot load userlist.xml");
+                    foreach($productlist->children() as $product){
+                        if($product->aisle=="bread"){
+                            echo '<div class="card">';
+                            echo '<img class="card-img-top" src="'.$product->imagepath.'" alt="'.$product->name.'">';
+                            echo '<div class="card-body">';
+                            echo '<h5 class="card-title">'.$product->name.'</h5>';
+                            echo '<p class="card-text">';
+                            echo 'Sold in unit';
+                            echo '</p>';
+                            echo '<h5 class="card-bold ">'.$product->price.' $</h5>';
+                            echo '<a href="../product-descriptions/'.$product->name.'.html " class="stretched-link"></a>';
+                            echo '';
+                            echo '';
+                        }
+                    }
+                ?>
                     <div class="card">
                         <img class="card-img-top" src="../images/baguette.jpg" alt="Bananas">
                         <div class="card-body">
@@ -94,6 +112,8 @@
                             <a href="../product-descriptions/baguette.html " class="stretched-link"></a>
                         </div>
                     </div>
+
+
                     <div class="card">
                         <img class="card-img-top" src="../images/tortilla.jpg" alt="Bananas">
                         <div class="card-body">

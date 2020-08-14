@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+
+<productlist idcount="10">
+    <product>
+        <id>0001</id>
+        <name>Banana</name>
+        <imagepath>../images/banana.jpg</imagepath>
+        <productpage>../product-descriptions/banana.html</productpage>
+        <aisle>fruits-vegetables</aisle>
+        <price>1.99</price>
+        <weight>190 g avg.</weight>
+        <types>
+            <type>organic</type>
+            <type>regular</type>
+        </types>
+        <productdesc>Product of Costa Rica, Ecuador or Guatemala. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel co.</productdesc>
+    </product>
+    <product>
+        <id>0002</id>
+        <name>Baguette</name>
+        <imagepath>../images/baguette.jpg</imagepath>
+        <productpage>../product-descriptions/baguette.html</productpage>
+        <aisle>bread</aisle>
+        <price>3.99</price>
+        <weight>325 g.</weight>
+        <types>
+            <type>White</type>
+            <type>Whole wheat</type>
+        </types>
+        <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe quaerat.</productdesc>
+    </product>
+    <product>
+        <id>0003</id>
+        <name>Cheese Dip</name>
+        <imagepath>../images/cheesedip.jpg</imagepath>
+        <productpage>../product-descriptions/cheesedip.html</productpage>
+        <aisle>snacks</aisle>
+        <price>4.00</price>
+        <weight>418 ml</weight>
+        <types>
+            <type>Not spicy</type>
+            <type>Spicy</type>
+            <type>Mild</type>
+        </types>
+        <productdesc>So creamy, decadently cheesy, and perfectly easy to whip up at a moment’s notice. Eat it with nachos or just plain chips because at the end of the day it is going to be very delicious on anything that you put it on.</productdesc>
+    </product>
+    <product>
+        <id>0004</id>
+        <name>Chicken breast, 1lb</name>
+        <imagepath>../images/chicken.jpg</imagepath>
+        <productpage>../product-descriptions/chicken.html</productpage>
+        <aisle>meat-poultry</aisle>
+        <price>8.99</price>
+        <weight>1 lb</weight>
+        <types>
+            <type>Regular</type>
+            <type>Certified Organic Free Range</type>
+        </types>
+        <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe
+                quaerat. Quod modi nesciunt earum hic, eligendi esse vitae quis velit quisquam autem mollitia ea?</productdesc>
+    </product>
+    <product>
+        <id>0005</id>
+        <name>Chips</name>
+        <imagepath>../images/lays.jpg</imagepath>
+        <productpage>../product-descriptions/chips.html</productpage>
+        <aisle>snacks</aisle>
+        <price>1.69</price>
+        <weight>66 g.</weight>
+        <types>
+            <type>Classic</type>
+            <type>BBQ</type>
+            <type>Onions and Cheese</type>
+            <type>Ketchup</type>
+            <type>Salt and Vinegar</type>
+        </types>
+        <productdesc>Lay’s chips brings the crispy bite you love from your favorite Lay’s potato chip with the delicious secret combinations. This product is sure to deliver a kick and flavor at any moment given!</productdesc>
+    </product>
+    <product>
+        <id>0006</id>
+        <name>Ground beef, 1lb</name>
+        <imagepath>../images/beef.jpg</imagepath>
+        <productpage>../product-descriptions/groundbeef.html</productpage>
+        <aisle>fruits-vegetables</aisle>
+        <price>8.99</price>
+        <weight>1 lb</weight>
+        <types>
+            <type>80% Lean / 20% fat</type>
+            <type>93% Lean / 7% fat</type>
+        </types>
+        <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe quaerat. Quod modi nesciunt earum hic, eligendi esse vitae quis velit quisquam autem mollitia ea?</productdesc>
+    </product>
+    <product>
+        <id>0007</id>
+        <name>Chocolate ice cream, 473 mL</name>
+        <imagepath>../images/bj.jpg</imagepath>
+        <productpage>../product-descriptions/baguette.html</productpage>
+        <aisle>frozen</aisle>
+        <price>7.99</price>
+        <weight>1 lb</weight>
+        <types>
+            <type>Chocolate</type>
+            <type>Chocolate and Vanilla</type>
+        </types>
+        <productdesc>When smooth chocolate ice cream meets fudge chips and salty swirls, they pack a serious one-two crunch.</productdesc>
+    </product>
+    <product>
+        <id>0008</id>
+        <name>Romaine Lettuce</name>
+        <imagepath>../images/lettuce.jpeg</imagepath>
+        <productpage>../product-descriptions/baguette.html</productpage>
+        <aisle>fruits-vegetables</aisle>
+        <price>5.00</price>
+        <weight>50g avg.</weight>
+        <types>
+            <type>organic</type>
+            <type>regular</type>
+        </types>
+        <productdesc>Product of U.S.A. or Mexico. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur su.</productdesc>
+    </product>
+    <product>
+        <id>0009</id>
+        <name>FireCracker Popsicle</name>
+        <imagepath>../images/popp.jpg</imagepath>
+        <productpage>../product-descriptions/baguette.html</productpage>
+        <aisle>frozen</aisle>
+        <price>4.99</price>
+        <weight>18 pack</weight>
+        <types>
+            <type>N/A</type>
+        </types>
+        <productdesc>blue, white and red popsicles</productdesc>
+    </product>
+    <product>
+        <id>0010</id>
+        <name>Tortilla</name>
+        <imagepath>../images/tortilla.jpg</imagepath>
+        <productpage>../product-descriptions/baguette.html</productpage>
+        <aisle>bread</aisle>
+        <price>3.29</price>
+        <weight>300 g</weight>
+        <types>
+            <type>Large (6 tortillas)</type>
+            <type>Small (10 tortillas)</type>
+        </types>
+        <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe quaerat.</productdesc>
+    </product>
+</productlist>

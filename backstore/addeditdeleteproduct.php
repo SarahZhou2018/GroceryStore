@@ -1,4 +1,6 @@
 <?php
+
+// When Saved, checks if add, edit or delete is called
 if(isset($_POST['save'])) {
     $productname=$_POST['productname'];
     $price=$_POST['price'];
@@ -8,7 +10,6 @@ if(isset($_POST['save'])) {
     if($productname!=null&&$productname!="") {
         if($price!=null&&$price!=""&&$weight!=null&&$weight!=""&&$productdesc!=null&&$productdesc!="") {
             add();
-            phpAlert("Product has been successfully added!");
         } elseif (($price==null||$price=="")&&($weight==null||$weight=="")||($productdesc==null||$productdesc=="")) {
             delete();
         } else {
@@ -27,6 +28,7 @@ if(isset($_POST['save'])) {
     header("Location:../backstore/p8.html");
 }
 
+// Upload image
 function uploadImage($productname) {
     $file=$_FILES['image'];
     $fileName=$file['name'];
@@ -49,6 +51,7 @@ function uploadImage($productname) {
     }
 }
 
+// Change string for file names
 function changestring($s) {
     $s=strtolower($s);
     while(strpos($s, " ") !== false) {
@@ -57,16 +60,13 @@ function changestring($s) {
     return $s;
 }
 
-function phpAlert($msg) {
-    echo '<script type="text/javascript">alert("'.$msg.'")</script>';
-}
-
+// Add product page description
 function add() {
     $productname=$_POST['productname'];
     $price=$_POST['price'];
     $weight=$_POST['weight'];
     $productdesc=$_POST['productdesc'];
-    $aisles=$_POST['aisles'];
+    $aisle=$_POST['aisle'];
     $a=$_POST['types'];
     $types=explode("-",$a);
     $options="";    
@@ -100,7 +100,7 @@ function add() {
             <ul>
                 <li><a href="../index.html">Home Page</a></li>
     
-                <li><a href="../aisles/'.$aisles.'.html">Return to Aisle</a></li>
+                <li><a href="../aisles/'.$aisle.'.html">Return to Aisle</a></li>
     
                 <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
             </ul>
