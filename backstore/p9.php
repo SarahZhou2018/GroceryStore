@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
     <link rel="stylesheet" href="../css/p7-p12.css">
+    <script src="../scripts/backstore-user.js"></script>
 </head>
 <body>
     <div id="main-container">
@@ -48,7 +49,7 @@
                             $userlist=simplexml_load_file("userlist.xml") or die("Error: cannot load userlist.xml");
                             foreach($userlist->children() as $user){
                                 echo "<tr>";
-                                echo "<td><label for=\"$user->id\"><input type=\"radio\" name=\"selectedUser\" id=\"$user->id\" value=\"$user->id\" />$user->id</label></td>";
+                                echo "<td><label for=\"$user->id\"><input type=\"radio\" name=\"selectedUser\" id=\"$user->id\" value=\"$user->id\" onclick=\"enableBtns()\" />$user->id</label></td>";
                                 echo "<td>$user->fname</td>";
                                 echo "<td>$user->lname</td>";
                                 echo "<td>$user->phone</td>";
@@ -62,8 +63,8 @@
                 </div>
                 <br>
                 <input type="submit" value="Add" name="add" class="button">
-                <input type="submit" value="Delete" name="delete" class="button" formaction="deleteuser.php">
-                <input type="submit" value="Edit" name="edit" class="button"> 
+                <input type="submit" value="Delete" name="delete" class="button" id="deleteButton" formaction="deleteuser.php" disabled>
+                <input type="submit" value="Edit" name="edit" id="editButton" class="button" disabled> 
                 
             </form>
             <br>
