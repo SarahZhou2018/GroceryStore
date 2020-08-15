@@ -36,27 +36,33 @@ if (isset($_POST["addtocart"])) {
                 $unit = (string)$product->unit;
                 $imagePath = (string)$product->imagepath;
 
-                $typeCount = 0;
+                // $typeCount = 0;
                 $arrType = array();
                 foreach ($product->types->children() as $type) {
                     $type = (string)$type;
-                    $typeCount++;
+                    // $typeCount++;
                     array_push($arrType, $type);
                 }
                 print_r($arrType);
             }
         }
     }
-    //productId as the array index
-    $_SESSION['cart'][$pidFromPage] = array(
+    $cartArrayId = $pidFromPage.'-'.$typeFromPage;
+    // quantity add up to what is already in cart
+    if (isset($_SESSION['cart'][$cartArrayId]["qty"])) {
+       $qtyFromPage = $qtyFromPage + $_SESSION['cart'][$cartArrayId]["qty"];
+    }
+
+    //concat (productId, type) as the $_SESSION array index
+    $_SESSION['cart'][$cartArrayId] = array(
         "name" => $name,
         "imagePath" => $imagePath,
         "price" => $price,
         "unit" => $unit,
         "type" => $typeFromPage,
         "qty" => $qtyFromPage,
-        "arrType" => $arrType,
-        "typeCount" => $typeCount,
+        "arrType" => $arrType
+        // "typeCount" => $typeCount
     );
     header("Location: index.php");
 }

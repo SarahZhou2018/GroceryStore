@@ -34,33 +34,33 @@ function storeLocalStorage() {
 
 function getLocalStorage() {
     var table = document.getElementById('itemtable');
-    var dataSaved = localStorage.getItem("persistingVars");
-    if (dataSaved == null) {
-        if (table.rows.length == 1) {
-            table.rows[0].remove();
-            table.insertRow().insertCell()
-            table.rows[0].cells[0].innerText = "Your cart is empty"
-        }
-        return;
-    }
+    // var dataSaved = localStorage.getItem("persistingVars");
+    // if (dataSaved == null) {
+    //     if (table.rows.length == 1) {
+    //         table.rows[0].remove();
+    //         table.insertRow().insertCell()
+    //         table.rows[0].cells[0].innerText = "Your cart is empty"
+    //     }
+    //     return;
+    // }
 
-    var productToRemove = []
-    dataSaved = JSON.parse(dataSaved)
-    for (var i = 1; i < table.rows.length; i++) {
-        var itemName = table.rows[i].cells[0].innerText
-        var searchItemResult = dataSaved.find(function(arrElement) {
-            return arrElement.name === itemName
-        })
+    // var productToRemove = []
+    // dataSaved = JSON.parse(dataSaved)
+    // for (var i = 1; i < table.rows.length; i++) {
+    //     var itemName = table.rows[i].cells[0].innerText
+    //     var searchItemResult = dataSaved.find(function(arrElement) {
+    //         return arrElement.name === itemName
+    //     })
 
-        if (searchItemResult == undefined) {
-            productToRemove.push(table.rows[i])
-        } else {
-            table.rows[i].cells[2].innerText = searchItemResult.quantity
-        }
-    }
-    productToRemove.forEach(function(arrElement) {
-        arrElement.remove()
-    })
+    //     if (searchItemResult == undefined) {
+    //         productToRemove.push(table.rows[i])
+    //     } else {
+    //         table.rows[i].cells[2].innerText = searchItemResult.quantity
+    //     }
+    // }
+    // productToRemove.forEach(function(arrElement) {
+    //     arrElement.remove()
+    // })
 
     if (table.rows.length == 1) {
         table.rows[0].remove();
@@ -121,10 +121,14 @@ function handleOnClickQtyChange(e, action, productId) {
     xmlhttp.send();
 }
 
-function handleOnClickReset(action) {
-    clearLocalStorage();
+function handleOnClickReset() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", `shopping-cart.php?action=${action}`, true);
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            clearLocalStorage();
+        }
+      };
+    xmlhttp.open("GET", `shopping-cart.php?action=reset`, true);
     xmlhttp.send();
 }
 

@@ -4,7 +4,7 @@
 -->
 
 <?php session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -129,8 +129,8 @@ print_r($_SESSION);
 
             </div>
             <!-- Bottom Buttons -->
-            <input class="button" type="submit" onclick="handleOnClickReset('reset')" name="reset" value="Reset Cart" readonly>
-            <input class="button" type="submit" onclick="backToPrevPage()" name="continueShop" value="Continue Shopping" readonly>
+            <input class="button" onclick="handleOnClickReset()" name="reset" value="Reset Cart" readonly>
+            <input class="button" onclick="backToPrevPage()" name="continueShop" value="Continue Shopping" readonly>
 
         </div>
 
