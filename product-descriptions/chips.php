@@ -1,3 +1,4 @@
+<?php $id = "0005";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,6 @@
 
 <?php
     $productlist=simplexml_load_file("../backstore/productlist.xml") or die("Error: cannot load productlist.xml");
-    $id=0005;
     foreach($productlist->children() as $product){
         if($product->id == $id){
             $name=$product->name;
@@ -58,27 +58,32 @@
             inventore pariatur facilis! Unde deleniti hic autem error molestias vel illum nostrum reprehenderit
             atque debitis.
         </div>
-        <br />
+        <br />';
+        ?>
 
-    <form action="../shopping-cart/index.html">
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(3.99)">
-        <label for="type">Type:</label>
-        <select id="type" name="type">';
-    foreach($types->children() as $type){
-        echo "<option>$type</option>";
-    }
-    echo '</select>
-        Subtotal: <span id="subtotal"></span>
-        <div class="addtocartposition">
-            <a href="../shopping-cart/index.html"><button class="addtocart" type="button" name="addtocart-button">Add to Cart</button></a>
-        </div>
-    </form>
+<form action="../shopping-cart/addtocart.php" method="POST">
+    <input type="hidden" name="addtocart[pid]" value= <?= $id?> />
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(<?=$price?>)">
+    <label for="type">Type:</label>
+    <select id="type" name="type">';
+        <?php
+        $index = 0;
+        foreach ($types->children() as $type) {
+            echo "<option value=$index>$type</option>";
+            $index++;
+        }
+        ?>
+    </select>
+    Subtotal: <span id="subtotal"></span>
+    <div class="addtocartposition">
+        <button class="addtocart" type="submit">Add to Cart</button>
+    </div>
+</form>
 </div>
 
 <footer></footer>
 
-</body>';
+</body>
     
-?>
 </html>

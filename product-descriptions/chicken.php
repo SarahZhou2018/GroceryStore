@@ -2,7 +2,7 @@
     P3 - Product page description
     Georges Grondin - 40034160
 -->
-
+<?php $id = "0004";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +16,6 @@
 
 <?php
     $productlist=simplexml_load_file("../backstore/productlist.xml") or die("Error: cannot load productlist.xml");
-    $id=0004;
     foreach($productlist->children() as $product){
         if($product->id == $id){
             $name=$product->name;
