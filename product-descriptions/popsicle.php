@@ -1,7 +1,7 @@
 <!--
     P3 - PRODUCT DESCRIPTION
     Noor Hammodi - 40061760-->
-<?php $id = "0009"; ?>
+<?php $id = 9; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +66,7 @@ echo '<div class="description">
 <form action="../shopping-cart/addtocart.php" method="POST">
     <input type="hidden" name="addtocart[pid]" value=<?= $id ?> />
     <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(<?= $price ?>)">
+    <input type="number" id="quantity" name="addtocart[qty]" min="1" value=1 size="2" onchange="updateSubtotal(<?= $price ?>)">
     <label for="type">Type:</label>
     <select id="type" name="type">';
         <?php
