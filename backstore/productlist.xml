@@ -9,8 +9,8 @@
         <price>1.99</price>
         <weight>190 g avg.</weight>
         <types>
-            <type>organic</type>
-            <type>regular</type>
+            <type>Organic</type>
+            <type>Regular</type>
         </types>
         <unit>lb</unit>
         <productdesc>Product of Costa Rica, Ecuador or Guatemala. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel co.</productdesc>
@@ -119,8 +119,8 @@
         <price>5.00</price>
         <weight>50g avg.</weight>
         <types>
-            <type>organic</type>
-            <type>regular</type>
+            <type>Organic</type>
+            <type>Regular</type>
         </types>
         <unit>each</unit>
         <productdesc>Product of U.S.A. or Mexico. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur su.</productdesc>
