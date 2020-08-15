@@ -2,7 +2,8 @@
     P3 - Product page description
     Shi Qi Zhou - 40163947
 -->
-<?php session_start(); ?>
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,8 +32,7 @@
             <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
         </ul>
         <div class="register-log-in">
-            <a href="../user/register.html"><button class="user-button" type="button"
-                    name="user-button">Register</button></a>
+            <a href="../user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
             <a href="../user/login.html"><button class="user-button" type="button" name="login-button">Log
                     In</button></a>
         </div>
@@ -61,18 +61,18 @@
         </div>
         <br />
 
-        <form action="../shopping-cart/index.html">
+        <form action="../shopping-cart/addtocart.php" method="POST">
+            <input type="hidden" name="addtocart[pid]" value="0001" />
             <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(1.99)">
+            <input type="number" id="quantity" name="addtocart[qty]" min="1" value=1 size="2" onchange="updateSubtotal(1.99)">
             <label for="type">Type:</label>
-            <select id="type" name="type">
-                <option value="o">organic</option>
-                <option value="r">regular</option>
+            <select id="type" name="addtocart[type]">
+                <option value="0">Organic</option>
+                <option value="1">Regular</option>
             </select>
             Subtotal: <span id="subtotal"></span>
             <div class="addtocartposition">
-                <a href="../shopping-cart/index.html"><button class="addtocart" type="button"
-                        name="addtocart-button">Add to Cart</button></a>
+                <button class="addtocart" type="submit">Add to Cart</button>
             </div>
         </form>
     </div>

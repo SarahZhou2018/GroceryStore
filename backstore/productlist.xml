@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<productlist idcount="2">
+    <product>
+        <id>0001</id>
+        <name>Banana</name>
+        <imagepath>../images/banana.jpg</imagepath>
+        <productpage>../product-descriptions/banana.php</productpage>
+        <aisle>fruits-vegetables</aisle>
+        <price>1.99</price>
+        <unit>lb</unit>
+        <weight>190 g avg.</weight>
+        <types>
+            <type>organic</type>
+            <type>regular</type>
+        </types>
+        <productdesc>Product of Costa Rica, Ecuador or Guatemala. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel co.</productdesc>
+    </product>
+    <product>
+        <id>0008</id>
+        <name>Romaine Lettuce</name>
+        <imagepath>../images/lettuce.jpeg</imagepath>
+        <productpage>../product-descriptions/lettuce.php</productpage>
+        <aisle>fruits-vegetables</aisle>
+        <price>5.00</price>
+         <unit>each</unit>
+        <weight>50g avg.</weight>
+        <types>
+            <type>organic</type>
+            <type>regular</type>
+        </types>
+        <productdesc>Product of U.S.A. or Mexico. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur su.</productdesc>
+    </product>
+    </productlist>

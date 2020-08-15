@@ -3,7 +3,10 @@
     Shi Qi Zhou - 40163947
 -->
 
-<?php session_start(); ?>
+<?php session_start();
+print_r($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,14 +46,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="../user/register.html">
                     <button class="user-button" type="button" name="user-button">
-                    Register
+                        Register
                     </button>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../user/login.html">
                     <button class="user-button" type="button" name="login-button">
-                    Log In
+                        Log In
                     </button>
                 </a>
             </li>
@@ -73,91 +76,62 @@
                 <!-- Detailed Illustrataded Table -->
                 <div id="table1">
                     <table class="table-responsive" id="itemtable">
+
                         <!-- Row 0 -->
                         <tr>
                             <th>Item</th>
                             <th>Price</th>
                             <th>Quantity</th>
+                            <th>Type</th>
                             <th></th>
                         </tr>
 
                         <!-- Row 1-->
-                        <tr>
-                            <td>
-                                <p>Romaine Lettuce</p>
-                                <img src=" ../images/lettuce.jpeg" alt="Romaine Lettuce" />
+                        <?php foreach ($_SESSION["cart"] as $id => $product) : ?>
 
-                            </td>
-                            <td>5.00 $/ea.</td>
-                            <td>1</td>
-                            <td>
-                                <!-- Quantity +/- buttons -->
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
-                                    <img id="icon" src="../images/buttons/minus.png"></button>
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
-                                    <img id="icon" src="../images/buttons/plus.png"></button>
-                            </td>
-
-                            <!-- Noor Hammodi - 40061760
-                            Workpackage 2 Start-->
-                            <td>
-                                <button type="button" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
-                            </td>
-                            <!-- Noor Hammodi - 40061760
-                            Workpackage 2 Done-->
-
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>
-                                <p>Bananas</p>
-                                <img src="../images/banana.jpg " alt="Bananas" />
-                            </td>
-                            <td>1.99 $/lb</td>
-                            <td>1</td>
-                            <td>
-                                <!-- Quantity +/- buttons -->
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
-                                    <img id="icon" src="../images/buttons/minus.png"></button>
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
-                                    <img id="icon" src="../images/buttons/plus.png"></button>
-                            </td>
-
-                            <!-- Noor Hammodi - 40061760
-                            Workpackage 2 Start-->
-                            <td>
-                                <button type="button" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
-                            </td>
-                            <!-- Noor Hammodi - 40061760
-                            Workpackage 2 Done-->
-
-                        </tr>
-                        <!-- Row 3-->
-                        <tr>
-                            <td>
-                                <p>Ground Beef</p>
-                                <img src="../images/beef.jpg" alt="Gorund Beef" />
-
-                            </td>
-                            <td>8.99 $/lb</td>
-                            <td>1</td>
-                            <td>
-                                <!-- Quantity +/- buttons -->
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
-                                    <img id="icon" src="../images/buttons/minus.png"></button>
-                                <button type="button" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
-                                    <img id="icon" src="../images/buttons/plus.png"></button>
-                            </td>
-
-                            <!-- Noor Hammodi - 40061760
-                            Workpackage 2 Start-->
-                            <td>
-                                <button type="button" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
-                            </td>
-                            <!-- Noor Hammodi - 40061760
-                            Workpackage 2 Done-->
-
-                        </tr>
+                            <tr>
+                                <td>
+                                    <p><?= $product["name"] ?></p>
+                                    <img src=<?= $product["imagePath"] ?> alt="Romaine Lettuce">
+                                </td>
+                                <td>
+                                    <?= $product["price"]." $/" . $product["unit"] ?>
+                                </td>
+                                <td>
+                                    <?= $product["qty"] ?>
+                                </td>
+                                <td>
+                                    <select id="type" name="type">
+                                        <?php foreach ($product["arrType"] as $index => $type) : ?>
+                                            <option 
+                                                <?= $index == $product["type"] ? "selected='selected''" : "" ?>
+                                                value=<?= $type ?> >
+                                                <?= $type ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                                <td>
+                                    <!-- Quantity +/- buttons -->
+                                    <form action="addtocart.php" method="POST">
+                                        <input type="hidden" name="qtyminus" />
+                                        <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
+                                            <img id="icon" src="../images/buttons/minus.png"></button>
+                                    </form>
+                                    <form action="addtocart.php" method="POST">
+                                        <input type="hidden" name="qtyplus" />
+                                        <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
+                                            <img id="icon" src="../images/buttons/plus.png"></button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="addtocart.php" method="POST">
+                                        <input type="hidden" name="deleteFromCart" value=<?php $product["pid"]?> />
+                                        <button type="submit" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </table>
                 </div>
                 <span></span>
@@ -277,40 +251,11 @@
                 <span></span>
             </div>
 
-            <!-- Noor Hammodi - 40061760
-            Workpackage 2 Start-->
-            <!-- <script>
-                function myFunction1() {
-                    document.getElementById("itemtable").deleteRow(1)
-                        // 2 functions calls by Shi Qi Zhou
-                    storeLocalStorage();
-                    cartTotalQty();
-                    adjustOrderSummary();
-                }
-
-                function myFunction2() {
-                    document.getElementById("itemtable").deleteRow(1)
-                    storeLocalStorage();
-                    cartTotalQty();
-                    adjustOrderSummary();
-                }
-
-                function myFunction3() {
-                    document.getElementById("itemtable").deleteRow(1)
-                    storeLocalStorage();
-                    cartTotalQty();
-                    adjustOrderSummary();
-                }
-            </script> -->
-            <!-- Noor Hammodi - 40061760
-            Workpackage 2 Done-->
-
-
             <!-- Bottom Buttons -->
             <input class="button" id="pay" type="submit" value="Checkout" readonly>
         </div>
     </div>
-    <br/><br/><br/>
+    <br /><br /><br />
     <footer>
         <a href="./index.html#main-header">Back to top</a>
     </footer>

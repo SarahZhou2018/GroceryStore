@@ -59,8 +59,8 @@
             <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(5)">
             <label for="type">Type:</label>
             <select id="type" name="type">
-                    <option value="o">organic</option>
-                    <option value="r">regular</option>
+                    <option value="1">Organic</option>
+                    <option value="2">Regular</option>
             </select>
             Subtotal: <span id="subtotal"></span>
             <div class="addtocartposition">

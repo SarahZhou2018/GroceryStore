@@ -76,7 +76,7 @@ function qtyminus(elm) {
     // Row index = currentRow index
     let currentCell = elm.offsetParent;
     var currentRow = currentCell.parentNode;
-    let targetCellIndex = currentCell.cellIndex - 1;
+    let targetCellIndex = currentCell.cellIndex - 2;
     let targetRowIndex = currentRow.rowIndex;
 
     var table = document.getElementById('itemtable');
@@ -107,7 +107,7 @@ function qtyplus(elm) {
     // Row index = currentRow index
     let currentCell = elm.offsetParent;
     var currentRow = currentCell.parentNode;
-    let targetCellIndex = currentCell.cellIndex - 1;
+    let targetCellIndex = currentCell.cellIndex - 2;
     let targetRowIndex = currentRow.rowIndex;
 
     var table = document.getElementById('itemtable');
