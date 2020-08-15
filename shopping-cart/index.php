@@ -33,25 +33,25 @@ print_r($_SESSION);
     <nav class="navbar navbar-expand-sm">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="../index.html">Home Page</a>
+                <a class="nav-link" href="../index.php">Home Page</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisle</a>
+                <a class="nav-link" href="../aisles/fruits-vegetables.php">Return to Aisle</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
+                <a class="nav-link" href="../shopping-cart/index.php">Shopping Cart</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../user/register.html">
+                <a class="nav-link" href="../user/register.php">
                     <button class="user-button" type="button" name="user-button">
                         Register
                     </button>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../user/login.html">
+                <a class="nav-link" href="../user/login.php">
                     <button class="user-button" type="button" name="login-button">
                         Log In
                     </button>
@@ -139,7 +139,7 @@ print_r($_SESSION);
             </div>
             <!-- Bottom Buttons -->
             <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" value="Reset Cart" readonly>
-            <form action="../aisles/fruits-vegetables.html">
+            <form action="../aisles/fruits-vegetables.php">
                 <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
             </form>
 
@@ -257,7 +257,7 @@ print_r($_SESSION);
     </div>
     <br /><br /><br />
     <footer>
-        <a href="./index.html#main-header">Back to top</a>
+        <a href="./index.php#main-header">Back to top</a>
     </footer>
 </body>
 

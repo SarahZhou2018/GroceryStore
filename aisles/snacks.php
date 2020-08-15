@@ -88,7 +88,11 @@
                             echo '<div class="card-body">';
                             echo '<h5 class="card-title">'.$product->name.'</h5>';
                             echo '<p class="card-text">';
-                            echo 'Sold in unit';
+                            if ($product->unit == "each") {
+                                echo 'Sold in unit';
+                            } else {
+                                echo 'Sold in '. $product->unit;
+                            }
                             echo '</p>';
                             echo '<h5 class="card-bold ">'.$product->price.' $</h5>';
                             echo '<a href="'.$product->productpage.'" class="stretched-link"></a>';
