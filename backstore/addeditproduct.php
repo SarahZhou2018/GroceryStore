@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $weight = $_POST["weight"];
     $productdesc = $_POST["productdesc"];
     $unit = $_POST["unit"];
+    $newtypes = $_POST["types"];
 
     //load XML file
     $productlist=simplexml_load_file("productlist.xml") or die("Error: cannot load productlist.xml");
@@ -22,7 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $product->price=$price;
                 $product->weight=$weight;
                 $product->productdesc=$productdesc;
-                $unit->productdesc=$unit;
+                $product->unit=$unit;
+                $oldtypes = $product->types;
+                $dom=dom_import_simplexml($oldtypes);
+                $dom->parentNode->removeChild($dom);
+                $types=explode("-",$newtypes);
+                $typeslist = $product->addChild("types");
+                for($i=0;$i<count($types);$i++) {
+                    $typeslist->addChild("type",$types[$i]);
+                }
+
                 if (!empty($_FILES['image']['tmp_name'])) {
                     $product->imagepath=uploadImage($name);
                 }
@@ -36,9 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $idcount = $productlist->attributes()->$att;
         $idcount = $idcount+1;
         $productlist->attributes()->$att=$idcount;
-        //$productlist->addAttribute("idcount",$idcount);
 
-        //create new user entry
+        //create new product entry
         $new_product = $productlist->addChild("product");
         $new_product->addChild("id",$idcount);
         $new_product->addChild("name",$name);
@@ -51,9 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $new_product->addChild("productpage",'../product-descriptions/'.changestring($_POST["name"]).'.php');
         $a=$_POST["types"];
         $types=explode("-",$a);
-        $typeslist = $new_product->addChild("types");
+        $newtypes = $new_product->addChild("types");
         for($i=0;$i<count($types);$i++) {
-            $typeslist->addChild("type",$types[$i]);
+            $newtypes->addChild("type",$types[$i]);
         }
         $fp = fopen($_SERVER['DOCUMENT_ROOT']."/product-descriptions/".changestring($_POST["name"]).".php","w");
         fwrite($fp,"<!DOCTYPE html>
@@ -142,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fclose($fp);
     }
     
-    //save user list to file
+    //save product list to file
     $productlist_file=fopen("productlist.xml","w") or die ("Error: cannot load productlist.xml");
     fwrite($productlist_file,$productlist->asXML());
     fclose($productlist_file);
@@ -183,7 +192,5 @@ function changestring($s) {
     }
     return $s;
 }
-
-//FIX TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES
 
 ?>

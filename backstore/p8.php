@@ -17,6 +17,7 @@ if(isset($_GET['edit'])){
             $aisle = $product->aisle;
             $price = $product->price;
             $weight = $product->weight;
+            $unit = $product->unit;
             $productdesc = $product->productdesc;
             $imagepath = $product->imagepath;
             $types = $product->types;
