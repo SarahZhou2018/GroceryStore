@@ -86,16 +86,15 @@ print_r($_SESSION);
                             <th></th>
                         </tr>
 
-                        <!-- Row 1-->
+                        <!-- Rows-->
                         <?php foreach ($_SESSION["cart"] as $id => $product) : ?>
-
                             <tr>
                                 <td>
                                     <p><?= $product["name"] ?></p>
                                     <img src=<?= $product["imagePath"] ?> alt="Romaine Lettuce">
                                 </td>
                                 <td>
-                                    <?= $product["price"]." $/" . $product["unit"] ?>
+                                    <?= $product["price"] . " $/" . $product["unit"] ?>
                                 </td>
                                 <td>
                                     <?= $product["qty"] ?>
@@ -103,9 +102,7 @@ print_r($_SESSION);
                                 <td>
                                     <select id="type" name="type">
                                         <?php foreach ($product["arrType"] as $index => $type) : ?>
-                                            <option 
-                                                <?= $index == $product["type"] ? "selected='selected''" : "" ?>
-                                                value=<?= $type ?> >
+                                            <option <?= $index == $product["type"] ? "selected='selected'" : "" ?> value="<?= $index ?>">
                                                 <?= $type ?>
                                             </option>
                                         <?php endforeach; ?>
@@ -113,22 +110,16 @@ print_r($_SESSION);
                                 </td>
                                 <td>
                                     <!-- Quantity +/- buttons -->
-                                    <form action="addtocart.php" method="POST">
-                                        <input type="hidden" name="qtyminus" />
-                                        <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="qtyminus(this);adjustOrderSummary();updateTotalPrice()">
-                                            <img id="icon" src="../images/buttons/minus.png"></button>
-                                    </form>
-                                    <form action="addtocart.php" method="POST">
-                                        <input type="hidden" name="qtyplus" />
-                                        <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="qtyplus(this);adjustOrderSummary();updateTotalPrice()">
-                                            <img id="icon" src="../images/buttons/plus.png"></button>
-                                    </form>
+                                    <!-- <input type="hidden" name="qtyminus" /> -->
+                                    <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="handleOnClickQtyChange(this, 'minus','<?= $id ?>')">
+                                        <img id="icon" src="../images/buttons/minus.png"></button>
+                                    <!-- <input type="hidden" name="qtyplus" /> -->
+                                    <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="handleOnClickQtyChange(this, 'plus','<?= $id ?>')">
+                                        <img id="icon" src="../images/buttons/plus.png"></button>
                                 </td>
                                 <td>
-                                    <form action="addtocart.php" method="POST">
-                                        <input type="hidden" name="deleteFromCart" value=<?php $product["pid"]?> />
-                                        <button type="submit" onclick="deleteProductFromCart()" class="deletebtn">DELETE</button>
-                                    </form>
+                                    <!-- <input type="hidden" name="deleteFromCart" value=/> -->
+                                    <button type="submit" onclick="handleOnClickQtyChange(this, 'delete','<?= $id ?>')" class="deletebtn">DELETE</button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -138,10 +129,8 @@ print_r($_SESSION);
 
             </div>
             <!-- Bottom Buttons -->
-            <form action="../shopping-cart/addtocart.php" method="POST">
-                <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" name="reset" value="Reset Cart" readonly>
-                <input class="button" id="shop" type="submit" name="continueShop" value="Continue Shopping" readonly>
-            </form>
+            <input class="button" type="submit" onclick="handleOnClickReset('reset')" name="reset" value="Reset Cart" readonly>
+            <input class="button" type="submit" onclick="backToPrevPage()" name="continueShop" value="Continue Shopping" readonly>
 
         </div>
 
@@ -194,7 +183,9 @@ print_r($_SESSION);
             </div>
 
             <!-- Bottom Buttons -->
-            <input class="button" id="pay" type="submit" value="Checkout" readonly>
+            <form action="shopping-cart.php" method="GET">
+            <input class="button" id="pay" type="submit" name="checkout" value="Checkout" readonly>
+            </form>
         </div>
     </div>
     <br /><br /><br />

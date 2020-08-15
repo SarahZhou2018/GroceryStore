@@ -30,7 +30,7 @@
                 <a class="nav-link" href="../aisles/fruits-vegetables.php">Return to Aisle</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
+                <a class="nav-link" href="../shopping-cart/index.php">Shopping Cart</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -112,7 +112,7 @@
 
 
     <footer>
-        <a href="fruits-vegetables.html#main-header">Back to top</a>
+        <a href="fruits-vegetables.php#main-header">Back to top</a>
     </footer>
 
 </body>

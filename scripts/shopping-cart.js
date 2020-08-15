@@ -33,12 +33,17 @@ function storeLocalStorage() {
 }
 
 function getLocalStorage() {
+    var table = document.getElementById('itemtable');
     var dataSaved = localStorage.getItem("persistingVars");
     if (dataSaved == null) {
+        if (table.rows.length == 1) {
+            table.rows[0].remove();
+            table.insertRow().insertCell()
+            table.rows[0].cells[0].innerText = "Your cart is empty"
+        }
         return;
     }
 
-    var table = document.getElementById('itemtable');
     var productToRemove = []
     dataSaved = JSON.parse(dataSaved)
     for (var i = 1; i < table.rows.length; i++) {
@@ -70,56 +75,57 @@ function extractProductFromHtml(tr, index) {
     return { rowid: index, name: prodname, quantity: quantity };
 }
 
-function qtyminus(elm) {
-    // We are interested in:
-    // Quantity column index  = currentCell index -1 
-    // Row index = currentRow index
-    let currentCell = elm.offsetParent;
+function changeQty(e, action) {
+    let currentCell = e.offsetParent;
     var currentRow = currentCell.parentNode;
-    let targetCellIndex = currentCell.cellIndex - 2;
+    let targetCellIndex = currentCell.cellIndex - 2; // qty col index
     let targetRowIndex = currentRow.rowIndex;
 
     var table = document.getElementById('itemtable');
     var y = table.rows[targetRowIndex].cells[targetCellIndex];
     var beforeqty = y.innerHTML;
-
-    //Minus 1
-    var afterqty = parseInt(beforeqty) - 1;
-
-    // Checks
-    if (afterqty <= 0) {
-        table.deleteRow(targetRowIndex)
+    var afterqty = beforeqty;
+    if (action === "delete") {
+        afterqty = 0;
     }
-    if (table.rows.length == 1) {
-        table.deleteRow(0)
-        table.insertRow().insertCell()
-        table.rows[0].cells[0].innerText = "Your cart is empty"
+    if (action === "minus") {
+        afterqty = parseInt(beforeqty) - 1; //Minus 1
+    }
+    if (action === "plus") {
+        afterqty = parseInt(beforeqty) + 1; //Plus 1
+    }
+    //Checks
+    if (action === "delete" || action === "minus" ) {
+        if (afterqty <= 0) {
+            table.deleteRow(targetRowIndex)
+        }
+        if (table.rows.length == 1) {
+            table.deleteRow(0)
+            table.insertRow().insertCell()
+            table.rows[0].cells[0].innerText = "Your cart is empty"
+        }
     }
     y.innerHTML = afterqty;
 
+    adjustOrderSummary();
+    updateTotalPrice()
     storeLocalStorage();
     cartTotalQty();
 }
 
-function qtyplus(elm) {
-    // We are interested in:
-    // Quantity column index  = currentCell index -1 
-    // Row index = currentRow index
-    let currentCell = elm.offsetParent;
-    var currentRow = currentCell.parentNode;
-    let targetCellIndex = currentCell.cellIndex - 2;
-    let targetRowIndex = currentRow.rowIndex;
+function handleOnClickQtyChange(e, action, productId) {
+    changeQty(e, action);
+    var xmlhttp = new XMLHttpRequest();
+    //`shopping-cart.php?pid=${productId}` === "shopping-cart.php?pid=" + productId;
+    xmlhttp.open("GET", `shopping-cart.php?productId=${productId}&action=${action}`, true);
+    xmlhttp.send();
+}
 
-    var table = document.getElementById('itemtable');
-    var y = table.rows[targetRowIndex].cells[targetCellIndex];
-    var beforeqty = y.innerHTML;
-
-    //Plus 1
-    var afterqty = parseInt(beforeqty) + 1;
-    y.innerHTML = afterqty;
-
-    storeLocalStorage();
-    cartTotalQty();
+function handleOnClickReset(action) {
+    clearLocalStorage();
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", `shopping-cart.php?action=${action}`, true);
+    xmlhttp.send();
 }
 
 function cartTotalQty() {
@@ -136,21 +142,15 @@ function cartTotalQty() {
     adjustOrderSummary();
 }
 
-function deleteProductFromCart() {
-    var table = document.getElementById('itemtable');
-    var td = event.target.parentNode; 
-    var tr = td.parentNode; // the row to be removed
-    tr.parentNode.removeChild(tr);
-    storeLocalStorage();
-    cartTotalQty();
-    adjustOrderSummary();
+function backToPrevPage() {
+    window.history.go(-1)
 }
-// if (window.addEventListener) {
-//     window.addEventListener('load', function() {
-//         alert('addEventListener')
-//     }, false);
-// } else if (window.attachEvent) { // IE < 9
-//     window.attachEvent('onload', function() {
-//         alert('attachEvent')
-//     });
+// function deleteProductFromCart() {
+//     var table = document.getElementById('itemtable');
+//     var td = event.target.parentNode;
+//     var tr = td.parentNode; // the row to be removed
+//     tr.parentNode.removeChild(tr);
+//     storeLocalStorage();
+//     cartTotalQty();
+//     adjustOrderSummary();
 // }

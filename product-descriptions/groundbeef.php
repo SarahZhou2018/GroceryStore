@@ -35,13 +35,13 @@ echo '<header>
 echo '</header>';
 echo '<nav>
     <ul>
-        <li><a href="../index.html">Home Page</a></li>
+        <li><a href="../index.php">Home Page</a></li>
         <li><a href="../aisles/' . $aisle . '.php">Return to Aisle</a></li>
-        <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
+        <li><a href="../shopping-cart/index.php">Shopping Cart</a></li>
     </ul>
     <div class="register-log-in">
-        <a href="../user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
-        <a href="../user/login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
+        <a href="../user/register.php"><button class="user-button" type="button" name="user-button">Register</button></a>
+        <a href="../user/login.php"><button class="user-button" type="button" name="login-button">Log In</button></a>
     </div>
 </nav>';
 echo '<div class="description">
@@ -64,7 +64,7 @@ echo '<div class="description">
         </div>
         <br />';
 ?>
-<form action="../shopping-cart/addtocart.php" method="POST">
+<form action="../shopping-cart/shopping-cart.php" method="POST">
     <input type="hidden" name="addtocart[pid]" value=<?= $id ?> />
     <label for="quantity">Quantity:</label>
     <input type="number" id="quantity" name="addtocart[qty]" min="1" value=1 size="2" onchange="updateSubtotal(<?= $price ?>)">

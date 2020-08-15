@@ -26,7 +26,7 @@
                 <a class="nav-link" href="../aisles/snacks.php">Return to Aisle</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
+                <a class="nav-link" href="../shopping-cart/index.php">Shopping Cart</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -108,7 +108,7 @@
 
 
     <footer>
-        <a href="frozen.html#main-header">Back to top</a>
+        <a href="frozen.php#main-header">Back to top</a>
     </footer>
 
 </body>
