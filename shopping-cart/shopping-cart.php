@@ -43,10 +43,11 @@ if (isset($_POST["addtocart"])) {
                     // $typeCount++;
                     array_push($arrType, $type);
                 }
-                print_r($arrType);
+                //print_r($arrType);
             }
         }
     }
+    $price = number_format($price, 2);
     $cartArrayId = $pidFromPage.'-'.$typeFromPage;
     // quantity add up to what is already in cart
     if (isset($_SESSION['cart'][$cartArrayId]["qty"])) {
