@@ -64,7 +64,7 @@ echo '<div class="description">
     <label for="quantity">Quantity:</label>
     <input type="number" id="quantity" name="addtocart[qty]" min="1" value=1 size="2" onchange="updateSubtotal(<?=$price?>)">
     <label for="type">Type:</label>
-    <select id="type" name="type">';
+    <select id="type" name="addtocart[type]">';
         <?php
         $index = 0;
         foreach ($types->children() as $type) {
