@@ -30,7 +30,7 @@
                 <a class="nav-link" href="../aisles/bread.php">Return to Aisle</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
+                <a class="nav-link" href="../shopping-cart/index.php">Shopping Cart</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -92,7 +92,11 @@
                             echo '<div class="card-body">';
                             echo '<h5 class="card-title">'.$product->name.'</h5>';
                             echo '<p class="card-text">';
-                            echo 'Sold in unit';
+                            if ($product->unit == "each") {
+                                echo 'Sold in unit';
+                            } else {
+                                echo 'Sold in '. $product->unit;
+                            }
                             echo '</p>';
                             echo '<h5 class="card-bold ">'.$product->price.' $</h5>';
                             echo '<a href="'.$product->productpage.'" class="stretched-link"></a>';
@@ -107,7 +111,7 @@
     </div>
 
     <footer>
-        <a href="../aisles/bread.html">Back to top</a>
+        <a href="../aisles/bread.php">Back to top</a>
     </footer>
 
 </body>

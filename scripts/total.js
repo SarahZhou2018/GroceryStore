@@ -29,7 +29,7 @@ function updateTotalPrice() {
   }
 
   // Delivery Fee is updated depending on the subtotal
-  if (subTotal < 30.0) {
+  if (subTotal < 30.0 && subTotal !== 0) {
     deliveryFee = 12.00
   }
 
