@@ -6,6 +6,10 @@ if(isset($_GET['delete'])){
     //remove entry with matching ID
     foreach($productlist->children() as $product){
         if($product->id == $id){
+            $imagepath = $product->imagepath;
+            $productpage = $product->productpage;
+            unlink($imagepath);
+            unlink($productpage);
             $dom=dom_import_simplexml($product);
             $dom->parentNode->removeChild($dom);
             break;
@@ -18,7 +22,7 @@ if(isset($_GET['delete'])){
 }
 
 echo '<script type="text/javascript">
-           window.location = "p9.php"
+           window.location = "p7.php"
       </script>';
 
 ?>

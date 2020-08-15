@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
-
-<productlist idcount="10">
+<productlist idcount="11">
     <product>
-        <id>0001</id>
+        <id>1</id>
         <name>Banana</name>
         <imagepath>../images/banana.jpg</imagepath>
         <productpage>../product-descriptions/banana.php</productpage>
@@ -13,10 +12,11 @@
             <type>organic</type>
             <type>regular</type>
         </types>
+        <unit>lb</unit>
         <productdesc>Product of Costa Rica, Ecuador or Guatemala. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel co.</productdesc>
     </product>
     <product>
-        <id>0002</id>
+        <id>2</id>
         <name>Baguette</name>
         <imagepath>../images/baguette.jpg</imagepath>
         <productpage>../product-descriptions/baguette.php</productpage>
@@ -27,10 +27,11 @@
             <type>White</type>
             <type>Whole wheat</type>
         </types>
+        <unit>each</unit>
         <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe quaerat.</productdesc>
     </product>
     <product>
-        <id>0003</id>
+        <id>3</id>
         <name>Cheese Dip</name>
         <imagepath>../images/cheesedip.jpg</imagepath>
         <productpage>../product-descriptions/cheesedip.php</productpage>
@@ -42,10 +43,11 @@
             <type>Spicy</type>
             <type>Mild</type>
         </types>
-        <productdesc>So creamy, decadently cheesy, and perfectly easy to whip up at a moment’s notice. Eat it with nachos or just plain chips because at the end of the day it is going to be very delicious on anything that you put it on.</productdesc>
+        <unit>each</unit>
+        <productdesc>So creamy, decadently cheesy, and perfectly easy to whip up at a moment&#x2019;s notice. Eat it with nachos or just plain chips because at the end of the day it is going to be very delicious on anything that you put it on.</productdesc>
     </product>
     <product>
-        <id>0004</id>
+        <id>4</id>
         <name>Chicken breast, 1lb</name>
         <imagepath>../images/chicken.jpg</imagepath>
         <productpage>../product-descriptions/chicken.php</productpage>
@@ -56,11 +58,12 @@
             <type>Regular</type>
             <type>Certified Organic Free Range</type>
         </types>
+        <unit>lb</unit>
         <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe
                 quaerat. Quod modi nesciunt earum hic, eligendi esse vitae quis velit quisquam autem mollitia ea?</productdesc>
     </product>
     <product>
-        <id>0005</id>
+        <id>5</id>
         <name>Chips</name>
         <imagepath>../images/lays.jpg</imagepath>
         <productpage>../product-descriptions/chips.php</productpage>
@@ -74,10 +77,11 @@
             <type>Ketchup</type>
             <type>Salt and Vinegar</type>
         </types>
-        <productdesc>Lay’s chips brings the crispy bite you love from your favorite Lay’s potato chip with the delicious secret combinations. This product is sure to deliver a kick and flavor at any moment given!</productdesc>
+        <unit>unit</unit>
+        <productdesc>Lay&#x2019;s chips brings the crispy bite you love from your favorite Lay&#x2019;s potato chip with the delicious secret combinations. This product is sure to deliver a kick and flavor at any moment given!</productdesc>
     </product>
     <product>
-        <id>0006</id>
+        <id>6</id>
         <name>Ground beef, 1lb</name>
         <imagepath>../images/beef.jpg</imagepath>
         <productpage>../product-descriptions/groundbeef.php</productpage>
@@ -88,10 +92,11 @@
             <type>80% Lean / 20% fat</type>
             <type>93% Lean / 7% fat</type>
         </types>
+        <unit>lb</unit>
         <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe quaerat. Quod modi nesciunt earum hic, eligendi esse vitae quis velit quisquam autem mollitia ea?</productdesc>
     </product>
     <product>
-        <id>0007</id>
+        <id>7</id>
         <name>Chocolate ice cream, 473 mL</name>
         <imagepath>../images/bj.jpg</imagepath>
         <productpage>../product-descriptions/icecream.php</productpage>
@@ -102,10 +107,11 @@
             <type>Chocolate</type>
             <type>Chocolate and Vanilla</type>
         </types>
+        <unit>each</unit>
         <productdesc>When smooth chocolate ice cream meets fudge chips and salty swirls, they pack a serious one-two crunch.</productdesc>
     </product>
     <product>
-        <id>0008</id>
+        <id>8</id>
         <name>Romaine Lettuce</name>
         <imagepath>../images/lettuce.jpeg</imagepath>
         <productpage>../product-descriptions/lettuce.php</productpage>
@@ -116,10 +122,11 @@
             <type>organic</type>
             <type>regular</type>
         </types>
+        <unit>each</unit>
         <productdesc>Product of U.S.A. or Mexico. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur su.</productdesc>
     </product>
     <product>
-        <id>0009</id>
+        <id>9</id>
         <name>FireCracker Popsicle</name>
         <imagepath>../images/popp.jpg</imagepath>
         <productpage>../product-descriptions/popsicle.php</productpage>
@@ -129,10 +136,11 @@
         <types>
             <type>N/A</type>
         </types>
+        <unit>pack</unit>
         <productdesc>blue, white and red popsicles</productdesc>
     </product>
     <product>
-        <id>0010</id>
+        <id>10</id>
         <name>Tortilla</name>
         <imagepath>../images/tortilla.jpg</imagepath>
         <productpage>../product-descriptions/tortilla.php</productpage>
@@ -143,6 +151,7 @@
             <type>Large (6 tortillas)</type>
             <type>Small (10 tortillas)</type>
         </types>
+        <unit>each</unit>
         <productdesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe quaerat.</productdesc>
     </product>
 </productlist>

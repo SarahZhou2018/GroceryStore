@@ -38,7 +38,7 @@
                     echo '<div class="form-large">';
                     echo '<img src="'.$product->imagepath.'" alt="'.$product->name.'" width="200px" height="200px" style= "float: left; padding-right: 1em;">';
                     echo '<h2>'.$product->name.' (ID: '.$product->id.')</h2>';
-                    echo '<p>'.$product->price.'$</p>';
+                    echo '<p>'.$product->price.'$/'.$product->unit.'</p>';
                     echo '<p>'.$product->weight.'</p>';
                     echo '<h3>Product Description</h3>';
                     echo '<p>'.$product->productdesc.'</p>';

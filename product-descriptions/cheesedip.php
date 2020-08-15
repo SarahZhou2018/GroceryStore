@@ -8,40 +8,47 @@
     <link rel="stylesheet" href="../css/p3.css">
     <script src="../scripts/product-descriptions.js"></script>
 </head>
-
-<body onload="updateSubtotal(4)">
-    <header>
-        <div class="product-name-header">
-            Product Description - Cheese Dip
-        </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home Page</a></li>
-            <li><a href="../aisles/snacks.php">Return to Aisle</a></li>
-            <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
-        </ul>
-        <div class="register-log-in">
-            <a href="../user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
-            <a href="../user/login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
-        </div>
-    </nav>
-
-
-    <div class="description">
-        <div class="image">
-            <img src="../images/cheesedip.jpg" alt="Chips" width="200px" height="200px" />
-        </div>
-        <h2>Cheese Dip</h2>
-        <p>4$/each</p>
-        <p>Volume: 418 ml</p>
-        <!--<p>Origin: USA</p>
-        <p>Brand: Tostitos</p>-->
-        <h3>Product Description</h3>
-        <p>So creamy, decadently cheesy, and perfectly easy to whip up at a moment’s notice. Eat it with nachos or just plain chips because at the end of the day it is going to be very delicious on anything that you put it on.</p>
-
-        <button class="addtocart" type="button" name="moredesc-button" onClick="toggleDescription()">More
+<?php
+    $productlist=simplexml_load_file("../backstore/productlist.xml") or die("Error: cannot load productlist.xml");
+    $id=0003;
+    foreach($productlist->children() as $product){
+        if($product->id == $id){
+            $name=$product->name;
+            $aisle=$product->aisle;
+            $price=$product->price;
+            $unit=$product->unit;
+            $weight=$product->weight;
+            $productdesc=$product->productdesc;
+            $imagepath=$product->imagepath;
+            $types=$product->types;
+            break;
+        }
+    }
+    echo '<body onload="updateSubtotal('.$price.')">';
+    echo '<header>
+    <div class="product-name-header">Product Description - '.$name.'</div>';
+    echo '</header>';
+    echo '<nav>
+    <ul>
+        <li><a href="../index.html">Home Page</a></li>
+        <li><a href="../aisles/'.$aisle.'.php">Return to Aisle</a></li>
+        <li><a href="../shopping-cart/index.html">Shopping Cart</a></li>
+    </ul>
+    <div class="register-log-in">
+        <a href="../user/register.html"><button class="user-button" type="button" name="user-button">Register</button></a>
+        <a href="../user/login.html"><button class="user-button" type="button" name="login-button">Log In</button></a>
+    </div>
+</nav>';
+    echo '<div class="description">
+    <div class="image">
+        <img src="'.$imagepath.'" alt="'.$name.'" width="200px" height="200px" />
+    </div>
+    <h2>'.$name.'</h2>
+    <p>'.$price.'$/'.$unit.'</p>
+    <p>Weight: '.$weight.'</p>
+    <h3>Product Description</h3>
+    <p>'.$productdesc.'</p>
+    <button class="addtocart" type="button" name="moredesc-button" onClick="toggleDescription()">More
             description</button><br><br>
         <div id="long-desc" style="display:none">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur sunt fuga commodi ratione saepe
@@ -52,26 +59,25 @@
         </div>
         <br />
 
-        <form action="../shopping-cart/index.html">
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(4)">
-            <label for="type">Type:</label>
-            <select id="type" name="type">
-                <option>Not Spicy</option>
-                <option>Mild</option>
-                <option>Spicy</option>
-            </select>
-            Subtotal: <span id="subtotal"></span>
-            <div class="addtocartposition">
-                <a href="../shopping-cart/index.html"><button class="addtocart" type="button" name="addtocart-button">Add to Cart</button></a>
-            </div>
-        </form>
-    </div>
-    <br>
-    <br>
-    <br>
-    <footer></footer>
+    <form action="../shopping-cart/index.html">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value=1 size="2" onchange="updateSubtotal(3.99)">
+        <label for="type">Type:</label>
+        <select id="type" name="type">';
+    foreach($types->children() as $type){
+        echo "<option>$type</option>";
+    }
+    echo '</select>
+        Subtotal: <span id="subtotal"></span>
+        <div class="addtocartposition">
+            <a href="../shopping-cart/index.html"><button class="addtocart" type="button" name="addtocart-button">Add to Cart</button></a>
+        </div>
+    </form>
+</div>
 
-</body>
+<footer></footer>
 
+</body>';
+    
+?>
 </html>
