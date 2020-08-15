@@ -138,9 +138,9 @@ print_r($_SESSION);
 
             </div>
             <!-- Bottom Buttons -->
-            <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" value="Reset Cart" readonly>
-            <form action="../aisles/fruits-vegetables.php">
-                <input class="button" id="shop" type="submit" value="Continue Shopping" readonly>
+            <form action="../shopping-cart/addtocart.php" method="POST">
+                <input class="button" id="shop" type="submit" onclick="clearLocalStorage()" name="reset" value="Reset Cart" readonly>
+                <input class="button" id="shop" type="submit" name="continueShop" value="Continue Shopping" readonly>
             </form>
 
         </div>
@@ -155,64 +155,6 @@ print_r($_SESSION);
                 <!-- Order Summary Table -->
                 <div id="table2">
                     <table class="table-responsive" id="mytable">
-                        <!--
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                        </tr>
-
-                        <tr id="romaineLettuce">
-                            <td id="name">Romaine Lettuce</td>
-                            <td style="text-align:right" id="number">x 1</td>
-                            <td style="text-align:right" id="price">5.00 $</td>
-                        </tr>
-                        <tr id="bananas">
-                            <td id="name">Bananas</td>
-                            <td style="text-align:right" id="number">x 1</td>
-                            <td style="text-align:right" id="price">1.99 $</td>
-                        </tr>
-                        <tr id="groundBeef">
-                            <td id="name">Ground Beef</td>
-                            <td style="text-align:right" id="number">x 1</td>
-                            <td style="text-align:right" id="price">8.99 $</td>
-                        </tr>
-                        <tr id="chickenBreast" style="display:none">
-                            <td id="name">Chicken Breast</td>
-                            <td style="text-align:right" id="number"></td>
-                            <td style="text-align:right" id="price"></td>
-                        </tr>
-                        <tr id="baguette" style="display:none">
-                            <td id="name">Baguette</td>
-                            <td style="text-align:right" id="number"></td>
-                            <td style="text-align:right" id="price"></td>
-                        </tr>
-                        <tr id="tortilla" style="display:none">
-                            <td id="name">Tortilla</td>
-                            <td style="text-align:right" id="number"></td>
-                            <td style="text-align:right" id="price"></td>
-                        </tr>
-                        <tr id="laysChips" style="display:none">
-                            <td id="name">Lay's Chips</td>
-                            <td style="text-align:right" id="number"></td>
-                            <td style="text-align:right" id="price"></td>
-                        </tr>
-                        <tr id="cheeseDip" style="display:none">
-                            <td id="name">Cheese Dip</td>
-                            <td style="text-align:right" id="number"></td>
-                            <td style="text-align:right" id="price"></td>
-                        </tr>
-                        <tr id="iceCream" style="display:none">
-                            <td id="name">Ben&Jerry's Ice Cream</td>
-                            <td style="text-align:right" id="number"></td>
-                            <td style="text-align:right" id="price"></td>
-                        </tr>
-                        <tr id="popsicle" style="display:none">
-                            <td id="name">FireCracker Popsicle</td>
-                            <td style="text-align:right" id="number"></td>
-                            <td style="text-align:right" id="price"></td>
-                        </tr>
-                    -->
                     </table>
                     <span></span>
                     <!-- Total Table -->

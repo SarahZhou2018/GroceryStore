@@ -1,4 +1,4 @@
-<!-- Add to Cart
+<!-- Add to Cart + Edit Cart
 Shi Qi Zhou - 40163947 -->
 
 <?php
@@ -55,7 +55,6 @@ if (isset($_POST["addtocart"])) {
         "typeCount" => $typeCount,
     );
    // print_r($_SESSION); 
-    
 }
 header("Location: index.php");
 
@@ -64,7 +63,7 @@ if (isset($_POST["deleteFromCart"])) {
     $pidFromPage = $_POST["deletefromcart"];
     unset($_SESSION["cart"][$pidFromPage]);
 }
-header("Location: index.php");
+header("Refresh:0");
 
 
 //Qtyminus Button
@@ -76,34 +75,18 @@ if (isset($_POST["qtyminus"])) {
         unset($_SESSION["cart"][$pidFromPage]);
     }
 }
-header("Location: index.php");
+header("Refresh:0");
 
 //Qtyplus Button
 if (isset($_POST["qtyplus"])) {
     $pidFromPage = $_POST["deletefromcart"];
     unset($_SESSION["cart"][$pidFromPage]);
 }
-header("Location: index.php");
+header("Refresh:0");
 
-
-// if (!isset($_SESSION["total"])) {
-
-//     $_SESSION["total"] = 0;
-
-//     for ($i = 0; $i < count($products); $i++) {
-//         $_SESSION["qty"][$i] = 0;
-//         $_SESSION["price"][$i] = 0;
-//     }
-// }
 //Reset
-// if (isset($_GET['reset'])) {
-//     if ($_GET["reset"] == 'true') {
-//         unset($_SESSION["qty"]); //The quantity for each product
-//         unset($_SESSION["price"]); //The amount from each product
-//         unset($_SESSION["total"]); //The total cost
-//         unset($_SESSION["cart"]); //Which item has been chosen
-//     }
-// }
-
+if (isset($_POST['reset'])) {
+    session_destroy();
+}
 
 ?>
