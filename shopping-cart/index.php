@@ -87,42 +87,44 @@
                         </tr>
 
                         <!-- Rows-->
-                        <?php foreach ($_SESSION["cart"] as $id => $product) : ?>
-                            <tr>
-                                <td>
-                                    <p><?= $product["name"] ?></p>
-                                    <img src=<?= $product["imagePath"] ?> alt="Romaine Lettuce">
-                                </td>
-                                <td>
-                                    <?= $product["price"] . " $/" . $product["unit"] ?>
-                                </td>
-                                <td>
-                                    <?= $product["qty"] ?>
-                                </td>
-                                <td>
-                                    <select id="type" name="type">
-                                        <?php foreach ($product["arrType"] as $index => $type) : ?>
-                                            <option <?= $index == $product["type"] ? "selected='selected'" : "" ?> value="<?= $index ?>">
-                                                <?= $type ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </td>
-                                <td>
-                                    <!-- Quantity +/- buttons -->
-                                    <!-- <input type="hidden" name="qtyminus" /> -->
-                                    <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="handleOnClickQtyChange(this, 'minus','<?= $id ?>')">
-                                        <img id="icon" src="../images/buttons/minus.png"></button>
-                                    <!-- <input type="hidden" name="qtyplus" /> -->
-                                    <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="handleOnClickQtyChange(this, 'plus','<?= $id ?>')">
-                                        <img id="icon" src="../images/buttons/plus.png"></button>
-                                </td>
-                                <td>
-                                    <!-- <input type="hidden" name="deleteFromCart" value=/> -->
-                                    <button type="submit" onclick="handleOnClickQtyChange(this, 'delete','<?= $id ?>')" class="deletebtn">DELETE</button>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
+                        <?php if (isset($_SESSION["cart"])) : ?>
+                            <?php foreach ($_SESSION["cart"] as $id => $product) : ?>
+                                <tr>
+                                    <td>
+                                        <p><?= $product["name"] ?></p>
+                                        <img src=<?= $product["imagePath"] ?> alt="Romaine Lettuce">
+                                    </td>
+                                    <td>
+                                        <?= $product["price"] . " $/" . $product["unit"] ?>
+                                    </td>
+                                    <td>
+                                        <?= $product["qty"] ?>
+                                    </td>
+                                    <td>
+                                        <select id="type" name="type">
+                                            <?php foreach ($product["arrType"] as $index => $type) : ?>
+                                                <option <?= $index == $product["type"] ? "selected='selected'" : "" ?> value="<?= $index ?>">
+                                                    <?= $type ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <!-- Quantity +/- buttons -->
+                                        <!-- <input type="hidden" name="qtyminus" /> -->
+                                        <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="handleOnClickQtyChange(this, 'minus','<?= $id ?>')">
+                                            <img id="icon" src="../images/buttons/minus.png"></button>
+                                        <!-- <input type="hidden" name="qtyplus" /> -->
+                                        <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="handleOnClickQtyChange(this, 'plus','<?= $id ?>')">
+                                            <img id="icon" src="../images/buttons/plus.png"></button>
+                                    </td>
+                                    <td>
+                                        <!-- <input type="hidden" name="deleteFromCart" value=/> -->
+                                        <button type="submit" onclick="handleOnClickQtyChange(this, 'delete','<?= $id ?>')" class="deletebtn">DELETE</button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </table>
                 </div>
                 <span></span>
@@ -184,7 +186,7 @@
 
             <!-- Bottom Buttons -->
             <form action="shopping-cart.php" method="GET">
-            <input class="button" id="pay" type="submit" name="checkout" value="Checkout" readonly>
+                <input class="button" id="pay" type="submit" name="checkout" value="Checkout" readonly>
             </form>
         </div>
     </div>
