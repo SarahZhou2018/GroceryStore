@@ -44,10 +44,10 @@ function updateTotalPrice() {
   // Calculate total
   total = Math.round((subTotal + deliveryFee + GST + QST) *100)/100;
 
-  document.getElementsByClassName("subtotal")[0].innerHTML = subTotal + " $"
-  document.getElementsByClassName("deliveryFee")[0].innerHTML = deliveryFee + " $"
-  document.getElementsByClassName("GST")[0].innerHTML = GST + " $"
-  document.getElementsByClassName("QST")[0].innerHTML = QST + " $"
-  document.getElementsByClassName("grandTotal")[0].innerHTML = total + " $"
+  document.getElementsByClassName("subtotal")[0].innerHTML = subTotal.toFixed(2) + " $"
+  document.getElementsByClassName("deliveryFee")[0].innerHTML = deliveryFee.toFixed(2) + " $"
+  document.getElementsByClassName("GST")[0].innerHTML = GST.toFixed(2) + " $"
+  document.getElementsByClassName("QST")[0].innerHTML = QST.toFixed(2) + " $"
+  document.getElementsByClassName("grandTotal")[0].innerHTML = total.toFixed(2) + " $"
 
 }
