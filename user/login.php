@@ -16,6 +16,8 @@
         $password = $_POST['password'];
 
         $validEntry = false;
+        $isUserAdmin = false;
+        $fieldsAreEmpty = true;
 
         $userlist=simplexml_load_file("../backstore/userlist.xml") or die("Error: cannot load userlist.xml");
 
@@ -25,12 +27,20 @@
             // Checking for password
             if($user->password == $password) {
               $validEntry = true;
+              $fieldsAreEmpty = false;
+              // Check if user is admin
+              if($user->admin == 1) {
+                $isUserAdmin = true;
+              }
             }
           }
         }
 
         if(!$validEntry) {
-          echo '<div id="error" class="alert alert-danger" role="alert"><strong>ERROR: </strong> Email or Password is/are incorrect.</div>';
+          // echo '<div id="error" class="alert alert-danger" role="alert"><strong>ERROR: </strong> Email or Password is/are incorrect.</div>';
+        } else if($validEntry && $isUserAdmin) {
+          echo '<div id="error" class="alert alert-success" role="alert"><strong>SUCCESS: </strong> You are now logged in.</div>';
+          echo "<script type='text/javascript'>document.location.href='http://35.223.54.77/backstore/';</script>";
         } else {
           echo '<div id="error" class="alert alert-success" role="alert"><strong>SUCCESS: </strong> You are now logged in.</div>';
           echo "<script type='text/javascript'>document.location.href='../index.html';</script>";
@@ -64,9 +74,14 @@
         <input required class="form-control" type="password" name="password" placeholder="Password" password>
 
         <button class="btn btn-primary" type="submit">Log In</button>
-        <a class="forgotPassword" href="#">Forgot password</a>
+        <a class="forgotPassword" href="./forgotpassword.php">Forgot password</a>
 
       </form>
+      <?php
+          if (!$validEntry && $fieldsAreEmpty) {
+            echo '<div id="error" class="alert alert-danger" role="alert"><strong>ERROR: </strong> Email or Password is/are incorrect.</div>';
+          }
+      ?>
     </div>
 
   </body>
