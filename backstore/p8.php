@@ -2,7 +2,9 @@
     P8 - Edit product
     Ejazali Rezayi - 40101892
 -->
-
+<?php
+require("require.php");
+?>
 <?php
 global $edit_mode, $id, $name, $price, $weight, $aisle, $productdesc, $alltypes, $unit, $imagepath;
 $edit_mode = false;
@@ -52,10 +54,12 @@ if(isset($_GET['edit'])){
             <ul>
                 <li><a href="p7.php">Product list</a></li>
                 <li><a href="p9.php">User list</a></li>
-                <li><a href="p11.html">Order list</a></li>
+                <li><a href="p11.php">Order list</a></li>
                 <li><a href="../index.html">Main site</a></li>
             </ul>
-            <a href="../index.html"><button class="logout-button" type="button" title="logout">Log out</button></a>
+            <form method="post">
+                <input type="submit" name="logout" value="Log out" class="logout-button" />
+            </form>
         </nav>
 
         <div id="main-block">
@@ -127,7 +131,7 @@ if(isset($_GET['edit'])){
 
             </form>
             <div class="clr"></div>
-            <a href="p7.html">Return to product list without saving</a>
+            <a href="p7.php">Return to product list without saving</a>
         </div>
         <footer>
             <a href="p8.html#main-header">Back to top</a>

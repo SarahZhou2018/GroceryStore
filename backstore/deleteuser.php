@@ -1,4 +1,6 @@
 <?php
+require("require.php");
+
 if(isset($_GET['delete'])){
     $id=$_GET["selectedUser"];
     $userlist=simplexml_load_file("userlist.xml") or die("Error: cannot load userlist.xml");

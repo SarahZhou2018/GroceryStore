@@ -67,7 +67,7 @@ echo '<div class="description">
 <form action="../shopping-cart/shopping-cart.php" method="POST">
     <input type="hidden" name="addtocart[pid]" value=<?= $id ?> />
     <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" name="addtocart[qty]" min="1" value=1 size="2" onchange="updateSubtotal(3.99)">
+    <input type="number" id="quantity" name="addtocart[qty]" min="1" value=1 size="2" onchange="updateSubtotal(<?=$price?>)">
     <label for="type">Type:</label>
     <select id="type" name="addtocart[type]">';
         <?php

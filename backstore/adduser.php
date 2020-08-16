@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 //redirect to user list
 echo '<script type="text/javascript">
-           window.location = "p9.php"
+        window.history.go(-2);
       </script>';
 
 //function to parse inputs

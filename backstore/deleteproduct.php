@@ -1,4 +1,5 @@
 <?php
+require("require.php");
 if(isset($_GET['delete'])){
     $id=$_GET["selectedProduct"];
     $productlist=simplexml_load_file("productlist.xml") or die("Error: cannot load productlist.xml");
