@@ -1,21 +1,32 @@
 <?xml version="1.0"?>
-<orderlist idcount="1">
-    <order>
-        <ordernum>2116</ordernum>
-        <customerid>123</customerid>
+<orderlist idcount="2">
+    
+   <order>
+<id> 523</id>
+        
+        <customerid>236</customerid>
+        
+        <datec>2020-08-01 00:00:00</datec>
+        <datem>2020-08-07 14:00:00</datem>
+        <fname>jojo</fname>
+        <lname>rabbit</lname>
+        <email>jojorabbit@test.com</email>
+        <phonenum>6132353214</phonenum>
+
+   </order>
+    
+   <order>
+<id> 555</id>
+        
+        <customerid>365</customerid>
+        
         <datec>2020-07-01 00:00:00</datec>
         <datem>2020-07-07 14:00:00</datem>
-        <fname>John</fname>
-        <lname>Smith</lname>
-        <email>joesmith@test.com</email>
-        
-        <phonenum>5145699089</phonenum>
-        <ordernote>1</ordernote>
-        <products>
-        <
-            </products>
-        
-    </order>
-   
+        <fname>johny</fname>
+        <lname>smith</lname>
+        <email>edt@test.com</email>
+        <phonenum>6136583214</phonenum>
+
+   </order>
 
 </orderlist>
