@@ -42,6 +42,7 @@
                             <th>Last Name</th>
                             <th>Email </th>
                             <th>Phone number</th>
+                            <th>Order description</th>
                         </tr>
                         <?php
                             $orderlist=simplexml_load_file("orderlist.xml") or die("Error: cannot load orderlist.xml");
@@ -49,9 +50,9 @@
                             foreach($orderlist->children() as $order){
                                 echo "<tr>";
                                 echo "<td><label for=\"$order->id\"><input type=\"radio\" name=\"selectedUser\" id=\"$order->id\" value=\"$order->id\" onclick=\"enableBtns()\" />$order->id</label></td>";
-                                //echo "<td>$order->id</td>";
+                                
                                 echo "<td>$order->customerid</td>";
-                                //echo "<td>$order->ordernum</td>";
+                               
                                 
                                 echo "<td>$order->datec</td>";
                                 echo "<td>$order->datem</td>";
@@ -59,7 +60,7 @@
                                 echo "<td>$order->lname</td>";
                                 echo "<td>$order->email</td>";
                                 echo "<td>$order->phonenum</td>";
-                                
+                                echo "<td>$order->orderdesc</td>";
                                 echo "</tr>";
 
                             }
