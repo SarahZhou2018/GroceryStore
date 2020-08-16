@@ -40,9 +40,13 @@
         if(!$validEntry) {
           // echo '<div id="error" class="alert alert-danger" role="alert"><strong>ERROR: </strong> Email or Password is/are incorrect.</div>';
         } else if($validEntry && $isUserAdmin) {
+          session_start();
+          $_SESSION['admin']=true;
           echo '<div id="error" class="alert alert-success" role="alert"><strong>SUCCESS: </strong> You are now logged in.</div>';
-          echo "<script type='text/javascript'>document.location.href='http://35.223.54.77/backstore/';</script>";
+          echo "<script type='text/javascript'>document.location.href='../backstore/';</script>";
         } else {
+          session_start();
+          $_SESSION['admin']=false;
           echo '<div id="error" class="alert alert-success" role="alert"><strong>SUCCESS: </strong> You are now logged in.</div>';
           echo "<script type='text/javascript'>document.location.href='../index.html';</script>";
         }
