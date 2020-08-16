@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Validate inputs
     $id=0;
     if(isset($_POST["id"])) $id = validate_input($_POST["id"]);
-    $ordernum = validate_input($_POST["ordernum"]);
-    $userid = validate_input($_POST["userid"]);
+    
+    $customerid = validate_input($_POST["customerid"]);
     $datec = validate_input($_POST["datec"]);
     $datem = validate_input($_POST["datem"]);
     $fname = validate_input($_POST["fname"]);
@@ -29,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($id){
         foreach($orderlist->children() as $order){
             if($order->id == $id){
-                $order->ordernum=$ordernum;
-                $order->userid=$userid;
+                
+                $order->customer=$customerid;
                 $order->datec=$datec;
                 $order->datem=$datem;
                 $order->fname=$fname;
@@ -54,8 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //create new order entry
         $new_order = $orderlist->addChild("order");
-        $new_order->addChild("ordernum",$ordernum);
-        $new_order->addChild("userid",$userid);
+        $new_order->addChild("id",$id);
+        $new_order->addChild("customerrid",$customerid);
         $new_order->addChild("datec",$datec);
         $new_order->addChild("datem",$datem);
         $new_order->addChild("fname",$fname);
