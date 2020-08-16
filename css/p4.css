@@ -177,8 +177,9 @@ header {
     margin-right: auto;
 }
 
-.item-block p {
+.table-responsive p {
     text-align: center;
+    line-height: 1.5em;
 }
 
 .item-block table {
