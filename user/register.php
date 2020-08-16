@@ -17,7 +17,7 @@
 
     <div class="navbar">
       <h3>Register</h3>
-      <a href="../index.html">Home Page</a>
+      <a href="../index.php">Home Page</a>
       <a href="#"></a>
     </div>
 
@@ -61,7 +61,7 @@
           </div>
 
           <div class="col-xl-12 col-sm-12">
-            <a href="../index.html"><button class="btn btn-primary" type="submit" name="button">Register</button></a>
+            <a href="../index.php"><button class="btn btn-primary" type="submit" name="button">Register</button></a>
           </div>
 
         </div>
