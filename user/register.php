@@ -52,7 +52,7 @@
 
             <label for="subscribeToMailingList">Subscribe To Mailing List?</label>
             <br>
-            <input type="checkbox" name="marketinglist" id="marketinglist" <?php if ($marketinglist==1 && $edit_mode) echo "checked"; ?>>
+            <input type="checkbox" name="marketinglist" id="marketinglist">
             <!-- <select class="form-control" name="">
               <option value="true">Yes</option>
               <option value="false">No</option>
