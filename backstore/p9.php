@@ -28,7 +28,7 @@ require("require.php");
                 <li><a href="p7.php">Product list</a></li>
                 <li><a href="p9.php">User list</a></li>
                 <li><a href="p11.php">Order list</a></li>
-                <li><a href="../index.html">Main site</a></li>
+                <li><a href="../index.php">Main site</a></li>
             </ul>
             <form method="post">
                 <input type="submit" name="logout" value="Log out" class="logout-button" />

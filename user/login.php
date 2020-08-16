@@ -48,7 +48,7 @@
           session_start();
           $_SESSION['admin']=false;
           echo '<div id="error" class="alert alert-success" role="alert"><strong>SUCCESS: </strong> You are now logged in.</div>';
-          echo "<script type='text/javascript'>document.location.href='../index.html';</script>";
+          echo "<script type='text/javascript'>document.location.href='../index.php';</script>";
         }
 
       }
@@ -65,7 +65,7 @@
 
     <div class="navbar">
       <h3>Log In</h3>
-      <a href="../index.html">Home Page</a>
+      <a href="../index.php">Home Page</a>
       <a href="#"></a>
     </div>
 

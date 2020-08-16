@@ -59,7 +59,7 @@
 
     <div class="navbar">
       <h3>Forgot Password</h3>
-      <a href="../index.html">Home Page</a>
+      <a href="../index.php">Home Page</a>
       <a href="#"></a>
     </div>
 

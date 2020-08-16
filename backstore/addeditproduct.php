@@ -97,13 +97,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '</header>';
             echo '<nav>
             <ul>
-                <li><a href=\"../index.html\">Home Page</a></li>
+                <li><a href=\"../index.php\">Home Page</a></li>
                 <li><a href=\"../aisles/'.\$aisle.'.php\">Return to Aisle</a></li>
-                <li><a href=\"../shopping-cart/index.html\">Shopping Cart</a></li>
+                <li><a href=\"../shopping-cart/index.php\">Shopping Cart</a></li>
             </ul>
             <div class=\"register-log-in\">
-                <a href=\"../user/register.html\"><button class=\"user-button\" type=\"button\" name=\"user-button\">Register</button></a>
-                <a href=\"../user/login.html\"><button class=\"user-button\" type=\"button\" name=\"login-button\">Log In</button></a>
+                <a href=\"../user/register.php\"><button class=\"user-button\" type=\"button\" name=\"user-button\">Register</button></a>
+                <a href=\"../user/login.php\"><button class=\"user-button\" type=\"button\" name=\"login-button\">Log In</button></a>
             </div>
         </nav>';
             echo '<div class=\"description\">
@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <br />
         
-            <form action=\"../shopping-cart/index.html\">
+            <form action=\"../shopping-cart/index.php\">
                 <label for=\"quantity\">Quantity:</label>
                 <input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" value=1 size=\"2\" onchange=\"updateSubtotal(3.99)\">
                 <label for=\"type\">Type:</label>
@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '</select>
                 Subtotal: <span id=\"subtotal\"></span>
                 <div class=\"addtocartposition\">
-                    <a href=\"../shopping-cart/index.html\"><button class=\"addtocart\" type=\"button\" name=\"addtocart-button\">Add to Cart</button></a>
+                    <a href=\"../shopping-cart/index.php\"><button class=\"addtocart\" type=\"button\" name=\"addtocart-button\">Add to Cart</button></a>
                 </div>
             </form>
         </div>
