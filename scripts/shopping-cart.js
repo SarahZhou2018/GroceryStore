@@ -1,5 +1,4 @@
 // Shi Qi Zhou - 40163947
-// Quantity buttons that preserve quantity through refresh
 
 var isResetCart = false;
 
@@ -94,7 +93,7 @@ function changeQty(e, action) {
     if (action === "plus") {
         afterqty = parseInt(beforeqty) + 1; //Plus 1
     }
-    //Checks
+    //Checks if qty <=0
     if (action === "delete" || action === "minus" ) {
         if (afterqty <= 0) {
             table.deleteRow(targetRowIndex)
@@ -113,6 +112,7 @@ function changeQty(e, action) {
     cartTotalQty();
 }
 
+// +/-, DELETE buttons
 function handleOnClickQtyChange(e, action, productId) {
     changeQty(e, action);
     var xmlhttp = new XMLHttpRequest();
@@ -121,7 +121,12 @@ function handleOnClickQtyChange(e, action, productId) {
     xmlhttp.send();
 }
 
+// Reset Cart button
 function handleOnClickReset() {
+    var r = confirm("Do you wish to empty your shopping cart?");
+    if (!r) {
+        return;
+    }
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -132,6 +137,7 @@ function handleOnClickReset() {
     xmlhttp.send();
 }
 
+// Total qty shown next to "Your Items"
 function cartTotalQty() {
     var table = document.getElementById('itemtable');
     var totalqty = 0;
@@ -146,15 +152,7 @@ function cartTotalQty() {
     adjustOrderSummary();
 }
 
+// Continue Shopping button
 function backToPrevPage() {
     window.history.go(-1)
 }
-// function deleteProductFromCart() {
-//     var table = document.getElementById('itemtable');
-//     var td = event.target.parentNode;
-//     var tr = td.parentNode; // the row to be removed
-//     tr.parentNode.removeChild(tr);
-//     storeLocalStorage();
-//     cartTotalQty();
-//     adjustOrderSummary();
-// }
