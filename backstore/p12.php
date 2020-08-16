@@ -54,9 +54,7 @@ if(isset($_GET['edit'])){
             <h2>Add/Edit Order</h2>
             Enter order information below:<br>
             <form action="addorder.php" class="form-large" method="POST" enctype="multipart/form-data">
-            <div class="required-fields">
-                    <i>* required fields</i>
-                </div>
+            
             <?php
                 if($edit_mode){
                     echo"<div class=\"form-container\">
@@ -119,55 +117,16 @@ if(isset($_GET['edit'])){
                 
                     <input type="submit" value="Save" class="button">
                 </form>
-                <div class="table-overflow">
-                    <table>
-                        <!-- Button Add Row  -->
-                        <i
-                                class="button" value="Save"> ADD</i></button>
-                        <tr>
-                            <th scope="col"> Products </th>
-                            <th scope="col"> Quantity </th>
-                            <th scope="col"> Action </th>
-                        </tr>
-                        <tr>
-                            <div contenteditable>
-                                <td>
-                                    <div contenteditable>Paramount Citrus Navel Oranges</div>
-                                </td>
-                                <td>
-                                    <div contenteditable>8 boxes</div>
-                                </td>
-                                <td>
-                                    <!-- Call to action button -->
-                                    <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
-                                            DELETE</i></button>
-                                </td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div contenteditable>Ristorante Frozen Pepperoni Pizza</div>
-                            </td>
-                            <td>
-                                <div contenteditable>2 boxes</div>
-                            </td>
-                            <td>
-                                <!-- Call to action button -->
-                                <button type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="">
-                                        DELETE</i></button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                
                 <br /> <br /><br />
                 To add a order, enter a new product name and fill all the inputs <br>
                 To edit a order, enter the changes in the order note section <br>
-                To delete a order, leave everything blank and save it <br>
+                To delete a order, leave everything blank and click the return link <br>
                 
 
             
             <div class="clr"></div>
-            <a href="p11.php">Return to order list without saving</a>
+            <a href="p11.php">Return to order list with saving</a>
         </div>
         <footer>
             <a href="p12.html#main-header">Back to top</a>
