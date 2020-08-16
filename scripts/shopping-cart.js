@@ -1,5 +1,4 @@
 // Shi Qi Zhou - 40163947
-// Quantity buttons that preserve quantity through refresh
 
 var isResetCart = false;
 
@@ -33,29 +32,34 @@ function storeLocalStorage() {
 }
 
 function getLocalStorage() {
-    var dataSaved = localStorage.getItem("persistingVars");
-    if (dataSaved == null) {
-        return;
-    }
-
     var table = document.getElementById('itemtable');
-    var productToRemove = []
-    dataSaved = JSON.parse(dataSaved)
-    for (var i = 1; i < table.rows.length; i++) {
-        var itemName = table.rows[i].cells[0].innerText
-        var searchItemResult = dataSaved.find(function(arrElement) {
-            return arrElement.name === itemName
-        })
+    // var dataSaved = localStorage.getItem("persistingVars");
+    // if (dataSaved == null) {
+    //     if (table.rows.length == 1) {
+    //         table.rows[0].remove();
+    //         table.insertRow().insertCell()
+    //         table.rows[0].cells[0].innerText = "Your cart is empty"
+    //     }
+    //     return;
+    // }
 
-        if (searchItemResult == undefined) {
-            productToRemove.push(table.rows[i])
-        } else {
-            table.rows[i].cells[2].innerText = searchItemResult.quantity
-        }
-    }
-    productToRemove.forEach(function(arrElement) {
-        arrElement.remove()
-    })
+    // var productToRemove = []
+    // dataSaved = JSON.parse(dataSaved)
+    // for (var i = 1; i < table.rows.length; i++) {
+    //     var itemName = table.rows[i].cells[0].innerText
+    //     var searchItemResult = dataSaved.find(function(arrElement) {
+    //         return arrElement.name === itemName
+    //     })
+
+    //     if (searchItemResult == undefined) {
+    //         productToRemove.push(table.rows[i])
+    //     } else {
+    //         table.rows[i].cells[2].innerText = searchItemResult.quantity
+    //     }
+    // }
+    // productToRemove.forEach(function(arrElement) {
+    //     arrElement.remove()
+    // })
 
     if (table.rows.length == 1) {
         table.rows[0].remove();
@@ -70,58 +74,70 @@ function extractProductFromHtml(tr, index) {
     return { rowid: index, name: prodname, quantity: quantity };
 }
 
-function qtyminus(elm) {
-    // We are interested in:
-    // Quantity column index  = currentCell index -1 
-    // Row index = currentRow index
-    let currentCell = elm.offsetParent;
+function changeQty(e, action) {
+    let currentCell = e.offsetParent;
     var currentRow = currentCell.parentNode;
-    let targetCellIndex = currentCell.cellIndex - 1;
+    let targetCellIndex = currentCell.cellIndex - 2; // qty col index
     let targetRowIndex = currentRow.rowIndex;
 
     var table = document.getElementById('itemtable');
     var y = table.rows[targetRowIndex].cells[targetCellIndex];
     var beforeqty = y.innerHTML;
-
-    //Minus 1
-    var afterqty = parseInt(beforeqty) - 1;
-
-    // Checks
-    if (afterqty <= 0) {
-        table.deleteRow(targetRowIndex)
+    var afterqty = beforeqty;
+    if (action === "delete") {
+        afterqty = 0;
     }
-    if (table.rows.length == 1) {
-        table.deleteRow(0)
-        table.insertRow().insertCell()
-        table.rows[0].cells[0].innerText = "Your cart is empty"
+    if (action === "minus") {
+        afterqty = parseInt(beforeqty) - 1; //Minus 1
+    }
+    if (action === "plus") {
+        afterqty = parseInt(beforeqty) + 1; //Plus 1
+    }
+    //Checks if qty <=0
+    if (action === "delete" || action === "minus" ) {
+        if (afterqty <= 0) {
+            table.deleteRow(targetRowIndex)
+        }
+        if (table.rows.length == 1) {
+            table.deleteRow(0)
+            table.insertRow().insertCell()
+            table.rows[0].cells[0].innerText = "Your cart is empty"
+        }
     }
     y.innerHTML = afterqty;
 
+    adjustOrderSummary();
+    updateTotalPrice()
     storeLocalStorage();
     cartTotalQty();
 }
 
-function qtyplus(elm) {
-    // We are interested in:
-    // Quantity column index  = currentCell index -1 
-    // Row index = currentRow index
-    let currentCell = elm.offsetParent;
-    var currentRow = currentCell.parentNode;
-    let targetCellIndex = currentCell.cellIndex - 1;
-    let targetRowIndex = currentRow.rowIndex;
-
-    var table = document.getElementById('itemtable');
-    var y = table.rows[targetRowIndex].cells[targetCellIndex];
-    var beforeqty = y.innerHTML;
-
-    //Plus 1
-    var afterqty = parseInt(beforeqty) + 1;
-    y.innerHTML = afterqty;
-
-    storeLocalStorage();
-    cartTotalQty();
+// +/-, DELETE buttons
+function handleOnClickQtyChange(e, action, productId) {
+    changeQty(e, action);
+    var xmlhttp = new XMLHttpRequest();
+    //`shopping-cart.php?pid=${productId}` === "shopping-cart.php?pid=" + productId;
+    xmlhttp.open("GET", `shopping-cart.php?productId=${productId}&action=${action}`, true);
+    xmlhttp.send();
 }
 
+// Reset Cart button
+function handleOnClickReset() {
+    var r = confirm("Do you wish to empty your shopping cart?");
+    if (!r) {
+        return;
+    }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            clearLocalStorage();
+        }
+      };
+    xmlhttp.open("GET", `shopping-cart.php?action=reset`, true);
+    xmlhttp.send();
+}
+
+// Total qty shown next to "Your Items"
 function cartTotalQty() {
     var table = document.getElementById('itemtable');
     var totalqty = 0;
@@ -136,12 +152,7 @@ function cartTotalQty() {
     adjustOrderSummary();
 }
 
-// if (window.addEventListener) {
-//     window.addEventListener('load', function() {
-//         alert('addEventListener')
-//     }, false);
-// } else if (window.attachEvent) { // IE < 9
-//     window.attachEvent('onload', function() {
-//         alert('attachEvent')
-//     });
-// }
+// Continue Shopping button
+function backToPrevPage() {
+    window.history.go(-1)
+}

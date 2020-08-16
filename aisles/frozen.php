@@ -27,10 +27,10 @@
                 <a class="nav-link" href="../index.html">Home Page</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../aisles/fruits-vegetables.html">Return to Aisle</a>
+                <a class="nav-link" href="../aisles/frozen.php">Return to Aisle</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../shopping-cart/index.html">Shopping Cart</a>
+                <a class="nav-link" href="../shopping-cart/index.php">Shopping Cart</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -62,19 +62,19 @@
             <div class="col-md-3 col-sm-12">
                 <div class="menu ">
                     <ul class="list-unstyled">
-                        <a href="fruits-vegetables.html">
+                        <a href="fruits-vegetables.php">
                             <li>Fruits & Vegetables</li>
                         </a>
-                        <a href="meat-poultry.html">
+                        <a href="meat-poultry.php">
                             <li>Meat & Poultry</li>
                         </a>
-                        <a href="bread.html">
+                        <a href="bread.php">
                             <li>Bread</li>
                         </a>
-                        <a href="snacks.html">
+                        <a href="snacks.php">
                             <li>Snack</li>
                         </a>
-                        <a href="frozen.html">
+                        <a href="frozen.php">
                             <li>Frozen</li>
                         </a>
                     </ul>
@@ -83,26 +83,28 @@
 
             <div class="col-md-9 col-sm-12">
                 <div class="card-deck">
-                    <div class="card">
-                        <img class="card-img-top" src="../images/bj.jpg" alt="Ice Cream">
-                        <div class="card-body">
-                            <h5 class="card-title">Ben&Jerry's Ice Cream</h5>
-                            <p class="card-text">
-                                Sold in pints
-                                <h5 class="card-bold ">7.99 $</h5>
-                                <a href="../product-descriptions/icecream.html " class="stretched-link"></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="../images/popp.jpg" alt="Popsicle">
-                        <div class="card-body">
-                            <h5 class="card-title">FireCracker Popsicle</h5>
-                            <p class="card-text">
-                                Sold in packs
-                                <h5 class="card-bold">4.99 $</h5>
-                                <a href="../product-descriptions/popsicle.html" class="stretched-link"></a>
-                        </div>
-                    </div>
+                <?php
+                    $productlist=simplexml_load_file("../backstore/productlist.xml") or die("Error: cannot load userlist.xml");
+                    foreach($productlist->children() as $product){
+                        if($product->aisle=="frozen"){
+                            echo '<div class="card">';
+                            echo '<img class="card-img-top" src="'.$product->imagepath.'" alt="'.$product->name.'">';
+                            echo '<div class="card-body">';
+                            echo '<h5 class="card-title">'.$product->name.'</h5>';
+                            echo '<p class="card-text">';
+                            if ($product->unit == "each") {
+                                echo 'Sold in unit';
+                            } else {
+                                echo 'Sold in '. $product->unit;
+                            }
+                            echo '</p>';
+                            echo '<h5 class="card-bold ">'.$product->price.' $</h5>';
+                            echo '<a href="'.$product->productpage.'" class="stretched-link"></a>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                ?>
                 </div>
             </div>
         </div>
@@ -110,7 +112,7 @@
 
 
     <footer>
-        <a href="frozen.html#main-header">Back to top</a>
+        <a href="frozen.php#main-header">Back to top</a>
     </footer>
 
 </body>
