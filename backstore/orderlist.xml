@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<orderlist idcount="1">
+    <order>
+        <ordernum>2116</ordernum>
+        <customerid>123</customerid>
+        <datec>2020-07-01 00:00:00</datec>
+        <datem>2020-07-07 14:00:00</datem>
+        <fname>John</fname>
+        <lname>Smith</lname>
+        <email>joesmith@test.com</email>
+        
+        <phonenum>5145699089</phonenum>
+        <ordernote>1</ordernote>
+        <products>
+        <
+            </products>
+        
+    </order>
+   
+
+</orderlist>
