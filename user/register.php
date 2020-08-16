@@ -17,49 +17,51 @@
 
     <div class="navbar">
       <h3>Register</h3>
-      <a href="../index.html">Home Page</a>
+      <a href="../index.php">Home Page</a>
       <a href="#"></a>
     </div>
 
     <div class="container-fluid">
-      <form class="" action="index.html" method="post">
+      <form class="" action="../backstore/adduser.php" method="post">
         <div class="row">
 
           <div class="col-xl-6 col-sm-12">
-            <label for="firstName">First Name</label>
-            <input required class="form-control" type="text" name="firstName" placeholder="First Name">
+            <label for="fname">First Name</label>
+            <input required class="form-control" type="text" name="fname" placeholder="First Name">
 
-            <label for="number">Phone Number</label>
-            <input required class="form-control" type="text" name="number" placeholder="(XXX)-XXX-XXXX">
+            <label for="phone">Phone Number</label>
+            <input required class="form-control" type="text" name="phone" placeholder="(999)-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 
             <label for="password">Password</label>
             <input required class="form-control" type="password" name="password" placeholder="Password" password>
 
-            <label for="postal">Postal Code</label>
-            <input required class="form-control" type="text" name="postal" placeholder="XXX XXX">
+            <label for="postalcode">Postal Code</label>
+            <input required class="form-control" type="text" name="postalcode" placeholder="A9A 9A9" pattern="[a-zA-Z][0-9][a-zA-Z] *[0-9][a-zA-Z][0-9]">
 
           </div>
 
           <div class="col-xl-6 col-sm-12">
-            <label for="lastName">Last Name</label>
-            <input required class="form-control" type="text" name="lastName" placeholder="Last Name">
+            <label for="lname">Last Name</label>
+            <input required class="form-control" type="text" name="lname" placeholder="Last Name">
 
             <label for="email">Email</label>
             <input required class="form-control" type="text" name="email" placeholder="Ex: John.Michael@gmail.com" email>
 
-            <label for="password">Confirm Password</label>
-            <input required class="form-control" type="password" name="password" placeholder="Password" password>
+            <label for="confirmpassword">Confirm Password</label>
+            <input required class="form-control" type="password" name="confirmpassword" placeholder="Password" password>
 
             <label for="subscribeToMailingList">Subscribe To Mailing List?</label>
-            <select class="form-control" name="">
+            <br>
+            <input type="checkbox" name="marketinglist" id="marketinglist">
+            <!-- <select class="form-control" name="">
               <option value="true">Yes</option>
               <option value="false">No</option>
-            </select>
+            </select> -->
 
           </div>
 
           <div class="col-xl-12 col-sm-12">
-            <a href="../index.html"><button class="btn btn-primary" type="submit" name="button">Register</button></a>
+            <a href="../index.php"><button class="btn btn-primary" type="submit" name="button">Register</button></a>
           </div>
 
         </div>

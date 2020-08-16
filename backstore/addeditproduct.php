@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $weight = $_POST["weight"];
     $productdesc = $_POST["productdesc"];
     $unit = $_POST["unit"];
+    $newtypes = $_POST["types"];
 
     //load XML file
     $productlist=simplexml_load_file("productlist.xml") or die("Error: cannot load productlist.xml");
@@ -22,7 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $product->price=$price;
                 $product->weight=$weight;
                 $product->productdesc=$productdesc;
-                $unit->productdesc=$unit;
+                $product->unit=$unit;
+                $oldtypes = $product->types;
+                $dom=dom_import_simplexml($oldtypes);
+                $dom->parentNode->removeChild($dom);
+                $types=explode("-",$newtypes);
+                $typeslist = $product->addChild("types");
+                for($i=0;$i<count($types);$i++) {
+                    $typeslist->addChild("type",$types[$i]);
+                }
+
                 if (!empty($_FILES['image']['tmp_name'])) {
                     $product->imagepath=uploadImage($name);
                 }
@@ -36,9 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $idcount = $productlist->attributes()->$att;
         $idcount = $idcount+1;
         $productlist->attributes()->$att=$idcount;
-        //$productlist->addAttribute("idcount",$idcount);
 
-        //create new user entry
+        //create new product entry
         $new_product = $productlist->addChild("product");
         $new_product->addChild("id",$idcount);
         $new_product->addChild("name",$name);
@@ -51,9 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $new_product->addChild("productpage",'../product-descriptions/'.changestring($_POST["name"]).'.php');
         $a=$_POST["types"];
         $types=explode("-",$a);
-        $typeslist = $new_product->addChild("types");
+        $newtypes = $new_product->addChild("types");
         for($i=0;$i<count($types);$i++) {
-            $typeslist->addChild("type",$types[$i]);
+            $newtypes->addChild("type",$types[$i]);
         }
         $fp = fopen($_SERVER['DOCUMENT_ROOT']."/product-descriptions/".changestring($_POST["name"]).".php","w");
         fwrite($fp,"<!DOCTYPE html>
@@ -88,13 +97,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '</header>';
             echo '<nav>
             <ul>
-                <li><a href=\"../index.html\">Home Page</a></li>
+                <li><a href=\"../index.php\">Home Page</a></li>
                 <li><a href=\"../aisles/'.\$aisle.'.php\">Return to Aisle</a></li>
-                <li><a href=\"../shopping-cart/index.html\">Shopping Cart</a></li>
+                <li><a href=\"../shopping-cart/index.php\">Shopping Cart</a></li>
             </ul>
             <div class=\"register-log-in\">
-                <a href=\"../user/register.html\"><button class=\"user-button\" type=\"button\" name=\"user-button\">Register</button></a>
-                <a href=\"../user/login.html\"><button class=\"user-button\" type=\"button\" name=\"login-button\">Log In</button></a>
+                <a href=\"../user/register.php\"><button class=\"user-button\" type=\"button\" name=\"user-button\">Register</button></a>
+                <a href=\"../user/login.php\"><button class=\"user-button\" type=\"button\" name=\"login-button\">Log In</button></a>
             </div>
         </nav>';
             echo '<div class=\"description\">
@@ -117,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <br />
         
-            <form action=\"../shopping-cart/index.html\">
+            <form action=\"../shopping-cart/index.php\">
                 <label for=\"quantity\">Quantity:</label>
                 <input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" value=1 size=\"2\" onchange=\"updateSubtotal(3.99)\">
                 <label for=\"type\">Type:</label>
@@ -128,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '</select>
                 Subtotal: <span id=\"subtotal\"></span>
                 <div class=\"addtocartposition\">
-                    <a href=\"../shopping-cart/index.html\"><button class=\"addtocart\" type=\"button\" name=\"addtocart-button\">Add to Cart</button></a>
+                    <a href=\"../shopping-cart/index.php\"><button class=\"addtocart\" type=\"button\" name=\"addtocart-button\">Add to Cart</button></a>
                 </div>
             </form>
         </div>
@@ -142,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fclose($fp);
     }
     
-    //save user list to file
+    //save product list to file
     $productlist_file=fopen("productlist.xml","w") or die ("Error: cannot load productlist.xml");
     fwrite($productlist_file,$productlist->asXML());
     fclose($productlist_file);
@@ -183,7 +192,5 @@ function changestring($s) {
     }
     return $s;
 }
-
-//FIX TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES TYPES
 
 ?>

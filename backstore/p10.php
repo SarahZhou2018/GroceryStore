@@ -4,6 +4,9 @@
 -->
 
 <?php
+
+require("require.php");
+
 global $edit_mode, $id, $fname, $lname, $email, $phone,  $postalcode, $marketinglist, $admin;
 $edit_mode = false;
 if(isset($_GET['edit'])){
@@ -48,10 +51,12 @@ if(isset($_GET['edit'])){
             <ul>
                 <li><a href="p7.php">Product list</a></li>
                 <li><a href="p9.php">User list</a></li>
-                <li><a href="p11.html">Order list</a></li>
-                <li><a href="../index.html">Main site</a></li>
+                <li><a href="p11.php">Order list</a></li>
+                <li><a href="../index.php">Main site</a></li>
             </ul>
-            <a href="../index.html"><button class="logout-button" type="button" title="logout">Log out</button></a>
+            <form method="post">
+                <input type="submit" name="logout" value="Log out" class="logout-button" />
+            </form>
         </nav>
         
         <div id="main-block">
