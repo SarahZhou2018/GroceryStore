@@ -51,7 +51,7 @@ if(isset($_GET['edit'])){
             <ul>
                 <li><a href="p7.php">Product list</a></li>
                 <li><a href="p9.php">User list</a></li>
-                <li><a href="p11.html">Order list</a></li>
+                <li><a href="p11.php">Order list</a></li>
                 <li><a href="../index.html">Main site</a></li>
             </ul>
             <form method="post">
