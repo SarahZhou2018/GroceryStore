@@ -9,12 +9,13 @@
   <body>
 
     <?php
-
+      global $validEntry, $fieldsAreEmpty;
       if (isset($_POST['email'])) {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
 
+        
         $validEntry = false;
         $isUserAdmin = false;
         $fieldsAreEmpty = true;

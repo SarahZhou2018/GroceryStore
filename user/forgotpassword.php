@@ -9,6 +9,7 @@
   <body>
 
     <?php
+    global $emailExists, $emailFieldIsEmpty, $passwordDontMatch;
     if (isset($_POST['email'])) {
 
       $passwordDontMatch = false;
