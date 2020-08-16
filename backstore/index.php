@@ -1,6 +1,5 @@
 <?php
 require("require.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +40,7 @@ require("require.php");
             <a href="p9.php">Go to user list</a><br/><br/>
             <a href="p11.php">Go to order list</a><br/><br/>
             <a href="../index.html">Return to main site</a><br/><br/>
-
+        </div>
         <footer>
             <a href="#main-header">Back to top</a>
         </footer>
