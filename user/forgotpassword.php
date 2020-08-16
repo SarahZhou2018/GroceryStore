@@ -38,13 +38,14 @@
       } else {
         $passwordDontMatch = true;
       }
-    }
 
-    //save user list to file//save user list to file
-    $userlist_file=fopen("../backstore/userlist.xml","w") or die ("Error: cannot load userlist.xml");
-    fwrite($userlist_file,$userlist->asXML());
-    fclose($userlist_file);
-    file_put_contents("../backstore/userlist.xml", $userlist->saveXML());
+
+      //save user list to file//save user list to file
+      $userlist_file=fopen("../backstore/userlist.xml","w") or die ("Error: cannot load userlist.xml");
+      fwrite($userlist_file,$userlist->asXML());
+      fclose($userlist_file);
+      file_put_contents("../backstore/userlist.xml", $userlist->saveXML());
+    }
      ?>
 
 
@@ -73,7 +74,7 @@
         <label for="newConfirmPassword">Confirm New Password</label>
         <input required class="form-control" type="password" name="newConfirmPassword" placeholder="Confirm New Password" password>
 
-        <button class="btn btn-primary" type="submit">Log In</button>
+        <button class="btn btn-primary" type="submit">Change Password</button>
 
       </form>
       <?php
