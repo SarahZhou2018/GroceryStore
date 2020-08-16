@@ -35,14 +35,14 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../user/register.html">
+                <a class="nav-link" href="../user/register.php">
                     <button class="user-button" type="button" name="user-button">
                     Register
                     </button>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../user/login.html">
+                <a class="nav-link" href="../user/login.php">
                     <button class="user-button" type="button" name="login-button">
                     Log In
                     </button>
