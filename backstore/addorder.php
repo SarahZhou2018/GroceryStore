@@ -79,6 +79,13 @@ echo '<script type="text/javascript">
            window.location = "p11.php"
       </script>';
 
+//function to parse inputs
+function validate_input($input){
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars($input);
+    return $input;
+}
 
 
 ?>

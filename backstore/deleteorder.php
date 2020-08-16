@@ -18,7 +18,7 @@ if(isset($_GET['delete'])){
 }
 
 echo '<script type="text/javascript">
-           window.location = "p12.php"
+           window.location = "p11.php"
       </script>';
 
 ?>

@@ -69,7 +69,7 @@
                 </div>
                 <br>
                 <input type="submit" value="Add" name="add" class="button">
-                <input type="submit" value="Delete" name="delete" class="button" id="deleteButton" formaction="deleteuser.php" disabled>
+                <input type="submit" value="Delete" name="delete" class="button" id="deleteButton" formaction="deleteorder.php" disabled>
                 <input type="submit" value="Edit" name="edit" id="editButton" class="button" disabled> 
                 
             </form>
