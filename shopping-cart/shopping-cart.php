@@ -1,4 +1,4 @@
-<!-- Add to Cart, Edit Cart Functions
+<!-- Shopping Cart Functions
 Shi Qi Zhou - 40163947 -->
 
 <?php
@@ -68,7 +68,7 @@ if (isset($_POST["addtocart"])) {
     header("Location: index.php");
 }
 
-//QtyChange Buttons
+//QtyChange + Delete Buttons
 if (isset($_GET["action"]) && isset($_GET['productId'])) {
     if ($_GET['action'] === "minus") {
         $productId = $_GET['productId'];
@@ -91,23 +91,7 @@ if (isset($_GET["action"]) && isset($_GET['productId'])) {
 
 //Reset
 if (isset($_GET['action']) && $_GET['action'] === "reset") {
-    session_destroy();
+    unset($_SESSION["cart"]);
 }
-
-//Qtyplus Button
-// if (isset($_POST["qtyplus"])) {
-//     $pidFromPage = $_POST["deletefromcart"];
-//     unset($_SESSION["cart"][$pidFromPage]);
-//     header("Refresh:0");
-// }
-
-//Delete Button
-// if (isset($_POST["deleteFromCart"])) {
-//     $pidFromPage = $_POST["deletefromcart"];
-//     unset($_SESSION["cart"][$pidFromPage]);
-//     header("Refresh:0");
-// }
-
-
 
 ?>

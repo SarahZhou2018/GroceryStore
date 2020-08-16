@@ -111,15 +111,13 @@
                                     </td>
                                     <td>
                                         <!-- Quantity +/- buttons -->
-                                        <!-- <input type="hidden" name="qtyminus" /> -->
                                         <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="remove" onclick="handleOnClickQtyChange(this, 'minus','<?= $id ?>')">
                                             <img id="icon" src="../images/buttons/minus.png"></button>
-                                        <!-- <input type="hidden" name="qtyplus" /> -->
                                         <button type="submit" data-toggle="tooltip" id="iconButton" data-placement="top" title="add" onclick="handleOnClickQtyChange(this, 'plus','<?= $id ?>')">
                                             <img id="icon" src="../images/buttons/plus.png"></button>
                                     </td>
+                                         <!-- DELETE button -->
                                     <td>
-                                        <!-- <input type="hidden" name="deleteFromCart" value=/> -->
                                         <button type="submit" onclick="handleOnClickQtyChange(this, 'delete','<?= $id ?>')" class="deletebtn">DELETE</button>
                                     </td>
                                 </tr>
@@ -128,7 +126,6 @@
                     </table>
                 </div>
                 <span></span>
-
             </div>
             <!-- Bottom Buttons -->
             <input class="button" onclick="handleOnClickReset()" name="reset" value="Reset Cart" readonly>
