@@ -4,7 +4,7 @@
 -->
 
 <?php
-global $edit_mode, $id, $fname, $lname, $email, $phone,  $postalcode, $marketinglist;
+global $edit_mode, $id, $fname, $lname, $email, $phone,  $postalcode, $marketinglist, $admin;
 $edit_mode = false;
 if(isset($_GET['edit'])){
     $edit_mode=true;
@@ -19,6 +19,7 @@ if(isset($_GET['edit'])){
             $phone = $user->phone;
             $postalcode = $user->postalcode;
             $marketinglist = $user->marketinglist;
+            $admin = $user->admin;
             break;
         }
     }
@@ -34,6 +35,7 @@ if(isset($_GET['edit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add/Edit user</title>
     <link rel="stylesheet" href="../css/p7-p12.css">
+    <script src="../scripts/backstore-user.js"></script>
 </head>
 <body>
     <div id="main-container">
@@ -44,7 +46,7 @@ if(isset($_GET['edit'])){
 
         <nav>
             <ul>
-                <li><a href="p7.html">Product list</a></li>
+                <li><a href="p7.php">Product list</a></li>
                 <li><a href="p9.php">User list</a></li>
                 <li><a href="p11.html">Order list</a></li>
                 <li><a href="../index.html">Main site</a></li>
@@ -91,15 +93,27 @@ if(isset($_GET['edit'])){
                     <label for="postalcode">*Postal code</label><br>
                     <input type="text" name="postalcode" id="postalcode" class="inputbox" maxlength=7 size="7"  placeholder="A9A 9A9" pattern="[a-zA-Z][0-9][a-zA-Z] *[0-9][a-zA-Z][0-9]" <?php if ($edit_mode) echo("value=\"$postalcode\""); ?> required><br>
                 </div>
-
+                <div class="clr"></div>
+                <div class="form-container">
+                    <label for="password"><?php if ($edit_mode) echo("Change password(optional)"); else echo("*Password"); ?></label><br>
+                    <input type="password" name="password" id="password" class="inputbox" size="30" <?php if (!$edit_mode) echo("required"); ?>><br>
+                </div>
+                <div class="form-container">
+                    <label for="password_confirm"><?php if (!$edit_mode) echo "*";?>Confirm password</label><br>
+                    <input type="password" name="password_confirm" id="password_confirm" class="inputbox" size="30"  oninput="validatePassword(this)" <?php if (!$edit_mode) echo("required"); ?> ><br>
+                </div>
                 <div class="clr"></div>
                 <div class="form-container">
                     <input type="checkbox" name="marketinglist" id="marketinglist" <?php if ($marketinglist==1 && $edit_mode) echo "checked"; ?>>
                     <label for="marketinglist">Subscribed to special offers</label>
                 </div>
                 <div class="clr"></div>
-                
-                
+                <div class="form-container">
+                    <input type="checkbox" name="admin" id="admin" <?php if ($admin==1 && $edit_mode) echo "checked"; ?>>
+                    <label for="admin">User is an administrator</label>
+                </div>
+                <div class="clr"></div>
+
                 <input type="submit" value="Save" class="button"> 
             </form>
 

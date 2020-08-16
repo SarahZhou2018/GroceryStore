@@ -14,13 +14,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = validate_input($_POST["email"]);
     $phone = validate_input($_POST["phone"]);
     $postalcode = validate_input($_POST["postalcode"]);
-    if (isset($_POST["marketinglist"]))$marketinglist = 1;
+
+    if($_POST["marketinglist"]=="true") $marketinglist = 1;
+    elseif (isset($_POST["marketinglist"]) && $_POST["marketinglist"]!="false") $marketinglist = 1;
     else $marketinglist=0;
+
+    if (isset($_POST["admin"]))$admin = 1;
+    else $admin=0;
+
 
     //load XML file
     $userlist=simplexml_load_file("userlist.xml") or die("Error: cannot load userlist.xml");
 
-    
+    //If id was passed, update user entry with matching id
     if($id){
         foreach($userlist->children() as $user){
             if($user->id == $id){
@@ -30,11 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $user->phone=$phone;
                 $user->postalcode=$postalcode;
                 $user->marketinglist=$marketinglist;
-                $user->password="TODO";
+                $user->admin=$admin;
+                if (isset($_POST["password"]) && $_POST["password"]!="") $user->password=$_POST["password"];
                 break;
             }
         }
     }
+    //If no id was passed, create a new user
     else {
         //Fetch user ID count, store, increment and update count
         $att="idcount";
@@ -52,7 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $new_user->addChild("phone",$phone);
         $new_user->addChild("postalcode",$postalcode);
         $new_user->addChild("marketinglist",$marketinglist);
-        $new_user->addChild("password","TODO");
+        $new_user->addChild("admin",$admin);
+        $new_user->addChild("password",$_POST["password"]);
 
     }
     
@@ -64,11 +73,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-
+//redirect to user list
 echo '<script type="text/javascript">
            window.location = "p9.php"
       </script>';
 
+//function to parse inputs
 function validate_input($input){
     $input = trim($input);
     $input = stripslashes($input);
