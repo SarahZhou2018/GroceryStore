@@ -1,5 +1,5 @@
 
-SOEN287 Course project deliverable 3<br/>
+Course project <br/>
 Store/Team name: Foodsy<br/><br/>
 
 Team members: <br/>
